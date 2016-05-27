@@ -1,0 +1,1831 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:dime="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/" xmlns:stk="http://schemas.microsoft.com/soap-toolkit/wsdl-extension" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ref="http://schemas.xmlsoap.org/ws/2002/04/reference/" xmlns:wsdlns="http://tempuri.org/patientservice/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:typens="http://tempuri.org/patientservice/type/" xmlns:content="http://schemas.xmlsoap.org/ws/2002/04/content-type/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="patientservice" targetNamespace="http://tempuri.org/patientservice/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://tempuri.org/patientservice/type/">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/reference/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/content-type/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="patientservice.CheckClinicTypeBySDLOC">
+    <wsdl:part name="pCurrentSDLOC" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.CheckClinicTypeBySDLOCResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.get_drug_IPD_status">
+    <wsdl:part name="hn" type="xsd:string" />
+    <wsdl:part name="cOrderId" type="xsd:string" />
+    <wsdl:part name="drugcode" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.get_drug_IPD_statusResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.get_drug_IPD">
+    <wsdl:part name="hn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.get_drug_IPDResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetEncouterDetailByEncIdAndType">
+    <wsdl:part name="penc_id" type="xsd:string" />
+    <wsdl:part name="penc_type" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetEncouterDetailByEncIdAndTypeResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetEncounterDetailClinicTypePriceTypeByMRNActiveDate">
+    <wsdl:part name="pMrn" type="xsd:string" />
+    <wsdl:part name="pActiveDate" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetEncounterDetailClinicTypePriceTypeByMRNActiveDateResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.searchCytoResultByMRNDate">
+    <wsdl:part name="pHn" type="xsd:string" />
+    <wsdl:part name="pStartDate" type="xsd:string" />
+    <wsdl:part name="pEndDate" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.searchCytoResultByMRNDateResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.searchPathoResultByMRNDate">
+    <wsdl:part name="pHn" type="xsd:string" />
+    <wsdl:part name="pStartDate" type="xsd:string" />
+    <wsdl:part name="pEndDate" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.searchPathoResultByMRNDateResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.getParentDetailByMRN">
+    <wsdl:part name="pcHN_baby" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.getParentDetailByMRNResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.searchORApppointmentByPlaceAndAppointmentDate">
+    <wsdl:part name="pcPlace_id" type="xsd:string" />
+    <wsdl:part name="pcAppointmentDate" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.searchORApppointmentByPlaceAndAppointmentDateResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.CheckPlacePremium">
+    <wsdl:part name="pCurrentWard" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.CheckPlacePremiumResponse">
+    <wsdl:part name="Result" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetChangeOrder">
+    <wsdl:part name="pcHL7StrORD" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetChangeOrderResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_demographic_shortbyAN">
+    <wsdl:part name="pAn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_demographic_shortbyANResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetProductLocationByBagID">
+    <wsdl:part name="pBagID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetProductLocationByBagIDResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetPatientBloodGrpByMRN">
+    <wsdl:part name="pMrn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetPatientBloodGrpByMRNResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetLabEventPerformDateTime">
+    <wsdl:part name="pStrEvn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetLabEventPerformDateTimeResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.getCurrentDrug">
+    <wsdl:part name="cHn" type="xsd:string" />
+    <wsdl:part name="dDate" type="xsd:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.getCurrentDrugResponse">
+    <wsdl:part name="Result" type="xsd:anyType" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SearchAllPriceType" />
+  <wsdl:message name="patientservice.SearchAllPriceTypeResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SearchAllClinicType" />
+  <wsdl:message name="patientservice.SearchAllClinicTypeResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetBBTrackingByORD">
+    <wsdl:part name="pnOrderID" type="xsd:double" />
+    <wsdl:part name="pcHL7HeaderMsg" type="xsd:string" />
+    <wsdl:part name="pcStrObsIDPutMsg" type="xsd:string" />
+    <wsdl:part name="pcMode" type="xsd:string" />
+    <wsdl:part name="pcStrBPO" type="xsd:string" />
+    <wsdl:part name="pcStrBPX" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetBBTrackingByORDResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetBBTracking">
+    <wsdl:part name="pHL7Msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetBBTrackingResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetLabResult">
+    <wsdl:part name="pLabRes" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetLabResultResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SearchProductDetailByProductID">
+    <wsdl:part name="pProductID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SearchProductDetailByProductIDResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetOrderLabStatus">
+    <wsdl:part name="pnOrderID" type="xsd:double" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetOrderLabStatusResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.CancelPayment">
+    <wsdl:part name="cOrderId" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.CancelPaymentResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetPayment">
+    <wsdl:part name="cPayload" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetPaymentResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetLabRQO">
+    <wsdl:part name="pStrRQO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetLabRQOResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetLabEvent">
+    <wsdl:part name="pStrEvn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.SetLabEventResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetOrderRQOByMRN">
+    <wsdl:part name="pMrn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetOrderRQOByMRNResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetOrderRQOByInvoiceId">
+    <wsdl:part name="pInvoice_id" type="xsd:double" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetOrderRQOByInvoiceIdResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetOrderRQOByRqId">
+    <wsdl:part name="pRq_type" type="xsd:string" />
+    <wsdl:part name="pRq_id" type="xsd:double" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetOrderRQOByRqIdResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Version_LabService" />
+  <wsdl:message name="patientservice.Get_Version_LabServiceResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.getPatientinSurgical">
+    <wsdl:part name="pMrn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.getPatientinSurgicalResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.RxOverSupply">
+    <wsdl:part name="mHn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.RxOverSupplyResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.getPatientinOr">
+    <wsdl:part name="pSrc" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.getPatientinOrResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_AdrNaranjo">
+    <wsdl:part name="hn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_AdrNaranjoResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetDrRepmed">
+    <wsdl:part name="pHn" type="xsd:string" />
+    <wsdl:part name="pSrc" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetDrRepmedResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.getrxseq_prm">
+    <wsdl:part name="pHn" type="xsd:string" />
+    <wsdl:part name="pSrc" type="xsd:string" />
+    <wsdl:part name="pdate" type="xsd:string" />
+    <wsdl:part name="mDr" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.getrxseq_prmResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetClaimFromRefund">
+    <wsdl:part name="pRq_type" type="xsd:string" />
+    <wsdl:part name="pRq_id" type="xsd:double" />
+    <wsdl:part name="pRq_seq" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetClaimFromRefundResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Ws_AllDrugGroup" />
+  <wsdl:message name="patientservice.Ws_AllDrugGroupResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Ws_DrugGroup">
+    <wsdl:part name="pSrc" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Ws_DrugGroupResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetRxSeq">
+    <wsdl:part name="pHn" type="xsd:string" />
+    <wsdl:part name="pSrc" type="xsd:string" />
+    <wsdl:part name="pdate" type="xsd:string" />
+    <wsdl:part name="mDr" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetRxSeqResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetRepeateMedByHN">
+    <wsdl:part name="tcHn" type="xsd:string" />
+    <wsdl:part name="tcDr" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetRepeateMedByHNResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.get_PriceSupply_byProduct_id">
+    <wsdl:part name="pcProduct_id" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.get_PriceSupply_byProduct_idResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.get_ReimburseSupply_byProduct_id">
+    <wsdl:part name="pcProduct_id" type="xsd:string" />
+    <wsdl:part name="pcPolicy_no" type="xsd:string" />
+    <wsdl:part name="pcPrice_type" type="xsd:string" />
+    <wsdl:part name="pcEligible" type="xsd:string" />
+    <wsdl:part name="pcIO" type="xsd:string" />
+    <wsdl:part name="pnLevel" type="xsd:int" />
+    <wsdl:part name="pnDiscount" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.get_ReimburseSupply_byProduct_idResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_lab_data_researchbydate4batch">
+    <wsdl:part name="pBatchHN" type="xsd:string" />
+    <wsdl:part name="pStartDate" type="xsd:string" />
+    <wsdl:part name="pEndDate" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_lab_data_researchbydate4batchResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_lab_data_researchall4batch">
+    <wsdl:part name="pBatchHN" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_lab_data_researchall4batchResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_lab_data_researchbydate">
+    <wsdl:part name="pHn" type="xsd:string" />
+    <wsdl:part name="pStartDate" type="xsd:string" />
+    <wsdl:part name="pEndDate" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_lab_data_researchbydateResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_lab_data_researchall">
+    <wsdl:part name="pHn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_lab_data_researchallResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_lab_data_outside">
+    <wsdl:part name="pReqname" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_lab_data_outsideResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetOrganizationInfoByParentId">
+    <wsdl:part name="pParentID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetOrganizationInfoByParentIdResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Org_detail">
+    <wsdl:part name="pOrgID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Org_detailResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Place_detail">
+    <wsdl:part name="pPlaceID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Place_detailResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_sdloc_all" />
+  <wsdl:message name="patientservice.Get_sdloc_allResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_sdloc_detail">
+    <wsdl:part name="pSrc" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_sdloc_detailResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_staff_fulldetail">
+    <wsdl:part name="sCode" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_staff_fulldetailResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_ConfirmTube">
+    <wsdl:part name="xString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_ConfirmTubeResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_LabOrderRegister">
+    <wsdl:part name="xString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_LabOrderRegisterResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_TubeID">
+    <wsdl:part name="pHn" type="xsd:string" />
+    <wsdl:part name="pSpecimenType" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_TubeIDResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Lab_OrderRegisted">
+    <wsdl:part name="pHn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Lab_OrderRegistedResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Lab_OrderFull">
+    <wsdl:part name="pHn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Lab_OrderFullResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_StaffPayroll">
+    <wsdl:part name="xString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_StaffPayrollResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_OrderReceive">
+    <wsdl:part name="xString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_OrderReceiveResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_Ward2Xray">
+    <wsdl:part name="xString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_Ward2XrayResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_WorkStaff">
+    <wsdl:part name="xString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_WorkStaffResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_ForeignXrayOrder">
+    <wsdl:part name="pFHn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_ForeignXrayOrderResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_ForeignDemographic">
+    <wsdl:part name="pFHn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_ForeignDemographicResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_XrayOrder">
+    <wsdl:part name="pHn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_XrayOrderResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_demographic_long_outsidepatient">
+    <wsdl:part name="DeptCode" type="xsd:string" />
+    <wsdl:part name="RefMrn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_demographic_long_outsidepatientResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_MedPatient">
+    <wsdl:part name="hn" type="xsd:string" />
+    <wsdl:part name="an" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_MedPatientResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_OR">
+    <wsdl:part name="xString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_ORResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_PAE">
+    <wsdl:part name="xString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_PAEResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Lab_order">
+    <wsdl:part name="hn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Lab_orderResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_Demographic_Long_OutsidePatient">
+    <wsdl:part name="pXString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_Demographic_Long_OutsidePatientResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_staff_detail">
+    <wsdl:part name="user_id" type="xsd:string" />
+    <wsdl:part name="password_id" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_staff_detailResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Adr">
+    <wsdl:part name="hn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_AdrResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Claim_Amt">
+    <wsdl:part name="hn" type="xsd:string" />
+    <wsdl:part name="accession_No" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Claim_AmtResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_lab_data">
+    <wsdl:part name="hn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_lab_dataResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Cancel_Billing">
+    <wsdl:part name="hn" type="xsd:string" />
+    <wsdl:part name="accession_No" type="xsd:string" />
+    <wsdl:part name="an" type="xsd:string" />
+    <wsdl:part name="iseq" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Cancel_BillingResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_Billing">
+    <wsdl:part name="xString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Set_BillingResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_all_exam">
+    <wsdl:part name="pExam_code" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_all_examResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Payment_Status">
+    <wsdl:part name="hn" type="xsd:string" />
+    <wsdl:part name="an" type="xsd:string" />
+    <wsdl:part name="accNo" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Payment_StatusResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_ipd_detail">
+    <wsdl:part name="hn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_ipd_detailResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetEligibilityInsuranceDetail">
+    <wsdl:part name="pMrn" type="xsd:string" />
+    <wsdl:part name="pEncType" type="xsd:string" />
+    <wsdl:part name="pEncID" type="xsd:string" />
+    <wsdl:part name="pSDLOC" type="xsd:string" />
+    <wsdl:part name="pPerfDate" type="xsd:string" />
+    <wsdl:part name="pClinicType" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetEligibilityInsuranceDetailResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetEncounterDetailByMRNENCTYPE">
+    <wsdl:part name="pMrn" type="xsd:string" />
+    <wsdl:part name="pEncType" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetEncounterDetailByMRNENCTYPEResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetEncounterDetailByMRNDATE">
+    <wsdl:part name="pMrn" type="xsd:string" />
+    <wsdl:part name="pCDate" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetEncounterDetailByMRNDATEResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetEncounterDetailByMRNForToday">
+    <wsdl:part name="pMrn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetEncounterDetailByMRNForTodayResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_appointment_detailByDateSdloc">
+    <wsdl:part name="pCDate" type="xsd:string" />
+    <wsdl:part name="pCSdloc" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_appointment_detailByDateSdlocResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_appointment_detail">
+    <wsdl:part name="hn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_appointment_detailResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetHNByIdCard">
+    <wsdl:part name="pIdCardNumber" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.GetHNByIdCardResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_demographic_shortByName">
+    <wsdl:part name="cName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_demographic_shortByNameResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_demographic_long">
+    <wsdl:part name="hn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_demographic_longResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_demographic_short">
+    <wsdl:part name="hn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_demographic_shortResponse">
+    <wsdl:part name="Result" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="patientservice.Get_Version" />
+  <wsdl:message name="patientservice.Get_VersionResponse">
+    <wsdl:part name="Result" type="xsd:anyType" />
+  </wsdl:message>
+  <wsdl:portType name="patientserviceSoapPort">
+    <wsdl:operation name="CheckClinicTypeBySDLOC" parameterOrder="pCurrentSDLOC">
+      <wsdl:input message="wsdlns:patientservice.CheckClinicTypeBySDLOC" />
+      <wsdl:output message="wsdlns:patientservice.CheckClinicTypeBySDLOCResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="get_drug_IPD_status" parameterOrder="hn cOrderId drugcode">
+      <wsdl:input message="wsdlns:patientservice.get_drug_IPD_status" />
+      <wsdl:output message="wsdlns:patientservice.get_drug_IPD_statusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="get_drug_IPD" parameterOrder="hn">
+      <wsdl:input message="wsdlns:patientservice.get_drug_IPD" />
+      <wsdl:output message="wsdlns:patientservice.get_drug_IPDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEncouterDetailByEncIdAndType" parameterOrder="penc_id penc_type">
+      <wsdl:input message="wsdlns:patientservice.GetEncouterDetailByEncIdAndType" />
+      <wsdl:output message="wsdlns:patientservice.GetEncouterDetailByEncIdAndTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEncounterDetailClinicTypePriceTypeByMRNActiveDate" parameterOrder="pMrn pActiveDate">
+      <wsdl:input message="wsdlns:patientservice.GetEncounterDetailClinicTypePriceTypeByMRNActiveDate" />
+      <wsdl:output message="wsdlns:patientservice.GetEncounterDetailClinicTypePriceTypeByMRNActiveDateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="searchCytoResultByMRNDate" parameterOrder="pHn pStartDate pEndDate">
+      <wsdl:input message="wsdlns:patientservice.searchCytoResultByMRNDate" />
+      <wsdl:output message="wsdlns:patientservice.searchCytoResultByMRNDateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="searchPathoResultByMRNDate" parameterOrder="pHn pStartDate pEndDate">
+      <wsdl:input message="wsdlns:patientservice.searchPathoResultByMRNDate" />
+      <wsdl:output message="wsdlns:patientservice.searchPathoResultByMRNDateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getParentDetailByMRN" parameterOrder="pcHN_baby">
+      <wsdl:input message="wsdlns:patientservice.getParentDetailByMRN" />
+      <wsdl:output message="wsdlns:patientservice.getParentDetailByMRNResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="searchORApppointmentByPlaceAndAppointmentDate" parameterOrder="pcPlace_id pcAppointmentDate">
+      <wsdl:input message="wsdlns:patientservice.searchORApppointmentByPlaceAndAppointmentDate" />
+      <wsdl:output message="wsdlns:patientservice.searchORApppointmentByPlaceAndAppointmentDateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlacePremium" parameterOrder="pCurrentWard">
+      <wsdl:input message="wsdlns:patientservice.CheckPlacePremium" />
+      <wsdl:output message="wsdlns:patientservice.CheckPlacePremiumResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SetChangeOrder" parameterOrder="pcHL7StrORD">
+      <wsdl:input message="wsdlns:patientservice.SetChangeOrder" />
+      <wsdl:output message="wsdlns:patientservice.SetChangeOrderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_demographic_shortbyAN" parameterOrder="pAn">
+      <wsdl:input message="wsdlns:patientservice.Get_demographic_shortbyAN" />
+      <wsdl:output message="wsdlns:patientservice.Get_demographic_shortbyANResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductLocationByBagID" parameterOrder="pBagID">
+      <wsdl:input message="wsdlns:patientservice.GetProductLocationByBagID" />
+      <wsdl:output message="wsdlns:patientservice.GetProductLocationByBagIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientBloodGrpByMRN" parameterOrder="pMrn">
+      <wsdl:input message="wsdlns:patientservice.GetPatientBloodGrpByMRN" />
+      <wsdl:output message="wsdlns:patientservice.GetPatientBloodGrpByMRNResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLabEventPerformDateTime" parameterOrder="pStrEvn">
+      <wsdl:input message="wsdlns:patientservice.SetLabEventPerformDateTime" />
+      <wsdl:output message="wsdlns:patientservice.SetLabEventPerformDateTimeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentDrug" parameterOrder="cHn dDate">
+      <wsdl:input message="wsdlns:patientservice.getCurrentDrug" />
+      <wsdl:output message="wsdlns:patientservice.getCurrentDrugResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchAllPriceType">
+      <wsdl:input message="wsdlns:patientservice.SearchAllPriceType" />
+      <wsdl:output message="wsdlns:patientservice.SearchAllPriceTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchAllClinicType">
+      <wsdl:input message="wsdlns:patientservice.SearchAllClinicType" />
+      <wsdl:output message="wsdlns:patientservice.SearchAllClinicTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SetBBTrackingByORD" parameterOrder="pnOrderID pcHL7HeaderMsg pcStrObsIDPutMsg pcMode pcStrBPO pcStrBPX">
+      <wsdl:input message="wsdlns:patientservice.SetBBTrackingByORD" />
+      <wsdl:output message="wsdlns:patientservice.SetBBTrackingByORDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SetBBTracking" parameterOrder="pHL7Msg">
+      <wsdl:input message="wsdlns:patientservice.SetBBTracking" />
+      <wsdl:output message="wsdlns:patientservice.SetBBTrackingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLabResult" parameterOrder="pLabRes">
+      <wsdl:input message="wsdlns:patientservice.SetLabResult" />
+      <wsdl:output message="wsdlns:patientservice.SetLabResultResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProductDetailByProductID" parameterOrder="pProductID">
+      <wsdl:input message="wsdlns:patientservice.SearchProductDetailByProductID" />
+      <wsdl:output message="wsdlns:patientservice.SearchProductDetailByProductIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderLabStatus" parameterOrder="pnOrderID">
+      <wsdl:input message="wsdlns:patientservice.GetOrderLabStatus" />
+      <wsdl:output message="wsdlns:patientservice.GetOrderLabStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelPayment" parameterOrder="cOrderId">
+      <wsdl:input message="wsdlns:patientservice.CancelPayment" />
+      <wsdl:output message="wsdlns:patientservice.CancelPaymentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPayment" parameterOrder="cPayload">
+      <wsdl:input message="wsdlns:patientservice.SetPayment" />
+      <wsdl:output message="wsdlns:patientservice.SetPaymentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLabRQO" parameterOrder="pStrRQO">
+      <wsdl:input message="wsdlns:patientservice.SetLabRQO" />
+      <wsdl:output message="wsdlns:patientservice.SetLabRQOResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLabEvent" parameterOrder="pStrEvn">
+      <wsdl:input message="wsdlns:patientservice.SetLabEvent" />
+      <wsdl:output message="wsdlns:patientservice.SetLabEventResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderRQOByMRN" parameterOrder="pMrn">
+      <wsdl:input message="wsdlns:patientservice.GetOrderRQOByMRN" />
+      <wsdl:output message="wsdlns:patientservice.GetOrderRQOByMRNResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderRQOByInvoiceId" parameterOrder="pInvoice_id">
+      <wsdl:input message="wsdlns:patientservice.GetOrderRQOByInvoiceId" />
+      <wsdl:output message="wsdlns:patientservice.GetOrderRQOByInvoiceIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderRQOByRqId" parameterOrder="pRq_type pRq_id">
+      <wsdl:input message="wsdlns:patientservice.GetOrderRQOByRqId" />
+      <wsdl:output message="wsdlns:patientservice.GetOrderRQOByRqIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Version_LabService">
+      <wsdl:input message="wsdlns:patientservice.Get_Version_LabService" />
+      <wsdl:output message="wsdlns:patientservice.Get_Version_LabServiceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientinSurgical" parameterOrder="pMrn">
+      <wsdl:input message="wsdlns:patientservice.getPatientinSurgical" />
+      <wsdl:output message="wsdlns:patientservice.getPatientinSurgicalResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RxOverSupply" parameterOrder="mHn">
+      <wsdl:input message="wsdlns:patientservice.RxOverSupply" />
+      <wsdl:output message="wsdlns:patientservice.RxOverSupplyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientinOr" parameterOrder="pSrc">
+      <wsdl:input message="wsdlns:patientservice.getPatientinOr" />
+      <wsdl:output message="wsdlns:patientservice.getPatientinOrResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_AdrNaranjo" parameterOrder="hn">
+      <wsdl:input message="wsdlns:patientservice.Get_AdrNaranjo" />
+      <wsdl:output message="wsdlns:patientservice.Get_AdrNaranjoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDrRepmed" parameterOrder="pHn pSrc">
+      <wsdl:input message="wsdlns:patientservice.GetDrRepmed" />
+      <wsdl:output message="wsdlns:patientservice.GetDrRepmedResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getrxseq_prm" parameterOrder="pHn pSrc pdate mDr">
+      <wsdl:input message="wsdlns:patientservice.getrxseq_prm" />
+      <wsdl:output message="wsdlns:patientservice.getrxseq_prmResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClaimFromRefund" parameterOrder="pRq_type pRq_id pRq_seq">
+      <wsdl:input message="wsdlns:patientservice.GetClaimFromRefund" />
+      <wsdl:output message="wsdlns:patientservice.GetClaimFromRefundResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Ws_AllDrugGroup">
+      <wsdl:input message="wsdlns:patientservice.Ws_AllDrugGroup" />
+      <wsdl:output message="wsdlns:patientservice.Ws_AllDrugGroupResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Ws_DrugGroup" parameterOrder="pSrc">
+      <wsdl:input message="wsdlns:patientservice.Ws_DrugGroup" />
+      <wsdl:output message="wsdlns:patientservice.Ws_DrugGroupResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRxSeq" parameterOrder="pHn pSrc pdate mDr">
+      <wsdl:input message="wsdlns:patientservice.GetRxSeq" />
+      <wsdl:output message="wsdlns:patientservice.GetRxSeqResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepeateMedByHN" parameterOrder="tcHn tcDr">
+      <wsdl:input message="wsdlns:patientservice.GetRepeateMedByHN" />
+      <wsdl:output message="wsdlns:patientservice.GetRepeateMedByHNResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="get_PriceSupply_byProduct_id" parameterOrder="pcProduct_id">
+      <wsdl:input message="wsdlns:patientservice.get_PriceSupply_byProduct_id" />
+      <wsdl:output message="wsdlns:patientservice.get_PriceSupply_byProduct_idResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="get_ReimburseSupply_byProduct_id" parameterOrder="pcProduct_id pcPolicy_no pcPrice_type pcEligible pcIO pnLevel pnDiscount">
+      <wsdl:input message="wsdlns:patientservice.get_ReimburseSupply_byProduct_id" />
+      <wsdl:output message="wsdlns:patientservice.get_ReimburseSupply_byProduct_idResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_lab_data_researchbydate4batch" parameterOrder="pBatchHN pStartDate pEndDate">
+      <wsdl:input message="wsdlns:patientservice.Get_lab_data_researchbydate4batch" />
+      <wsdl:output message="wsdlns:patientservice.Get_lab_data_researchbydate4batchResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_lab_data_researchall4batch" parameterOrder="pBatchHN">
+      <wsdl:input message="wsdlns:patientservice.Get_lab_data_researchall4batch" />
+      <wsdl:output message="wsdlns:patientservice.Get_lab_data_researchall4batchResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_lab_data_researchbydate" parameterOrder="pHn pStartDate pEndDate">
+      <wsdl:input message="wsdlns:patientservice.Get_lab_data_researchbydate" />
+      <wsdl:output message="wsdlns:patientservice.Get_lab_data_researchbydateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_lab_data_researchall" parameterOrder="pHn">
+      <wsdl:input message="wsdlns:patientservice.Get_lab_data_researchall" />
+      <wsdl:output message="wsdlns:patientservice.Get_lab_data_researchallResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_lab_data_outside" parameterOrder="pReqname">
+      <wsdl:input message="wsdlns:patientservice.Get_lab_data_outside" />
+      <wsdl:output message="wsdlns:patientservice.Get_lab_data_outsideResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationInfoByParentId" parameterOrder="pParentID">
+      <wsdl:input message="wsdlns:patientservice.GetOrganizationInfoByParentId" />
+      <wsdl:output message="wsdlns:patientservice.GetOrganizationInfoByParentIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Org_detail" parameterOrder="pOrgID">
+      <wsdl:input message="wsdlns:patientservice.Get_Org_detail" />
+      <wsdl:output message="wsdlns:patientservice.Get_Org_detailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Place_detail" parameterOrder="pPlaceID">
+      <wsdl:input message="wsdlns:patientservice.Get_Place_detail" />
+      <wsdl:output message="wsdlns:patientservice.Get_Place_detailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_sdloc_all">
+      <wsdl:input message="wsdlns:patientservice.Get_sdloc_all" />
+      <wsdl:output message="wsdlns:patientservice.Get_sdloc_allResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_sdloc_detail" parameterOrder="pSrc">
+      <wsdl:input message="wsdlns:patientservice.Get_sdloc_detail" />
+      <wsdl:output message="wsdlns:patientservice.Get_sdloc_detailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_staff_fulldetail" parameterOrder="sCode">
+      <wsdl:input message="wsdlns:patientservice.Get_staff_fulldetail" />
+      <wsdl:output message="wsdlns:patientservice.Get_staff_fulldetailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_ConfirmTube" parameterOrder="xString">
+      <wsdl:input message="wsdlns:patientservice.Set_ConfirmTube" />
+      <wsdl:output message="wsdlns:patientservice.Set_ConfirmTubeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_LabOrderRegister" parameterOrder="xString">
+      <wsdl:input message="wsdlns:patientservice.Set_LabOrderRegister" />
+      <wsdl:output message="wsdlns:patientservice.Set_LabOrderRegisterResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_TubeID" parameterOrder="pHn pSpecimenType">
+      <wsdl:input message="wsdlns:patientservice.Get_TubeID" />
+      <wsdl:output message="wsdlns:patientservice.Get_TubeIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Lab_OrderRegisted" parameterOrder="pHn">
+      <wsdl:input message="wsdlns:patientservice.Get_Lab_OrderRegisted" />
+      <wsdl:output message="wsdlns:patientservice.Get_Lab_OrderRegistedResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Lab_OrderFull" parameterOrder="pHn">
+      <wsdl:input message="wsdlns:patientservice.Get_Lab_OrderFull" />
+      <wsdl:output message="wsdlns:patientservice.Get_Lab_OrderFullResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_StaffPayroll" parameterOrder="xString">
+      <wsdl:input message="wsdlns:patientservice.Set_StaffPayroll" />
+      <wsdl:output message="wsdlns:patientservice.Set_StaffPayrollResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_OrderReceive" parameterOrder="xString">
+      <wsdl:input message="wsdlns:patientservice.Set_OrderReceive" />
+      <wsdl:output message="wsdlns:patientservice.Set_OrderReceiveResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_Ward2Xray" parameterOrder="xString">
+      <wsdl:input message="wsdlns:patientservice.Set_Ward2Xray" />
+      <wsdl:output message="wsdlns:patientservice.Set_Ward2XrayResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_WorkStaff" parameterOrder="xString">
+      <wsdl:input message="wsdlns:patientservice.Set_WorkStaff" />
+      <wsdl:output message="wsdlns:patientservice.Set_WorkStaffResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ForeignXrayOrder" parameterOrder="pFHn">
+      <wsdl:input message="wsdlns:patientservice.Get_ForeignXrayOrder" />
+      <wsdl:output message="wsdlns:patientservice.Get_ForeignXrayOrderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ForeignDemographic" parameterOrder="pFHn">
+      <wsdl:input message="wsdlns:patientservice.Get_ForeignDemographic" />
+      <wsdl:output message="wsdlns:patientservice.Get_ForeignDemographicResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_XrayOrder" parameterOrder="pHn">
+      <wsdl:input message="wsdlns:patientservice.Get_XrayOrder" />
+      <wsdl:output message="wsdlns:patientservice.Get_XrayOrderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_demographic_long_outsidepatient" parameterOrder="DeptCode RefMrn">
+      <wsdl:input message="wsdlns:patientservice.Get_demographic_long_outsidepatient" />
+      <wsdl:output message="wsdlns:patientservice.Get_demographic_long_outsidepatientResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_MedPatient" parameterOrder="hn an">
+      <wsdl:input message="wsdlns:patientservice.Get_MedPatient" />
+      <wsdl:output message="wsdlns:patientservice.Get_MedPatientResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_OR" parameterOrder="xString">
+      <wsdl:input message="wsdlns:patientservice.Set_OR" />
+      <wsdl:output message="wsdlns:patientservice.Set_ORResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_PAE" parameterOrder="xString">
+      <wsdl:input message="wsdlns:patientservice.Set_PAE" />
+      <wsdl:output message="wsdlns:patientservice.Set_PAEResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Lab_order" parameterOrder="hn">
+      <wsdl:input message="wsdlns:patientservice.Get_Lab_order" />
+      <wsdl:output message="wsdlns:patientservice.Get_Lab_orderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_Demographic_Long_OutsidePatient" parameterOrder="pXString">
+      <wsdl:input message="wsdlns:patientservice.Set_Demographic_Long_OutsidePatient" />
+      <wsdl:output message="wsdlns:patientservice.Set_Demographic_Long_OutsidePatientResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_staff_detail" parameterOrder="user_id password_id">
+      <wsdl:input message="wsdlns:patientservice.Get_staff_detail" />
+      <wsdl:output message="wsdlns:patientservice.Get_staff_detailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Adr" parameterOrder="hn">
+      <wsdl:input message="wsdlns:patientservice.Get_Adr" />
+      <wsdl:output message="wsdlns:patientservice.Get_AdrResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Claim_Amt" parameterOrder="hn accession_No">
+      <wsdl:input message="wsdlns:patientservice.Get_Claim_Amt" />
+      <wsdl:output message="wsdlns:patientservice.Get_Claim_AmtResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_lab_data" parameterOrder="hn">
+      <wsdl:input message="wsdlns:patientservice.Get_lab_data" />
+      <wsdl:output message="wsdlns:patientservice.Get_lab_dataResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Cancel_Billing" parameterOrder="hn accession_No an iseq">
+      <wsdl:input message="wsdlns:patientservice.Cancel_Billing" />
+      <wsdl:output message="wsdlns:patientservice.Cancel_BillingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_Billing" parameterOrder="xString">
+      <wsdl:input message="wsdlns:patientservice.Set_Billing" />
+      <wsdl:output message="wsdlns:patientservice.Set_BillingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_all_exam" parameterOrder="pExam_code">
+      <wsdl:input message="wsdlns:patientservice.Get_all_exam" />
+      <wsdl:output message="wsdlns:patientservice.Get_all_examResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Payment_Status" parameterOrder="hn an accNo">
+      <wsdl:input message="wsdlns:patientservice.Get_Payment_Status" />
+      <wsdl:output message="wsdlns:patientservice.Get_Payment_StatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ipd_detail" parameterOrder="hn">
+      <wsdl:input message="wsdlns:patientservice.Get_ipd_detail" />
+      <wsdl:output message="wsdlns:patientservice.Get_ipd_detailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEligibilityInsuranceDetail" parameterOrder="pMrn pEncType pEncID pSDLOC pPerfDate pClinicType">
+      <wsdl:input message="wsdlns:patientservice.GetEligibilityInsuranceDetail" />
+      <wsdl:output message="wsdlns:patientservice.GetEligibilityInsuranceDetailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEncounterDetailByMRNENCTYPE" parameterOrder="pMrn pEncType">
+      <wsdl:input message="wsdlns:patientservice.GetEncounterDetailByMRNENCTYPE" />
+      <wsdl:output message="wsdlns:patientservice.GetEncounterDetailByMRNENCTYPEResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEncounterDetailByMRNDATE" parameterOrder="pMrn pCDate">
+      <wsdl:input message="wsdlns:patientservice.GetEncounterDetailByMRNDATE" />
+      <wsdl:output message="wsdlns:patientservice.GetEncounterDetailByMRNDATEResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEncounterDetailByMRNForToday" parameterOrder="pMrn">
+      <wsdl:input message="wsdlns:patientservice.GetEncounterDetailByMRNForToday" />
+      <wsdl:output message="wsdlns:patientservice.GetEncounterDetailByMRNForTodayResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_appointment_detailByDateSdloc" parameterOrder="pCDate pCSdloc">
+      <wsdl:input message="wsdlns:patientservice.Get_appointment_detailByDateSdloc" />
+      <wsdl:output message="wsdlns:patientservice.Get_appointment_detailByDateSdlocResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_appointment_detail" parameterOrder="hn">
+      <wsdl:input message="wsdlns:patientservice.Get_appointment_detail" />
+      <wsdl:output message="wsdlns:patientservice.Get_appointment_detailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHNByIdCard" parameterOrder="pIdCardNumber">
+      <wsdl:input message="wsdlns:patientservice.GetHNByIdCard" />
+      <wsdl:output message="wsdlns:patientservice.GetHNByIdCardResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_demographic_shortByName" parameterOrder="cName">
+      <wsdl:input message="wsdlns:patientservice.Get_demographic_shortByName" />
+      <wsdl:output message="wsdlns:patientservice.Get_demographic_shortByNameResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_demographic_long" parameterOrder="hn">
+      <wsdl:input message="wsdlns:patientservice.Get_demographic_long" />
+      <wsdl:output message="wsdlns:patientservice.Get_demographic_longResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_demographic_short" parameterOrder="hn">
+      <wsdl:input message="wsdlns:patientservice.Get_demographic_short" />
+      <wsdl:output message="wsdlns:patientservice.Get_demographic_shortResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Version">
+      <wsdl:input message="wsdlns:patientservice.Get_Version" />
+      <wsdl:output message="wsdlns:patientservice.Get_VersionResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="patientserviceSoapBinding" type="wsdlns:patientserviceSoapPort">
+    <stk:binding preferredEncoding="UTF-8" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="CheckClinicTypeBySDLOC">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.CheckClinicTypeBySDLOC" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pCurrentSDLOC" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_drug_IPD_status">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.get_drug_IPD_status" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="hn cOrderId drugcode" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_drug_IPD">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.get_drug_IPD" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="hn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEncouterDetailByEncIdAndType">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetEncouterDetailByEncIdAndType" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="penc_id penc_type" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEncounterDetailClinicTypePriceTypeByMRNActiveDate">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetEncounterDetailClinicTypePriceTypeByMRNActiveDate" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pMrn pActiveDate" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCytoResultByMRNDate">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.searchCytoResultByMRNDate" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pHn pStartDate pEndDate" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchPathoResultByMRNDate">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.searchPathoResultByMRNDate" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pHn pStartDate pEndDate" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getParentDetailByMRN">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.getParentDetailByMRN" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pcHN_baby" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchORApppointmentByPlaceAndAppointmentDate">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.searchORApppointmentByPlaceAndAppointmentDate" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pcPlace_id pcAppointmentDate" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlacePremium">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.CheckPlacePremium" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pCurrentWard" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetChangeOrder">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.SetChangeOrder" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pcHL7StrORD" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_demographic_shortbyAN">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_demographic_shortbyAN" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pAn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductLocationByBagID">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetProductLocationByBagID" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pBagID" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientBloodGrpByMRN">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetPatientBloodGrpByMRN" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pMrn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLabEventPerformDateTime">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.SetLabEventPerformDateTime" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pStrEvn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentDrug">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.getCurrentDrug" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="cHn dDate" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAllPriceType">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.SearchAllPriceType" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAllClinicType">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.SearchAllClinicType" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetBBTrackingByORD">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.SetBBTrackingByORD" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pnOrderID pcHL7HeaderMsg pcStrObsIDPutMsg pcMode pcStrBPO pcStrBPX" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetBBTracking">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.SetBBTracking" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pHL7Msg" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLabResult">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.SetLabResult" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pLabRes" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProductDetailByProductID">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.SearchProductDetailByProductID" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pProductID" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderLabStatus">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetOrderLabStatus" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pnOrderID" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelPayment">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.CancelPayment" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="cOrderId" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPayment">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.SetPayment" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="cPayload" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLabRQO">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.SetLabRQO" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pStrRQO" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLabEvent">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.SetLabEvent" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pStrEvn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderRQOByMRN">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetOrderRQOByMRN" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pMrn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderRQOByInvoiceId">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetOrderRQOByInvoiceId" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pInvoice_id" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderRQOByRqId">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetOrderRQOByRqId" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pRq_type pRq_id" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Version_LabService">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_Version_LabService" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientinSurgical">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.getPatientinSurgical" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pMrn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RxOverSupply">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.RxOverSupply" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="mHn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientinOr">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.getPatientinOr" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pSrc" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_AdrNaranjo">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_AdrNaranjo" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="hn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDrRepmed">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetDrRepmed" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pHn pSrc" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getrxseq_prm">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.getrxseq_prm" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pHn pSrc pdate mDr" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClaimFromRefund">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetClaimFromRefund" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pRq_type pRq_id pRq_seq" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ws_AllDrugGroup">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Ws_AllDrugGroup" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ws_DrugGroup">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Ws_DrugGroup" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pSrc" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRxSeq">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetRxSeq" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pHn pSrc pdate mDr" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepeateMedByHN">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetRepeateMedByHN" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="tcHn tcDr" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_PriceSupply_byProduct_id">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.get_PriceSupply_byProduct_id" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pcProduct_id" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_ReimburseSupply_byProduct_id">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.get_ReimburseSupply_byProduct_id" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pcProduct_id pcPolicy_no pcPrice_type pcEligible pcIO pnLevel pnDiscount" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_lab_data_researchbydate4batch">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_lab_data_researchbydate4batch" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pBatchHN pStartDate pEndDate" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_lab_data_researchall4batch">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_lab_data_researchall4batch" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pBatchHN" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_lab_data_researchbydate">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_lab_data_researchbydate" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pHn pStartDate pEndDate" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_lab_data_researchall">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_lab_data_researchall" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pHn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_lab_data_outside">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_lab_data_outside" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pReqname" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationInfoByParentId">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetOrganizationInfoByParentId" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pParentID" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Org_detail">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_Org_detail" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pOrgID" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Place_detail">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_Place_detail" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pPlaceID" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_sdloc_all">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_sdloc_all" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_sdloc_detail">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_sdloc_detail" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pSrc" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_staff_fulldetail">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_staff_fulldetail" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="sCode" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_ConfirmTube">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Set_ConfirmTube" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="xString" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_LabOrderRegister">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Set_LabOrderRegister" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="xString" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_TubeID">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_TubeID" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pHn pSpecimenType" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Lab_OrderRegisted">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_Lab_OrderRegisted" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pHn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Lab_OrderFull">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_Lab_OrderFull" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pHn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_StaffPayroll">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Set_StaffPayroll" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="xString" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_OrderReceive">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Set_OrderReceive" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="xString" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_Ward2Xray">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Set_Ward2Xray" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="xString" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_WorkStaff">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Set_WorkStaff" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="xString" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ForeignXrayOrder">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_ForeignXrayOrder" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pFHn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ForeignDemographic">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_ForeignDemographic" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pFHn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_XrayOrder">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_XrayOrder" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pHn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_demographic_long_outsidepatient">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_demographic_long_outsidepatient" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="DeptCode RefMrn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MedPatient">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_MedPatient" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="hn an" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_OR">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Set_OR" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="xString" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_PAE">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Set_PAE" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="xString" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Lab_order">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_Lab_order" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="hn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_Demographic_Long_OutsidePatient">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Set_Demographic_Long_OutsidePatient" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pXString" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_staff_detail">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_staff_detail" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="user_id password_id" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Adr">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_Adr" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="hn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Claim_Amt">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_Claim_Amt" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="hn accession_No" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_lab_data">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_lab_data" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="hn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cancel_Billing">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Cancel_Billing" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="hn accession_No an iseq" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_Billing">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Set_Billing" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="xString" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_all_exam">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_all_exam" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pExam_code" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Payment_Status">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_Payment_Status" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="hn an accNo" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ipd_detail">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_ipd_detail" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="hn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEligibilityInsuranceDetail">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetEligibilityInsuranceDetail" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pMrn pEncType pEncID pSDLOC pPerfDate pClinicType" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEncounterDetailByMRNENCTYPE">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetEncounterDetailByMRNENCTYPE" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pMrn pEncType" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEncounterDetailByMRNDATE">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetEncounterDetailByMRNDATE" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pMrn pCDate" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEncounterDetailByMRNForToday">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetEncounterDetailByMRNForToday" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pMrn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_appointment_detailByDateSdloc">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_appointment_detailByDateSdloc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pCDate pCSdloc" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_appointment_detail">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_appointment_detail" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="hn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHNByIdCard">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.GetHNByIdCard" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="pIdCardNumber" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_demographic_shortByName">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_demographic_shortByName" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="cName" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_demographic_long">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_demographic_long" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="hn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_demographic_short">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_demographic_short" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="hn" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Version">
+      <soap:operation soapAction="http://tempuri.org/patientservice/action/patientservice.Get_Version" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/patientservice/message/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="Result" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="patientservice">
+    <wsdl:port name="patientserviceSoapPort" binding="wsdlns:patientserviceSoapBinding">
+      <soap:address location="http://HISWS03/webservice/patientservice.WSDL" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
