@@ -1,0 +1,100 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="MSP01.master.vb" Inherits="RAMA06.MSP01" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta charset="UTF-8" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+    <link href="Content/jquery.datetimepicker.css" rel="stylesheet" />
+
+
+    <script src="<%=Page.ResolveClientUrl("~/Scripts/jquery-1.10.2.js")%>" type="text/javascript"></script>
+    <script src="<%=Page.ResolveClientUrl("~/Scripts/bootstrap.js")%>" type="text/javascript"></script>
+    <script src="<%=Page.ResolveClientUrl("~/Scripts/jquery.datetimepicker.full.js")%>" type="text/javascript"></script>
+
+    <!--support IE8 IE9-->
+    <script src="<%=Page.ResolveClientUrl("~/Scripts/html5shiv.js")%>" type="text/javascript"></script>
+    <script src="<%=Page.ResolveClientUrl("~/Scripts/respond.min.js")%>" type="text/javascript"></script>
+    <!--support IE8 IE9-->
+
+    <style type="text/css">
+        body {
+            margin-top: 2px;
+            margin-right: 5px;
+            margin-bottom: 10px;
+            margin-left: 5px;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="background-color: #2EACE0; color: #fff; height: 120px;">
+            <br />
+            <h1>&nbsp; One Stop Service for Research Management System.</h1>
+            <p>&nbsp;&nbsp;  สำนักงานวิจัย วิชาการ และนวัตกรรม.</p>
+        </div>
+
+        <nav class="navbar navbar-default">
+            <ul id="ul1" runat="server" class="nav navbar-nav">
+                <li class="active"><a href='<%= Page.ResolveUrl("~/Page/Menu1.aspx")%>'>เมนูหลัก</a></li>
+                <li><a href='<%= Page.ResolveUrl("~/Manual.aspx")%>'>คู่มือ</a></li>
+                <li><a href='<%= Page.ResolveUrl("~/Vvdo.aspx")%>'>วิดีโอ</a></li>
+        
+                <li><a href='<%= Page.ResolveUrl("~/Download.aspx")%>'>ดาวน์โหลด</a></li>
+                <li><a href='<%= Page.ResolveUrl("~/About.aspx")%>'>เกี่ยวกับระบบ</a></li>
+                <li><a href='<%= Page.ResolveUrl("~/Contact.aspx")%>'>ติดต่อเรา</a></li>
+            </ul>
+
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <button id="button1" class="btn btn-primary btn-lg" data-target="#Alert1" data-toggle="collapse" type="button"><span class="glyphicon glyphicon-user"></span><span class="badge">8</span></button></li>
+                <li class="active"><a href="#">
+                    <asp:Label ID="lblFullName" runat="server"></asp:Label></a></li>
+                <li class="active">
+                    <asp:Image ID="Image1" runat="server" Height="50px" Width="60px" /></li>
+
+                <li>
+                    <asp:LinkButton ID="LinkButton_Logout" runat="server" CausesValidation="false" PostBackUrl="~/index.aspx">ออก</asp:LinkButton></li>
+            </ul>
+        </nav>
+
+        <div></div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <br />
+        <br />
+
+        <div>
+            Online : 
+            <asp:Label ID="lblContOnline" runat="server" Font-Bold="True" Font-Size="9pt" ForeColor="Blue" ToolTip="จำนวนผู้เข้าใช้งานระบบ" Font-Names="Tahoma"></asp:Label>
+        </div>
+
+        <footer class="navbar navbar-inverse" style="background-color: #2EACE0; color: #fff;">
+            <div class="text-center">
+                <br />
+                <asp:Label ID="Label1" runat="server"></asp:Label>
+                <p></p>
+                <asp:Label ID="Label2" runat="server"></asp:Label>
+                <p></p>
+                <asp:Label ID="Label3" runat="server"></asp:Label>
+            </div>
+
+            <%--<p class="text-center"> มุ่งเรียนรู้ คู่คุณธรรม ใฝ่คุณภาพ ร่วมสานภารกิจ คิดนอกกรอบ รับผิดชอบสังคม.</p> 
+
+   <p class="text-center" >พัฒนาโดยฝายสารสนเทศ โทร. 0208,083-0110-273 Email : kriangkrai.pit@mahidol.ca.th</p>
+   <p class="text-center" >คณะแพทยศาสตร์โรงพยาบาลรามาธิบดี มหาวิทยาลัยมหิดล</p>--%>
+        </footer>
+
+    </form>
+</body>
+</html>
