@@ -1,0 +1,219 @@
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\RAMA06.dll.config
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\RAMA06.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\RAMA06.pdb
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\WebForms_Basic.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Antlr3.Runtime.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\AspNet.ScriptManager.jQuery.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\EntityFramework.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\EntityFramework.SqlServer.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Google.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Web.Infrastructure.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Newtonsoft.Json.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Owin.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\System.Web.Optimization.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\System.Web.Providers.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\WebGrease.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\System.Web.Optimization.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Antlr3.Runtime.pdb
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Newtonsoft.Json.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\EntityFramework.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\EntityFramework.SqlServer.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Google.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\obj\Debug\RAMA06.vbprojResolveAssemblyReference.cache
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\obj\Debug\RAMA06.Resources.resources
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\obj\Debug\RAMA06.vbproj.GenerateResource.Cache
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\obj\Debug\RAMA06.dll
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\obj\Debug\WebForms_Basic.xml
+C:\Data win 7\WorkProjectRama\RAMA06\RAMA06\obj\Debug\RAMA06.pdb
+D:\WorkWebRama\RAMA06\RAMA06\bin\RAMA06.dll.config
+D:\WorkWebRama\RAMA06\RAMA06\bin\RAMA06.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\RAMA06.pdb
+D:\WorkWebRama\RAMA06\RAMA06\bin\WebForms_Basic.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Antlr3.Runtime.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\AspNet.ScriptManager.jQuery.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\EntityFramework.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\EntityFramework.SqlServer.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Core.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Cookies.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Facebook.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Google.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.OAuth.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Twitter.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.ScriptManager.WebForms.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Web.Infrastructure.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Newtonsoft.Json.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\Owin.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\System.Web.Optimization.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\System.Web.Providers.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\WebGrease.dll
+D:\WorkWebRama\RAMA06\RAMA06\bin\System.Web.Optimization.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Antlr3.Runtime.pdb
+D:\WorkWebRama\RAMA06\RAMA06\bin\Newtonsoft.Json.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\EntityFramework.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\EntityFramework.SqlServer.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Core.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Facebook.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Cookies.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Google.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Twitter.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\WorkWebRama\RAMA06\RAMA06\bin\Microsoft.Owin.Security.OAuth.xml
+D:\WorkWebRama\RAMA06\RAMA06\obj\Debug\RAMA06.vbprojResolveAssemblyReference.cache
+D:\WorkWebRama\RAMA06\RAMA06\obj\Debug\RAMA06.Resources.resources
+D:\WorkWebRama\RAMA06\RAMA06\obj\Debug\RAMA06.vbproj.GenerateResource.Cache
+D:\WorkWebRama\RAMA06\RAMA06\obj\Debug\RAMA06.dll
+D:\WorkWebRama\RAMA06\RAMA06\obj\Debug\WebForms_Basic.xml
+D:\WorkWebRama\RAMA06\RAMA06\obj\Debug\RAMA06.pdb
+D:\WORK\ep7\RAMA06\RAMA06\bin\RAMA06.dll.config
+D:\WORK\ep7\RAMA06\RAMA06\bin\RAMA06.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\RAMA06.pdb
+D:\WORK\ep7\RAMA06\RAMA06\bin\WebForms_Basic.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Antlr3.Runtime.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\AspNet.ScriptManager.bootstrap.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\AspNet.ScriptManager.jQuery.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\EntityFramework.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\EntityFramework.SqlServer.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Core.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Cookies.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Security.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Facebook.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Google.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Security.OAuth.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Twitter.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.ScriptManager.WebForms.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Web.Infrastructure.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Newtonsoft.Json.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\Owin.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\System.Web.Optimization.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\System.Web.Providers.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\WebGrease.dll
+D:\WORK\ep7\RAMA06\RAMA06\bin\System.Web.Optimization.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Antlr3.Runtime.pdb
+D:\WORK\ep7\RAMA06\RAMA06\bin\Newtonsoft.Json.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\EntityFramework.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\EntityFramework.SqlServer.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Core.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Security.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Facebook.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Cookies.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Google.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Twitter.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\WORK\ep7\RAMA06\RAMA06\bin\Microsoft.Owin.Security.OAuth.xml
+D:\WORK\ep7\RAMA06\RAMA06\obj\Debug\RAMA06.vbprojResolveAssemblyReference.cache
+D:\WORK\ep7\RAMA06\RAMA06\obj\Debug\RAMA06.Resources.resources
+D:\WORK\ep7\RAMA06\RAMA06\obj\Debug\RAMA06.vbproj.GenerateResource.Cache
+D:\WORK\ep7\RAMA06\RAMA06\obj\Debug\RAMA06.dll
+D:\WORK\ep7\RAMA06\RAMA06\obj\Debug\WebForms_Basic.xml
+D:\WORK\ep7\RAMA06\RAMA06\obj\Debug\RAMA06.pdb
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\RAMA06.dll.config
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\RAMA06.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\RAMA06.pdb
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\WebForms_Basic.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Antlr3.Runtime.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\AspNet.ScriptManager.bootstrap.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\AspNet.ScriptManager.jQuery.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\EntityFramework.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\EntityFramework.SqlServer.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Core.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Cookies.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Security.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Facebook.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Google.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Security.OAuth.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Twitter.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.ScriptManager.WebForms.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Web.Infrastructure.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Newtonsoft.Json.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Owin.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\System.Web.Optimization.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\System.Web.Providers.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\WebGrease.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\System.Web.Optimization.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Antlr3.Runtime.pdb
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Newtonsoft.Json.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\EntityFramework.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\EntityFramework.SqlServer.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Core.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Security.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Facebook.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Cookies.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Google.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Security.Twitter.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\bin\Microsoft.Owin.Security.OAuth.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\obj\Debug\RAMA06.Resources.resources
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\obj\Debug\RAMA06.vbproj.GenerateResource.Cache
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\obj\Debug\RAMA06.dll
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\obj\Debug\WebForms_Basic.xml
+D:\WORK\ep7_RAMA06\RAMA06\RAMA06\obj\Debug\RAMA06.pdb
+D:\WorkWebRama\RAMA06\RAMA06\bin\AspNet.ScriptManager.bootstrap.dll
