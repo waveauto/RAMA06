@@ -6,30 +6,40 @@
     <asp:MultiView ID="mutiview1" runat="server" ActiveViewIndex="0">
         <asp:View ID="viewshow" runat="server">
             <h2></h2>
-            <div class="text-center">
-                <asp:DataList ID="DataList1" Visible="true" runat="server" AutoGenerateColumns="false"
-                    RepeatColumns="4" Width="100%" CellSpacing="100" CellPadding="5">
-                    <ItemTemplate>
-                      <%--  <div class="text-center">--%>
+         <div class="table-responsive">
+                <div class="text-center">
+                    <asp:DataList ID="DataList1" Visible="true" runat="server" AutoGenerateColumns="false"
+                        RepeatColumns="4" Width="100%" CellSpacing="100" CellPadding="5" class="vex-res">
+                        <ItemTemplate>
                             <hr />
                             <u>
                                 <%# Eval("Headvideo")%></u>
                             <p></p>
                             <hr />
-                            <a class="player" style="height: 400px; width: 400px; display: block" href='<%# Eval("IDvideo", "npage/VideoHandler.ashx?Id={0}") %>'></a>
-                   <%--     </div>--%>
 
-                    </ItemTemplate>
-                </asp:DataList>
-                <script src="FlowPlayer/flowplayer-3.2.12.min.js" type="text/javascript"></script>
-                <script type="text/javascript">
-                    flowplayer("a.player", "FlowPlayer/flowplayer-3.2.16.swf", {
-                        plugins: {
-                            pseudo: { url: "FlowPlayer/flowplayer.pseudostreaming-3.2.12.swf" }
-                        },
-                        clip: { provider: 'pseudo', autoPlay: false },
-                    });
-                </script>
+                            <div class="col-xs-6 col-sm-3">
+                                <a class="player" style="height: 400px; width: 400px; display: block" href='<%# Eval("IDvideo", "npage/VideoHandler.ashx?Id={0}") %>'></a>
+                            </div>
+
+
+                            <%--  <hr />
+                            <u>
+                                <%# Eval("Headvideo")%></u>
+                            <p></p>
+                            <hr />
+                            <a class="player" style="height: 400px; width: 400px; display: block" href='<%# Eval("IDvideo", "npage/VideoHandler.ashx?Id={0}") %>'></a>--%>
+                        </ItemTemplate>
+                    </asp:DataList>
+                    <script src="FlowPlayer/flowplayer-3.2.12.min.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                        flowplayer("a.player", "FlowPlayer/flowplayer-3.2.16.swf", {
+                            plugins: {
+                                pseudo: { url: "FlowPlayer/flowplayer.pseudostreaming-3.2.12.swf" }
+                            },
+                            clip: { provider: 'pseudo', autoPlay: false },
+                        });
+                    </script>
+                </div>
             </div>
             <p></p>
 
