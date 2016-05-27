@@ -72,9 +72,6 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
                         Dim rename As String = checkrenamefile(intDiceRoll, ext)
 
-
-
-
                         Dim sqlinsert As String = ""
                         sqlinsert = "INSERT INTO oss_imgnew(rID,namefile,renamefile,datesand,sizefile,typefile,codestaff)" & _
                         "VALUES" & _
@@ -101,7 +98,7 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
                         End Try
 
 
-                        FileUpload4.SaveAs(Server.MapPath("~/files-uploads/") & intDiceRoll & ext)
+                        FileUpload4.SaveAs(Server.MapPath("~/files-uploads/") & rename)
 
                     Catch ex As Exception
 

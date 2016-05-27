@@ -109,7 +109,7 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
                         End Try
 
 
-                        FileUpload4.SaveAs(Server.MapPath("~/files-uploads/") & intDiceRoll & ext)
+                        FileUpload4.SaveAs(Server.MapPath("~/files-uploads/") & rename)
 
                     Catch ex As Exception
 
