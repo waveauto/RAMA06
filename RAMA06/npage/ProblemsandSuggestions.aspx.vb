@@ -123,6 +123,9 @@ Public Class ProblemsandSuggestions
                         filesize = FileUpload4.PostedFile.ContentLength
                         'InsertT01_IMG
 
+                        Dim rename As String = checkrenamefile(intDiceRoll, ext)
+
+
                         Dim sqlinsert As String = ""
                         sqlinsert = "INSERT INTO oss_imgproblem(rID,namefile,renamefile,datesand,sizefile,typefile,codestaff)" & _
                         "VALUES" & _
@@ -444,7 +447,25 @@ Public Class ProblemsandSuggestions
             End If
         End If
     End Sub
-#End Region
 
-   
+    Private Function checkrenamefile(ByVal id As Long, ByVal ext As String)
+        Dim nDt As DataTable
+        Dim nVal As String
+
+        Dim sql As String = "SELECT * FROM oss_imgproblem WHERE renamefile='" & id & ext & "'"
+        Dim cmdc As New SqlCommand(sql)
+        If mDB.fReadDataTable(cmdc, nDt) Then
+            If nDt.Rows.Count > 0 Then
+                Dim intDiceRoll As Long
+                intDiceRoll = GetRandomNumber(1, 999999999)
+                checkrenamefile(intDiceRoll, ext)
+
+                nVal = intDiceRoll & ext
+            Else
+                nVal = id & ext
+            End If
+        End If
+        Return nVal
+    End Function
+#End Region
 End Class

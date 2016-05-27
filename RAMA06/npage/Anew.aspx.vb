@@ -11,6 +11,7 @@ Public Class Anew
     Dim objRandom As New System.Random( _
 CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
+#Region "EVEN"
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             If mFunc.fCheckSession() Then
@@ -20,6 +21,287 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
         End If
     End Sub
 
+    Protected Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
+        mutiview.SetActiveView(viewadd)
+
+        runidimg()
+        BindGrid()
+    End Sub
+
+    Protected Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
+
+        If mFunc.fCheckSession Then
+            Dim nValue As String
+            If fSaveData(nValue) Then
+                clstb()
+                runidimg()
+                BindGrid()
+                ShowMessage("บันทึกข้อมูลเรียบร้อยแล้ว", MessageType.Success)
+            End If
+        End If
+
+    End Sub
+
+    Private Sub gvData_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gvData.RowCommand
+        If e.CommandName = "aEdit" Then
+
+            Dim ndutyID As Integer = gvData.DataKeys(e.CommandArgument).Value
+            hdfid.Value = ndutyID
+
+            Response.Redirect("~/nPage/Enew.aspx?value1=" + hdfid.Value)
+
+        ElseIf e.CommandName = "atopic" Then
+            Dim ndutyID As Integer = gvData.DataKeys(e.CommandArgument).Value
+            hdfid.Value = ndutyID
+
+            Dim url As String = "Vnew.aspx?value1=" + hdfid.Value
+            Dim sb As New StringBuilder()
+            sb.Append("<script type = 'text/javascript'>")
+            sb.Append("window.open('")
+            sb.Append(url)
+            sb.Append("');")
+            sb.Append("</script>")
+            ClientScript.RegisterStartupScript(Me.GetType(), _
+                        "script", sb.ToString())
+
+        ElseIf e.CommandName = "aDel" Then
+            Dim pValue As String
+            Dim nDt As DataTable
+
+            Dim ndutyID As Integer = gvData.DataKeys(e.CommandArgument).Value
+            hdfid.Value = ndutyID
+
+
+            Dim Ssql As String = "SELECT rID FROM oss_new WHERE IDNew='" & hdfid.Value & "'"
+            Dim cmds As New SqlCommand(Ssql)
+            If mDB.fReadDataTable(cmds, nDt) Then
+                If nDt.Rows.Count > 0 Then
+
+                    Dim strsql As String = "SELECT * FROM oss_imgnew WHERE rID = '" & nDt.Rows(0).Item("rID") & "'"
+                    Dim cmdd As New SqlCommand(strsql)
+                    Dim i As Integer
+                    If mDB.fReadDataTable(cmdd, nDt) Then
+                        If nDt.Rows.Count > 0 Then
+                            For i = 0 To nDt.Rows.Count - 1
+                                delpic(nDt.Rows(i).Item("id_imgoss_New"))
+                            Next
+                        End If
+                    End If
+
+                End If
+            End If
+
+            Dim sql As String = "DELETE FROM oss_new WHERE IDNew='" & hdfid.Value & "'"
+            Dim cmd As New SqlCommand(sql)
+            mDB.fExecuteCommand(cmd, pValue)
+
+
+            fBindePaging()
+            fShowData(1)
+        End If
+    End Sub
+
+    Private Sub gvData_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gvData.RowDataBound
+        If e.Row.RowType = DataControlRowType.DataRow Then
+            Dim pValue As String
+            Dim datetoday As String = DateTime.Parse(Date.Now, System.Globalization.CultureInfo.CurrentCulture)
+            Dim dat As String = datetoday
+            datetoday = DateToDisplay(dat, True)
+            Dim id_new As Integer = Int32.Parse(gvData.DataKeys(e.Row.RowIndex).Values("IDNew").ToString())
+
+            Dim intStatus As Integer
+            intStatus = CType(DataBinder.Eval(e.Row.DataItem, "statusicon"), Integer)
+            Dim enddate As String
+            enddate = CType(DataBinder.Eval(e.Row.DataItem, "dateend"), String)
+            enddate = DateToDisplay(enddate, True)
+            Dim img As Image = DirectCast(e.Row.FindControl("image"), Image)
+
+            If intStatus = 0 Then
+
+                img.Visible = False
+            ElseIf intStatus = 1 Then
+                img.Visible = True
+            ElseIf intStatus = 2 Then
+
+                If enddate = datetoday Then
+
+                    img.Visible = False
+                    Dim sqlupdate As String = ""
+                    sqlupdate = "UPDATE oss_new SET statusicon=@statusicon WHERE IDNew=@IDNew"
+                    Dim cmd As New SqlCommand(sqlupdate)
+                    cmd.Parameters.AddWithValue("@statusactionicon", 0)
+                    cmd.Parameters.AddWithValue("@id_new", id_new)
+                    mDB.fExecuteCommand(cmd, pValue)
+                Else
+
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        fBindePaging()
+        fShowData(1)
+    End Sub
+
+    Private Sub ddlPage_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlPage.SelectedIndexChanged
+        fShowData(ddlPage.SelectedValue)
+    End Sub
+
+    Protected Sub gvpic_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvpic.SelectedIndexChanged
+
+    End Sub
+
+    Protected Sub btnupload_Click(sender As Object, e As EventArgs) Handles btnupload.Click
+        If mFunc.fCheckSession() Then
+            Dim nUser As cUser = Session("cUser")
+
+
+
+            If FileUpload4.FileName = "" Then
+
+                ShowMessage("กรุณาเลือกไฟล์ก่อนอัพโหลดค่ะ", MessageType.Error)
+                Exit Sub
+            End If
+            If FileUpload4.PostedFile.ContentLength > 2147483647 Then
+
+                ShowMessage("ไฟล์มีขนาดเกิน 2GB.ค่ะ", MessageType.Error)
+                Exit Sub
+            End If
+
+            If True Then
+                If FileUpload4.HasFile Then
+                    Try
+
+                        Dim intDiceRoll As Long
+                        intDiceRoll = GetRandomNumber(1, 999999999)
+
+                        Dim datesand As String = DateTime.Parse(Date.Now, System.Globalization.CultureInfo.CurrentCulture)
+                        Dim dat As String = datesand
+                        datesand = DateToDisplay(dat, True)
+                        Dim tim As String
+                        tim = datesand & " " & Hour(Now) & ":" & Minute(Now) & ":" & Second(Now)
+                        'check
+
+                        Dim ext As String = Path.GetExtension(FileUpload4.FileName)
+                        Dim filesize As Integer
+                        filesize = FileUpload4.PostedFile.ContentLength
+
+
+                        Dim rename As String = checkrenamefile(intDiceRoll, ext)
+
+
+                        Dim sqlinsert As String = ""
+                        sqlinsert = "INSERT INTO oss_imgnew(rID,namefile,renamefile,datesand,sizefile,typefile,codestaff)" & _
+                        "VALUES" & _
+                        "(@rID,@namefile,@renamefile,@datesand,@sizefile,@typefile,@codestaff)"
+
+                        Dim cmd As New SqlCommand(sqlinsert)
+                        cmd.Parameters.AddWithValue("@rID", hdfIDNew.Value)
+                        cmd.Parameters.AddWithValue("@namefile", FileUpload4.FileName)
+                        cmd.Parameters.AddWithValue("@renamefile", rename)
+                        cmd.Parameters.AddWithValue("@datesand", datesand)
+                        cmd.Parameters.AddWithValue("@sizefile", filesize)
+                        cmd.Parameters.AddWithValue("@typefile", ext)
+                        cmd.Parameters.AddWithValue("@codestaff", nUser.tUserID)
+
+                        Try
+                            mDB.fExecuteCommand(cmd, 0)
+
+                            BindGrid()
+
+                        Catch ex As Exception
+                            ShowMessage("ไม่สามารถบันทึกข้อมูลได้", MessageType.Error)
+                        Finally
+
+                        End Try
+
+
+                        FileUpload4.SaveAs(Server.MapPath("~/files-uploads/") & intDiceRoll & ext)
+
+                    Catch ex As Exception
+
+                        ShowMessage(" The file could not be uploaded. The following error occured", MessageType.Error)
+                    End Try
+                End If
+            End If
+        End If
+    End Sub
+
+    Protected Sub btnback_Click(sender As Object, e As EventArgs) Handles btnback.Click
+        mutiview.SetActiveView(viewshow)
+        fBindePaging()
+        fShowData(1)
+    End Sub
+
+    Private Sub gvpic_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gvpic.RowCommand
+        If mFunc.fCheckSession Then
+
+            If e.CommandName = "aviewfile" Then
+                Dim nDt As DataTable
+                Dim nID As Integer = gvpic.DataKeys(e.CommandArgument).Value
+                Dim sql As String
+                sql = "SELECT renamefile FROM oss_imgnew WHERE id_imgoss_New = '" & nID & "'"
+                Dim cmd As New SqlCommand(sql)
+                If mDB.fReadDataTable(cmd, nDt) Then
+                    If nDt.Rows.Count > 0 Then
+                        Dim renamefile As String
+                        renamefile = nDt.Rows(0).Item("renamefile")
+
+                        Response.ContentType = ContentType
+                        Response.AppendHeader("Content-Disposition", ("attachment; filename=" + renamefile))
+                        Response.TransmitFile(Server.MapPath("~/files-uploads/" + renamefile))
+
+                        Response.End()
+
+                    End If
+                End If
+
+            ElseIf e.CommandName = "aDel" Then
+
+                Dim nValue As String
+                Dim nID As Integer = gvpic.DataKeys(e.CommandArgument).Value
+                Dim nDt As DataTable
+
+                Dim sqldelimg As String
+                Dim namefile As String
+                sqldelimg = "SELECT renamefile FROM oss_imgnew WHERE id_imgoss_New ='" & nID & "'"
+
+                Dim cmd As New SqlCommand(sqldelimg)
+
+                If mDB.fReadDataTable(cmd, nDt) Then
+                    If nDt.Rows.Count > 0 Then
+                        namefile = nDt.Rows(0).Item("renamefile")
+
+                        Dim FileToDelete As String
+                        ' Set full path to file
+                        FileToDelete = Server.MapPath("~/files-uploads/") & namefile
+                        ' Delete a file
+                        File.Delete(FileToDelete)
+
+                    End If
+                End If
+
+                Dim sqldelete As String = "DELETE FROM oss_imgnew WHERE id_imgoss_New='" & nID & "'"
+                Dim cmddel As New SqlCommand(sqldelete)
+
+                If mDB.fExecuteCommand(cmddel, nValue) Then
+                    BindGrid()
+                End If
+
+            End If
+        End If
+    End Sub
+
+    Protected Sub gvData_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvData.SelectedIndexChanged
+
+    End Sub
+
+
+
+#End Region
+
+#Region "FUNCTION"
     Private Sub fShowData(ByVal pPage As Integer, Optional ByVal pSortDirection As String = "")
         gvData.DataSource = fReadData(pPage, pSortDirection)
         gvData.DataBind()
@@ -79,13 +361,6 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
         Return nValue
     End Function
 
-    Protected Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
-        mutiview.SetActiveView(viewadd)
-
-        runidimg()
-        BindGrid()
-    End Sub
-
     Private Sub runidimg()
 
         Dim nDt As DataTable
@@ -108,7 +383,6 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
     End Sub
 
-
     Public Enum MessageType
         Success
         [Error]
@@ -120,35 +394,12 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
         ScriptManager.RegisterStartupScript(Me, Me.[GetType](), System.Guid.NewGuid().ToString(), "ShowMessage('" & Message & "','" & type.ToString() & "');", True)
     End Sub
 
-    Protected Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
-
-        If mFunc.fCheckSession Then
-            Dim nValue As String
-            If fSaveData(nValue) Then
-                clstb()
-                runidimg()
-                BindGrid()
-                ShowMessage("บันทึกข้อมูลเรียบร้อยแล้ว", MessageType.Success)
-            End If
-        End If
-
-    End Sub
-
     Private Sub clstb()
         tbnewHead.Text = ""
         tbnewdetail.Text = ""
 
         ddlstatusdate.SelectedIndex = 0
     End Sub
-
-    Private Function fSaveData(ByRef pValue As String) As Boolean
-        Dim nSb As New StringBuilder
-        nSb.Append("insert into oss_new(rID,newHead,newdetail,datesend,statusdate,datestart,dateend,statusicon,frequency,codestaff) ")
-        nSb.Append("values(@rID,@newHead,@newdetail,@datesend,@statusdate,@datestart,@dateend,@statusicon,@frequency,@codestaff)")
-        Dim nComd As New SqlCommand(nSb.ToString)
-        fSetParaValue(nComd)
-        Return mDB.fExecuteCommand(nComd, pValue)
-    End Function
 
     Private Function DateToDisplay(ByVal _dateTime As System.DateTime, ByVal _displayTime As Boolean) As String
         Dim _day As String
@@ -178,6 +429,14 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
         Return _ret
     End Function
 
+    Private Function fSaveData(ByRef pValue As String) As Boolean
+        Dim nSb As New StringBuilder
+        nSb.Append("insert into oss_new(rID,newHead,newdetail,datesend,statusdate,datestart,dateend,statusicon,frequency,codestaff) ")
+        nSb.Append("values(@rID,@newHead,@newdetail,@datesend,@statusdate,@datestart,@dateend,@statusicon,@frequency,@codestaff)")
+        Dim nComd As New SqlCommand(nSb.ToString)
+        fSetParaValue(nComd)
+        Return mDB.fExecuteCommand(nComd, pValue)
+    End Function
 
     Private Sub fSetParaValue(ByRef pCommand As SqlCommand)
         Dim nUser As cUser = Session("cUser")
@@ -276,65 +535,6 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
     End Sub
 
-    Private Sub gvData_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gvData.RowCommand
-        If e.CommandName = "aEdit" Then
-
-            Dim ndutyID As Integer = gvData.DataKeys(e.CommandArgument).Value
-            hdfid.Value = ndutyID
-
-            Response.Redirect("~/nPage/Enew.aspx?value1=" + hdfid.Value)
-
-        ElseIf e.CommandName = "atopic" Then
-            Dim ndutyID As Integer = gvData.DataKeys(e.CommandArgument).Value
-            hdfid.Value = ndutyID
-
-            Dim url As String = "Vnew.aspx?value1=" + hdfid.Value
-            Dim sb As New StringBuilder()
-            sb.Append("<script type = 'text/javascript'>")
-            sb.Append("window.open('")
-            sb.Append(url)
-            sb.Append("');")
-            sb.Append("</script>")
-            ClientScript.RegisterStartupScript(Me.GetType(), _
-                        "script", sb.ToString())
-
-        ElseIf e.CommandName = "aDel" Then
-            Dim pValue As String
-            Dim nDt As DataTable
-
-            Dim ndutyID As Integer = gvData.DataKeys(e.CommandArgument).Value
-            hdfid.Value = ndutyID
-
-
-            Dim Ssql As String = "SELECT rID FROM oss_new WHERE IDNew='" & hdfid.Value & "'"
-            Dim cmds As New SqlCommand(Ssql)
-            If mDB.fReadDataTable(cmds, nDt) Then
-                If nDt.Rows.Count > 0 Then
-
-                    Dim strsql As String = "SELECT * FROM oss_imgnew WHERE rID = '" & nDt.Rows(0).Item("rID") & "'"
-                    Dim cmdd As New SqlCommand(strsql)
-                    Dim i As Integer
-                    If mDB.fReadDataTable(cmdd, nDt) Then
-                        If nDt.Rows.Count > 0 Then
-                            For i = 0 To nDt.Rows.Count - 1
-                                delpic(nDt.Rows(i).Item("id_imgoss_New"))
-                            Next
-                        End If
-                    End If
-
-                End If
-            End If
-
-            Dim sql As String = "DELETE FROM oss_new WHERE IDNew='" & hdfid.Value & "'"
-            Dim cmd As New SqlCommand(sql)
-            mDB.fExecuteCommand(cmd, pValue)
-
-
-            fBindePaging()
-            fShowData(1)
-        End If
-    End Sub
-
     Private Sub delpic(ByVal id As Integer)
         Dim nValue As String
 
@@ -368,132 +568,6 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
     End Sub
 
-    Private Sub gvData_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gvData.RowDataBound
-        If e.Row.RowType = DataControlRowType.DataRow Then
-            Dim pValue As String
-            Dim datetoday As String = DateTime.Parse(Date.Now, System.Globalization.CultureInfo.CurrentCulture)
-            Dim dat As String = datetoday
-            datetoday = DateToDisplay(dat, True)
-            Dim id_new As Integer = Int32.Parse(gvData.DataKeys(e.Row.RowIndex).Values("IDNew").ToString())
-
-            Dim intStatus As Integer
-            intStatus = CType(DataBinder.Eval(e.Row.DataItem, "statusicon"), Integer)
-            Dim enddate As String
-            enddate = CType(DataBinder.Eval(e.Row.DataItem, "dateend"), String)
-            enddate = DateToDisplay(enddate, True)
-            Dim img As Image = DirectCast(e.Row.FindControl("image"), Image)
-
-            If intStatus = 0 Then
-
-                img.Visible = False
-            ElseIf intStatus = 1 Then
-                img.Visible = True
-            ElseIf intStatus = 2 Then
-
-                If enddate = datetoday Then
-
-                    img.Visible = False
-                    Dim sqlupdate As String = ""
-                    sqlupdate = "UPDATE oss_new SET statusicon=@statusicon WHERE IDNew=@IDNew"
-                    Dim cmd As New SqlCommand(sqlupdate)
-                    cmd.Parameters.AddWithValue("@statusactionicon", 0)
-                    cmd.Parameters.AddWithValue("@id_new", id_new)
-                    mDB.fExecuteCommand(cmd, pValue)
-                Else
-
-                End If
-            End If
-        End If
-    End Sub
-
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        fBindePaging()
-        fShowData(1)
-    End Sub
-
-    Private Sub ddlPage_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlPage.SelectedIndexChanged
-        fShowData(ddlPage.SelectedValue)
-    End Sub
-
-    Public Function GetRandomNumber( _
-    Optional ByVal Low As Integer = 1, _
-    Optional ByVal High As Integer = 100) As Integer
-        ' Returns a random number,
-        ' between the optional Low and High parameters
-        Return objRandom.Next(Low, High + 1)
-    End Function
-
-    Protected Sub btnupload_Click(sender As Object, e As EventArgs) Handles btnupload.Click
-        If mFunc.fCheckSession() Then
-            Dim nUser As cUser = Session("cUser")
-
-            If FileUpload4.FileName = "" Then
-
-                ShowMessage("กรุณาเลือกไฟล์ก่อนอัพโหลดค่ะ", MessageType.Error)
-                Exit Sub
-            End If
-            If FileUpload4.PostedFile.ContentLength > 2147483647 Then
-
-                ShowMessage("ไฟล์มีขนาดเกิน 2GB.ค่ะ", MessageType.Error)
-                Exit Sub
-            End If
-
-            If True Then
-                If FileUpload4.HasFile Then
-                    Try
-
-                        Dim intDiceRoll As Long
-                        intDiceRoll = GetRandomNumber(1, 999999999)
-
-                        Dim datesand As String = DateTime.Parse(Date.Now, System.Globalization.CultureInfo.CurrentCulture)
-                        Dim dat As String = datesand
-                        datesand = DateToDisplay(dat, True)
-                        Dim tim As String
-                        tim = datesand & " " & Hour(Now) & ":" & Minute(Now) & ":" & Second(Now)
-                        'check
-
-                        Dim ext As String = Path.GetExtension(FileUpload4.FileName)
-                        Dim filesize As Integer
-                        filesize = FileUpload4.PostedFile.ContentLength
-                        'InsertT01_IMG
-
-                        Dim sqlinsert As String = ""
-                        sqlinsert = "INSERT INTO oss_imgnew(rID,namefile,renamefile,datesand,sizefile,typefile,codestaff)" & _
-                        "VALUES" & _
-                        "(@rID,@namefile,@renamefile,@datesand,@sizefile,@typefile,@codestaff)"
-
-                        Dim cmd As New SqlCommand(sqlinsert)
-                        cmd.Parameters.AddWithValue("@rID", hdfIDNew.Value)
-                        cmd.Parameters.AddWithValue("@namefile", FileUpload4.FileName)
-                        cmd.Parameters.AddWithValue("@renamefile", intDiceRoll & ext)
-                        cmd.Parameters.AddWithValue("@datesand", datesand)
-                        cmd.Parameters.AddWithValue("@sizefile", filesize)
-                        cmd.Parameters.AddWithValue("@typefile", ext)
-                        cmd.Parameters.AddWithValue("@codestaff", nUser.tUserID)
-
-                        Try
-                            mDB.fExecuteCommand(cmd, 0)
-
-                            BindGrid()
-
-                        Catch ex As Exception
-                            ShowMessage("ไม่สามารถบันทึกข้อมูลได้", MessageType.Error)
-                        Finally
-
-                        End Try
-
-
-                        FileUpload4.SaveAs(Server.MapPath("~/files-uploads/") & intDiceRoll & ext)
-
-                    Catch ex As Exception
-
-                        ShowMessage(" The file could not be uploaded. The following error occured", MessageType.Error)
-                    End Try
-                End If
-            End If
-        End If
-    End Sub
-
     Private Sub BindGrid()
 
         Dim nDt As DataTable
@@ -512,78 +586,33 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
         End If
     End Sub
 
-    Protected Sub btnback_Click(sender As Object, e As EventArgs) Handles btnback.Click
-        mutiview.SetActiveView(viewshow)
-        fBindePaging()
-        fShowData(1)
-    End Sub
+    Private Function checkrenamefile(ByVal id As Long, ByVal ext As String)
+        Dim nDt As DataTable
+        Dim nVal As String
 
-    Private Sub gvpic_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gvpic.RowCommand
-        If mFunc.fCheckSession Then
+        Dim sql As String = "SELECT * FROM oss_imgnew WHERE renamefile='" & id & ext & "'"
+        Dim cmdc As New SqlCommand(sql)
+        If mDB.fReadDataTable(cmdc, nDt) Then
+            If nDt.Rows.Count > 0 Then
+                Dim intDiceRoll As Long
+                intDiceRoll = GetRandomNumber(1, 999999999)
+                checkrenamefile(intDiceRoll, ext)
 
-            If e.CommandName = "aviewfile" Then
-                Dim nDt As DataTable
-                Dim nID As Integer = gvpic.DataKeys(e.CommandArgument).Value
-                Dim sql As String
-                sql = "SELECT renamefile FROM oss_imgnew WHERE id_imgoss_New = '" & nID & "'"
-                Dim cmd As New SqlCommand(sql)
-                If mDB.fReadDataTable(cmd, nDt) Then
-                    If nDt.Rows.Count > 0 Then
-                        Dim renamefile As String
-                        renamefile = nDt.Rows(0).Item("renamefile")
-
-                        Response.ContentType = ContentType
-                        Response.AppendHeader("Content-Disposition", ("attachment; filename=" + renamefile))
-                        Response.TransmitFile(Server.MapPath("~/files-uploads/" + renamefile))
-
-                        Response.End()
-
-                    End If
-                End If
-
-            ElseIf e.CommandName = "aDel" Then
-
-                Dim nValue As String
-                Dim nID As Integer = gvpic.DataKeys(e.CommandArgument).Value
-                Dim nDt As DataTable
-
-                Dim sqldelimg As String
-                Dim namefile As String
-                sqldelimg = "SELECT renamefile FROM oss_imgnew WHERE id_imgoss_New ='" & nID & "'"
-
-                Dim cmd As New SqlCommand(sqldelimg)
-
-                If mDB.fReadDataTable(cmd, nDt) Then
-                    If nDt.Rows.Count > 0 Then
-                        namefile = nDt.Rows(0).Item("renamefile")
-
-                        Dim FileToDelete As String
-                        ' Set full path to file
-                        FileToDelete = Server.MapPath("~/files-uploads/") & namefile
-                        ' Delete a file
-                        File.Delete(FileToDelete)
-
-                    End If
-                End If
-
-                Dim sqldelete As String = "DELETE FROM oss_imgnew WHERE id_imgoss_New='" & nID & "'"
-                Dim cmddel As New SqlCommand(sqldelete)
-
-                If mDB.fExecuteCommand(cmddel, nValue) Then
-                    BindGrid()
-                End If
-
+                nVal = intDiceRoll & ext
+            Else
+                nVal = id & ext
             End If
         End If
-    End Sub
+        Return nVal
+    End Function
 
-    Protected Sub gvData_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvData.SelectedIndexChanged
+    Public Function GetRandomNumber( _
+        Optional ByVal Low As Integer = 1, _
+        Optional ByVal High As Integer = 100) As Integer
+        ' Returns a random number,
+        ' between the optional Low and High parameters
+        Return objRandom.Next(Low, High + 1)
+    End Function
+#End Region
 
-    End Sub
-
-    Protected Sub gvpic_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvpic.SelectedIndexChanged
-
-    End Sub
-
-    
 End Class

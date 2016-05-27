@@ -56,6 +56,8 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
                         filesize = FileUpload4.PostedFile.ContentLength
                         'InsertT01_IMG
 
+                        Dim rename As String = checkrenamefile(intDiceRoll, ext)
+
                         Dim sqlinsert As String = ""
                         sqlinsert = "INSERT INTO oss_imgfoundpriv(rID,namefile,renamefile,datesand,sizefile,typefile,codestaff)" & _
                         "VALUES" & _
@@ -64,7 +66,7 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
                         Dim cmd As New SqlCommand(sqlinsert)
                         cmd.Parameters.AddWithValue("@rID", hdfrID.Value)
                         cmd.Parameters.AddWithValue("@namefile", FileUpload4.FileName)
-                        cmd.Parameters.AddWithValue("@renamefile", intDiceRoll & ext)
+                        cmd.Parameters.AddWithValue("@renamefile", rename)
                         cmd.Parameters.AddWithValue("@datesand", datesand)
                         cmd.Parameters.AddWithValue("@sizefile", filesize)
                         cmd.Parameters.AddWithValue("@typefile", ext)
@@ -587,7 +589,26 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
         End If
     End Sub
 
+    Private Function checkrenamefile(ByVal id As Long, ByVal ext As String)
+        Dim nDt As DataTable
+        Dim nVal As String
+
+        Dim sql As String = "SELECT * FROM oss_imgfoundpriv WHERE renamefile='" & id & ext & "'"
+        Dim cmdc As New SqlCommand(sql)
+        If mDB.fReadDataTable(cmdc, nDt) Then
+            If nDt.Rows.Count > 0 Then
+                Dim intDiceRoll As Long
+                intDiceRoll = GetRandomNumber(1, 999999999)
+                checkrenamefile(intDiceRoll, ext)
+
+                nVal = intDiceRoll & ext
+            Else
+                nVal = id & ext
+            End If
+        End If
+        Return nVal
+    End Function
+
 #End Region
 
-    
 End Class

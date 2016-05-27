@@ -12,6 +12,7 @@ Public Class Agov
     Dim objRandom As New System.Random( _
 CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
+#Region "EVEN"
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             If mFunc.fCheckSession() Then
@@ -19,59 +20,6 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
                 fShowData(1)
             End If
         End If
-    End Sub
-
-    Private Sub fShowData(ByVal pPage As Integer, Optional ByVal pSortDirection As String = "")
-        gvData.DataSource = fReadData(pPage, pSortDirection)
-        gvData.DataBind()
-    End Sub
-
-    Private Function fReadData(ByVal pPage As Integer, Optional ByVal pSortDirection As String = "") As DataTable
-        Dim nUser As cUser = Session("cUser")
-        Dim nPageSize As Integer = gvData.PageSize
-        Dim nSb As New System.Text.StringBuilder
-        nSb.Append("select * from ( ")
-        nSb.Append("select ROW_NUMBER() OVER(ORDER BY IDfound desc) AS row,*  ")
-        nSb.Append("from oss_foundgovernment where 1=1")
-        nSb.Append(fGetSearchStr())
-        nSb.Append(") AS a ")
-        nSb.Append(String.Format(" where row between {0} and {1} order by IDfound desc",
-                                 ((pPage - 1) * nPageSize) + 1,
-                                 ((pPage - 1) * nPageSize) + nPageSize))
-        Dim nComd As New SqlCommand(nSb.ToString)
-        fSetCommandFilterValue(nComd)
-        Dim nDt As DataTable
-
-        If mDB.fReadDataTable(nComd, nDt) Then
-            If pSortDirection <> "" Then
-                nDt = nDt.Select("", pSortDirection).CopyToDataTable
-            End If
-        End If
-        Return nDt
-    End Function
-
-    Private Sub fBindePaging()
-        Dim nSb As New System.Text.StringBuilder
-        nSb.Append("select count(*) from oss_foundgovernment where 1=1 ")
-        nSb.Append(fGetSearchStr())
-        Dim nVal As Integer
-        Dim nComd As New SqlCommand(nSb.ToString)
-        fSetCommandFilterValue(nComd)
-        mDB.fReadTopData(nComd, nVal)
-        If nVal > 0 Then
-            Dim nPage As Integer = Math.Ceiling(nVal / gvData.PageSize)
-            lblAllPage.Text = nPage
-            ddlPage.Items.Clear()
-            For i = 1 To nPage
-                ddlPage.Items.Insert(i - 1, New ListItem(i, i))
-            Next
-        End If
-    End Sub
-
-    Private Sub fSetCommandFilterValue(ByRef pCommand As SqlCommand)
-        With pCommand.Parameters
-            .AddWithValue("@searchTxt", "%" & txtSearch.Text & "%")
-        End With
     End Sub
 
     Protected Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
@@ -83,27 +31,6 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
     End Sub
 
-    Private Sub runIDfound()
-        Dim nDt As DataTable
-        Dim sql As String
-        sql = " SELECT MAX(rID) AS rID "
-        sql &= " FROM oss_foundgovernment "
-        'sql &= " WHERE codestaff = '" & cid & "'"
-
-        Dim cmd As New SqlCommand(sql)
-        If mDB.fReadDataTable(cmd, nDt) Then
-            If nDt.Rows.Count > 0 Then
-                If IsDBNull(nDt.Rows(0).Item("rID")) Then
-                    hdfIDfound.Value = 1
-                Else
-                    hdfIDfound.Value = (CInt(nDt.Rows(0).Item("rID")))
-                    hdfIDfound.Value += 1
-
-                End If
-            End If
-        End If
-    End Sub
-
     Protected Sub btnback_Click(sender As Object, e As EventArgs) Handles btnback.Click
         If mFunc.fCheckSession Then
             fBindePaging()
@@ -112,42 +39,6 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
         End If
 
-    End Sub
-
-    Private Function fGetSearchStr() As String
-        Dim nValue As String = ""
-        If txtSearch.Text <> "" Then nValue &= " and (namefound like @searchTxt )"
-        Return nValue
-    End Function
-
-    Public Enum MessageType
-        Success
-        [Error]
-        Info
-        Warning
-    End Enum
-
-    Protected Sub ShowMessage(Message As String, type As MessageType)
-        ScriptManager.RegisterStartupScript(Me, Me.[GetType](), System.Guid.NewGuid().ToString(), "ShowMessage('" & Message & "','" & type.ToString() & "');", True)
-    End Sub
-
-    Private Sub BindGrid()
-
-        Dim nUser As cUser = Session("cUser")
-        Dim nDt As DataTable
-        Dim strsql As String = "SELECT row_number() OVER (ORDER BY ID_imgfound ASC) AS row,* FROM oss_imgfoundgovernment WHERE rID='" & hdfIDfound.Value & "'"
-
-        Dim cmd As New SqlCommand(strsql)
-        If mDB.fReadDataTable(cmd, nDt) Then
-            If nDt.Rows.Count > 0 Then
-                gvpic.Visible = True
-
-                gvpic.DataSource = nDt
-                gvpic.DataBind()
-            Else
-                gvpic.Visible = False
-            End If
-        End If
     End Sub
 
     Protected Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
@@ -163,82 +54,6 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
         End If
 
     End Sub
-
-    Private Sub clstb()
-        tbnamefound.Text = ""
-        tbdetailfound.Text = ""
-        tbnumfound.Text = ""
-        tbnummoneyfound.Text = ""
-        tbdatefound.Text = ""
-        tbendfound.Text = ""
-        tbtypefound.Text = ""
-    End Sub
-
-    Private Function DateToDisplay(ByVal _dateTime As System.DateTime, ByVal _displayTime As Boolean) As String
-        Dim _day As String
-        Dim _month As String
-        Dim _year As String
-
-        Dim _ret As String
-
-        _day = _dateTime.Day.ToString
-        If _day.Length = 1 Then _day = "0" + _day
-        _month = _dateTime.Month.ToString
-
-        If _month.Length = 1 Then _month = "0" + _month
-        '_year = (_dateTime.Year).ToString
-        _year = (_dateTime.Year).ToString
-
-        '+ " " + (_dateTime)
-        If _displayTime Then
-            '_ret = _day + "/" + _month + "/" + _year
-            _ret = _year + "/" + _month + "/" + _day
-
-        Else
-            _ret = _year + "/" + _month + "/" + _day
-            '_ret = _day + "/" + _month + "/" + _year
-        End If
-
-        Return _ret
-    End Function
-
-    Private Function fSaveData(ByRef pValue As String) As Boolean
-        Dim nSb As New StringBuilder
-        nSb.Append("insert into oss_foundgovernment(rID,datesend,namefound,detailfound,numfound,nummoneyfound,datefound,endfound,typefound,frequency) ")
-        nSb.Append("values(@rID,@datesend,@namefound,@detailfound,@numfound,@nummoneyfound,@datefound,@endfound,@typefound,@frequency)")
-        Dim nComd As New SqlCommand(nSb.ToString)
-        fSetParaValue(nComd)
-        Return mDB.fExecuteCommand(nComd, pValue)
-    End Function
-
-    Private Sub fSetParaValue(ByRef pCommand As SqlCommand)
-        Dim nUser As cUser = Session("cUser")
-        With pCommand.Parameters
-            Dim datestart As String = Date.Parse(Date.Now, System.Globalization.CultureInfo.CurrentCulture)
-            Dim dstart As String = datestart
-            datestart = DateToDisplay(dstart, True)
-            .AddWithValue("@rID", hdfIDfound.Value)
-            .AddWithValue("@datesend", datestart)
-            .AddWithValue("@namefound", tbnamefound.Text)
-            .AddWithValue("@detailfound", tbdetailfound.Text)
-            .AddWithValue("@numfound", tbnumfound.Text)
-            .AddWithValue("@nummoneyfound", tbnummoneyfound.Text)
-            .AddWithValue("@datefound", tbdatefound.Text)
-            .AddWithValue("@endfound", tbendfound.Text)
-            .AddWithValue("@typefound", tbtypefound.Text)
-            .AddWithValue("@frequency", 0)
-
-
-        End With
-    End Sub
-
-    Public Function GetRandomNumber( _
-   Optional ByVal Low As Integer = 1, _
-   Optional ByVal High As Integer = 100) As Integer
-        ' Returns a random number,
-        ' between the optional Low and High parameters
-        Return objRandom.Next(Low, High + 1)
-    End Function
 
     Protected Sub btnupload_Click(sender As Object, e As EventArgs) Handles btnupload.Click
         If mFunc.fCheckSession() Then
@@ -263,12 +78,12 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
                         Dim intDiceRoll As Long
                         intDiceRoll = GetRandomNumber(1, 999999999)
 
-
-
                         Dim ext As String = Path.GetExtension(FileUpload4.FileName)
                         Dim filesize As Integer
                         filesize = FileUpload4.PostedFile.ContentLength
                         'InsertT01_IMG
+
+                        Dim rename As String = checkrenamefile(intDiceRoll, ext)
 
                         Dim sqlinsert As String = ""
                         sqlinsert = "INSERT INTO oss_imgfoundgovernment(rID,namefile,renamefile,sizefile,typefile)" & _
@@ -278,7 +93,7 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
                         Dim cmd As New SqlCommand(sqlinsert)
                         cmd.Parameters.AddWithValue("@rID", hdfIDfound.Value)
                         cmd.Parameters.AddWithValue("@namefile", FileUpload4.FileName)
-                        cmd.Parameters.AddWithValue("@renamefile", intDiceRoll & ext)
+                        cmd.Parameters.AddWithValue("@renamefile", rename)
                         cmd.Parameters.AddWithValue("@sizefile", filesize)
                         cmd.Parameters.AddWithValue("@typefile", ext)
 
@@ -378,6 +193,194 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
         End If
         'End If
     End Sub
+#End Region
+
+#Region "FUNCTION"
+    Private Sub fShowData(ByVal pPage As Integer, Optional ByVal pSortDirection As String = "")
+        gvData.DataSource = fReadData(pPage, pSortDirection)
+        gvData.DataBind()
+    End Sub
+
+    Private Function fReadData(ByVal pPage As Integer, Optional ByVal pSortDirection As String = "") As DataTable
+        Dim nUser As cUser = Session("cUser")
+        Dim nPageSize As Integer = gvData.PageSize
+        Dim nSb As New System.Text.StringBuilder
+        nSb.Append("select * from ( ")
+        nSb.Append("select ROW_NUMBER() OVER(ORDER BY IDfound desc) AS row,*  ")
+        nSb.Append("from oss_foundgovernment where 1=1")
+        nSb.Append(fGetSearchStr())
+        nSb.Append(") AS a ")
+        nSb.Append(String.Format(" where row between {0} and {1} order by IDfound desc",
+                                 ((pPage - 1) * nPageSize) + 1,
+                                 ((pPage - 1) * nPageSize) + nPageSize))
+        Dim nComd As New SqlCommand(nSb.ToString)
+        fSetCommandFilterValue(nComd)
+        Dim nDt As DataTable
+
+        If mDB.fReadDataTable(nComd, nDt) Then
+            If pSortDirection <> "" Then
+                nDt = nDt.Select("", pSortDirection).CopyToDataTable
+            End If
+        End If
+        Return nDt
+    End Function
+
+    Private Sub fBindePaging()
+        Dim nSb As New System.Text.StringBuilder
+        nSb.Append("select count(*) from oss_foundgovernment where 1=1 ")
+        nSb.Append(fGetSearchStr())
+        Dim nVal As Integer
+        Dim nComd As New SqlCommand(nSb.ToString)
+        fSetCommandFilterValue(nComd)
+        mDB.fReadTopData(nComd, nVal)
+        If nVal > 0 Then
+            Dim nPage As Integer = Math.Ceiling(nVal / gvData.PageSize)
+            lblAllPage.Text = nPage
+            ddlPage.Items.Clear()
+            For i = 1 To nPage
+                ddlPage.Items.Insert(i - 1, New ListItem(i, i))
+            Next
+        End If
+    End Sub
+
+    Private Sub fSetCommandFilterValue(ByRef pCommand As SqlCommand)
+        With pCommand.Parameters
+            .AddWithValue("@searchTxt", "%" & txtSearch.Text & "%")
+        End With
+    End Sub
+
+    Private Sub runIDfound()
+        Dim nDt As DataTable
+        Dim sql As String
+        sql = " SELECT MAX(rID) AS rID "
+        sql &= " FROM oss_foundgovernment "
+        'sql &= " WHERE codestaff = '" & cid & "'"
+
+        Dim cmd As New SqlCommand(sql)
+        If mDB.fReadDataTable(cmd, nDt) Then
+            If nDt.Rows.Count > 0 Then
+                If IsDBNull(nDt.Rows(0).Item("rID")) Then
+                    hdfIDfound.Value = 1
+                Else
+                    hdfIDfound.Value = (CInt(nDt.Rows(0).Item("rID")))
+                    hdfIDfound.Value += 1
+
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Function fGetSearchStr() As String
+        Dim nValue As String = ""
+        If txtSearch.Text <> "" Then nValue &= " and (namefound like @searchTxt )"
+        Return nValue
+    End Function
+
+    Public Enum MessageType
+        Success
+        [Error]
+        Info
+        Warning
+    End Enum
+
+    Protected Sub ShowMessage(Message As String, type As MessageType)
+        ScriptManager.RegisterStartupScript(Me, Me.[GetType](), System.Guid.NewGuid().ToString(), "ShowMessage('" & Message & "','" & type.ToString() & "');", True)
+    End Sub
+
+    Private Sub BindGrid()
+
+        Dim nUser As cUser = Session("cUser")
+        Dim nDt As DataTable
+        Dim strsql As String = "SELECT row_number() OVER (ORDER BY ID_imgfound ASC) AS row,* FROM oss_imgfoundgovernment WHERE rID='" & hdfIDfound.Value & "'"
+
+        Dim cmd As New SqlCommand(strsql)
+        If mDB.fReadDataTable(cmd, nDt) Then
+            If nDt.Rows.Count > 0 Then
+                gvpic.Visible = True
+
+                gvpic.DataSource = nDt
+                gvpic.DataBind()
+            Else
+                gvpic.Visible = False
+            End If
+        End If
+    End Sub
+
+    Private Sub clstb()
+        tbnamefound.Text = ""
+        tbdetailfound.Text = ""
+        tbnumfound.Text = ""
+        tbnummoneyfound.Text = ""
+        tbdatefound.Text = ""
+        tbendfound.Text = ""
+        tbtypefound.Text = ""
+    End Sub
+
+    Private Function DateToDisplay(ByVal _dateTime As System.DateTime, ByVal _displayTime As Boolean) As String
+        Dim _day As String
+        Dim _month As String
+        Dim _year As String
+
+        Dim _ret As String
+
+        _day = _dateTime.Day.ToString
+        If _day.Length = 1 Then _day = "0" + _day
+        _month = _dateTime.Month.ToString
+
+        If _month.Length = 1 Then _month = "0" + _month
+        '_year = (_dateTime.Year).ToString
+        _year = (_dateTime.Year).ToString
+
+        '+ " " + (_dateTime)
+        If _displayTime Then
+            '_ret = _day + "/" + _month + "/" + _year
+            _ret = _year + "/" + _month + "/" + _day
+
+        Else
+            _ret = _year + "/" + _month + "/" + _day
+            '_ret = _day + "/" + _month + "/" + _year
+        End If
+
+        Return _ret
+    End Function
+
+    Private Function fSaveData(ByRef pValue As String) As Boolean
+        Dim nSb As New StringBuilder
+        nSb.Append("insert into oss_foundgovernment(rID,datesend,namefound,detailfound,numfound,nummoneyfound,datefound,endfound,typefound,frequency) ")
+        nSb.Append("values(@rID,@datesend,@namefound,@detailfound,@numfound,@nummoneyfound,@datefound,@endfound,@typefound,@frequency)")
+        Dim nComd As New SqlCommand(nSb.ToString)
+        fSetParaValue(nComd)
+        Return mDB.fExecuteCommand(nComd, pValue)
+    End Function
+
+    Private Sub fSetParaValue(ByRef pCommand As SqlCommand)
+        Dim nUser As cUser = Session("cUser")
+        With pCommand.Parameters
+            Dim datestart As String = Date.Parse(Date.Now, System.Globalization.CultureInfo.CurrentCulture)
+            Dim dstart As String = datestart
+            datestart = DateToDisplay(dstart, True)
+            .AddWithValue("@rID", hdfIDfound.Value)
+            .AddWithValue("@datesend", datestart)
+            .AddWithValue("@namefound", tbnamefound.Text)
+            .AddWithValue("@detailfound", tbdetailfound.Text)
+            .AddWithValue("@numfound", tbnumfound.Text)
+            .AddWithValue("@nummoneyfound", tbnummoneyfound.Text)
+            .AddWithValue("@datefound", tbdatefound.Text)
+            .AddWithValue("@endfound", tbendfound.Text)
+            .AddWithValue("@typefound", tbtypefound.Text)
+            .AddWithValue("@frequency", 0)
+
+
+        End With
+    End Sub
+
+    Public Function GetRandomNumber( _
+       Optional ByVal Low As Integer = 1, _
+       Optional ByVal High As Integer = 100) As Integer
+        ' Returns a random number,
+        ' between the optional Low and High parameters
+        Return objRandom.Next(Low, High + 1)
+    End Function
 
     Private Sub delpic(ByVal id As Integer)
         Dim nValue As String
@@ -411,5 +414,27 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
         End If
 
     End Sub
+
+    Private Function checkrenamefile(ByVal id As Long, ByVal ext As String)
+        Dim nDt As DataTable
+        Dim nVal As String
+
+        Dim sql As String = "SELECT * FROM oss_imgfoundgovernment WHERE renamefile='" & id & ext & "'"
+        Dim cmdc As New SqlCommand(sql)
+        If mDB.fReadDataTable(cmdc, nDt) Then
+            If nDt.Rows.Count > 0 Then
+                Dim intDiceRoll As Long
+                intDiceRoll = GetRandomNumber(1, 999999999)
+                checkrenamefile(intDiceRoll, ext)
+
+                nVal = intDiceRoll & ext
+            Else
+                nVal = id & ext
+            End If
+        End If
+        Return nVal
+    End Function
+
+#End Region
 
 End Class

@@ -12,6 +12,7 @@ Public Class Egov
     Dim objRandom As New System.Random( _
 CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
+#Region "EVEN"
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             Dim value1 As String = Request.QueryString("value1")
@@ -32,44 +33,6 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
             End If
 
 
-        End If
-    End Sub
-
-    Private Sub fShowDetail(ByVal pID As Integer)
-        Dim nDt As DataTable
-        Dim sql As String = "SELECT * FROM oss_foundgovernment WHERE IDfound = '" & pID & "'"
-
-        Dim cmd As New SqlCommand(sql)
-        If mDB.fReadDataTable(cmd, nDt) Then
-            If nDt.Rows.Count > 0 Then
-                tbnamefound.Text = nDt.Rows(0).Item("namefound")
-                Literal1.Text = nDt.Rows(0).Item("detailfound")
-                tbdetailfound.Text = Literal1.Text
-
-                tbnumfound.Text = nDt.Rows(0).Item("numfound")
-                tbnummoneyfound.Text = nDt.Rows(0).Item("nummoneyfound")
-
-                tbdatefound.Text = nDt.Rows(0).Item("datefound")
-                tbendfound.Text = nDt.Rows(0).Item("endfound")
-                tbtypefound.Text = nDt.Rows(0).Item("typefound")
-
-            End If
-        End If
-    End Sub
-
-    Private Sub fShowPic(ByVal id As Integer)
-        Dim nDt As DataTable
-
-        Dim strsql As String = "SELECT row_number() OVER (ORDER BY ID_imgfound ASC) AS row,* FROM oss_imgfoundgovernment WHERE rID='" & id & "'"
-        Dim cmd As New SqlCommand(strsql)
-        If mDB.fReadDataTable(cmd, nDt) Then
-            If nDt.Rows.Count > 0 Then
-                gvpic.Visible = True
-                gvpic.DataSource = nDt
-                gvpic.DataBind()
-            Else
-                gvpic.Visible = False
-            End If
         End If
     End Sub
 
@@ -126,27 +89,8 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
         End If
     End Sub
 
-    Public Enum MessageType
-        Success
-        [Error]
-        Info
-        Warning
-    End Enum
-
-    Protected Sub ShowMessage(Message As String, type As MessageType)
-        ScriptManager.RegisterStartupScript(Me, Me.[GetType](), System.Guid.NewGuid().ToString(), "ShowMessage('" & Message & "','" & type.ToString() & "');", True)
-    End Sub
-
-    Public Function GetRandomNumber( _
-  Optional ByVal Low As Integer = 1, _
-  Optional ByVal High As Integer = 100) As Integer
-        ' Returns a random number,
-        ' between the optional Low and High parameters
-        Return objRandom.Next(Low, High + 1)
-    End Function
-
     Protected Sub btnupload_Click(sender As Object, e As EventArgs) Handles btnupload.Click
-        If mFunc.fCheckSession() Then
+         If mFunc.fCheckSession() Then
 
             Dim nUser As cUser = Session("cUser")
 
@@ -175,6 +119,8 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
                         filesize = FileUpload4.PostedFile.ContentLength
                         'InsertT01_IMG
 
+                        Dim rename As String = checkrenamefile(intDiceRoll, ext)
+
                         Dim sqlinsert As String = ""
                         sqlinsert = "INSERT INTO oss_imgfoundgovernment(rID,namefile,renamefile,sizefile,typefile)" & _
                         "VALUES" & _
@@ -183,7 +129,7 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
                         Dim cmd As New SqlCommand(sqlinsert)
                         cmd.Parameters.AddWithValue("@rID", hdfrid.Value)
                         cmd.Parameters.AddWithValue("@namefile", FileUpload4.FileName)
-                        cmd.Parameters.AddWithValue("@renamefile", intDiceRoll & ext)
+                        cmd.Parameters.AddWithValue("@renamefile", rename)
                         cmd.Parameters.AddWithValue("@sizefile", filesize)
                         cmd.Parameters.AddWithValue("@typefile", ext)
 
@@ -210,6 +156,79 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
         End If
     End Sub
 
+    Protected Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
+        Dim nValue As String
+        If mFunc.fCheckSession Then
+            If fUpdateData(nValue) Then
+                ShowMessage("บันทึกข้อมูลเรียบร้อยแล้ว", MessageType.Success)
+            End If
+        End If
+    End Sub
+
+    Protected Sub btnback_Click(sender As Object, e As EventArgs) Handles btnback.Click
+        Response.Redirect("~/npage/Agov.aspx")
+    End Sub
+
+#End Region
+
+#Region "FUNCTION"
+    Private Sub fShowDetail(ByVal pID As Integer)
+        Dim nDt As DataTable
+        Dim sql As String = "SELECT * FROM oss_foundgovernment WHERE IDfound = '" & pID & "'"
+
+        Dim cmd As New SqlCommand(sql)
+        If mDB.fReadDataTable(cmd, nDt) Then
+            If nDt.Rows.Count > 0 Then
+                tbnamefound.Text = nDt.Rows(0).Item("namefound")
+                Literal1.Text = nDt.Rows(0).Item("detailfound")
+                tbdetailfound.Text = Literal1.Text
+
+                tbnumfound.Text = nDt.Rows(0).Item("numfound")
+                tbnummoneyfound.Text = nDt.Rows(0).Item("nummoneyfound")
+
+                tbdatefound.Text = nDt.Rows(0).Item("datefound")
+                tbendfound.Text = nDt.Rows(0).Item("endfound")
+                tbtypefound.Text = nDt.Rows(0).Item("typefound")
+
+            End If
+        End If
+    End Sub
+
+    Private Sub fShowPic(ByVal id As Integer)
+        Dim nDt As DataTable
+
+        Dim strsql As String = "SELECT row_number() OVER (ORDER BY ID_imgfound ASC) AS row,* FROM oss_imgfoundgovernment WHERE rID='" & id & "'"
+        Dim cmd As New SqlCommand(strsql)
+        If mDB.fReadDataTable(cmd, nDt) Then
+            If nDt.Rows.Count > 0 Then
+                gvpic.Visible = True
+                gvpic.DataSource = nDt
+                gvpic.DataBind()
+            Else
+                gvpic.Visible = False
+            End If
+        End If
+    End Sub
+
+    Public Enum MessageType
+        Success
+        [Error]
+        Info
+        Warning
+    End Enum
+
+    Protected Sub ShowMessage(Message As String, type As MessageType)
+        ScriptManager.RegisterStartupScript(Me, Me.[GetType](), System.Guid.NewGuid().ToString(), "ShowMessage('" & Message & "','" & type.ToString() & "');", True)
+    End Sub
+
+    Public Function GetRandomNumber( _
+      Optional ByVal Low As Integer = 1, _
+      Optional ByVal High As Integer = 100) As Integer
+        ' Returns a random number,
+        ' between the optional Low and High parameters
+        Return objRandom.Next(Low, High + 1)
+    End Function
+
     Private Sub BindGrid()
 
         Dim nUser As cUser = Session("cUser")
@@ -225,15 +244,6 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
                 gvpic.DataBind()
             Else
                 gvpic.Visible = False
-            End If
-        End If
-    End Sub
-
-    Protected Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
-        Dim nValue As String
-        If mFunc.fCheckSession Then
-            If fUpdateData(nValue) Then
-                ShowMessage("บันทึกข้อมูลเรียบร้อยแล้ว", MessageType.Success)
             End If
         End If
     End Sub
@@ -263,7 +273,26 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
         End With
     End Sub
 
-    Protected Sub btnback_Click(sender As Object, e As EventArgs) Handles btnback.Click
-        Response.Redirect("~/npage/Agov.aspx")
-    End Sub
+    Private Function checkrenamefile(ByVal id As Long, ByVal ext As String)
+        Dim nDt As DataTable
+        Dim nVal As String
+
+        Dim sql As String = "SELECT * FROM oss_imgfoundgovernment WHERE renamefile='" & id & ext & "'"
+        Dim cmdc As New SqlCommand(sql)
+        If mDB.fReadDataTable(cmdc, nDt) Then
+            If nDt.Rows.Count > 0 Then
+                Dim intDiceRoll As Long
+                intDiceRoll = GetRandomNumber(1, 999999999)
+                checkrenamefile(intDiceRoll, ext)
+
+                nVal = intDiceRoll & ext
+            Else
+                nVal = id & ext
+            End If
+        End If
+        Return nVal
+    End Function
+
+#End Region
+
 End Class
