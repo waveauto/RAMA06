@@ -392,6 +392,15 @@ Partial Public Class Menu1
     Protected WithEvents A28 As Global.System.Web.UI.HtmlControls.HtmlAnchor
 
     '''<summary>
+    '''A14 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents A14 As Global.System.Web.UI.HtmlControls.HtmlAnchor
+
+    '''<summary>
     '''Div2 control.
     '''</summary>
     '''<remarks>

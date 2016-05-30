@@ -142,6 +142,7 @@
                     <a href="~/npage/Agov.aspx" id="A19" runat="server" class="list-group-item">ประกาศข่าวทุนรัฐบาล</a>
                     <a href="~/npage/Apriv.aspx" id="A23" runat="server" class="list-group-item">ประกาศข่าวทุนเอกชน</a>
                     <a href="~/npage/Avideo.aspx" id="A28" runat="server" class="list-group-item">วิดีโอสอนการใช้งานระบบ</a>
+                    <a href="~/npage/ADownload.aspx" id="A14" runat="server" class="list-group-item">ไฟล์ดาวน์โหลด</a>
                 </div>
             </div>
             <div class="col-lg-6">
