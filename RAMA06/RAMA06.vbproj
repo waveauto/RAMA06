@@ -533,6 +533,7 @@
     <Content Include="Data\IOR TO BE.jpg" />
     <Content Include="Document.aspx" />
     <Content Include="Download.aspx" />
+    <Content Include="error.aspx" />
     <Content Include="FlowPlayer\flowplayer-3.2.12.min.js" />
     <Content Include="FlowPlayer\flowplayer-3.2.16.swf" />
     <Content Include="FlowPlayer\flowplayer.controls-3.2.15.swf" />
@@ -579,6 +580,7 @@
     <Content Include="NewResiterOut.aspx" />
     <Content Include="npage\Aabout.aspx" />
     <Content Include="npage\AContact.aspx" />
+    <Content Include="npage\ADownload.aspx" />
     <Content Include="npage\Afoot.aspx" />
     <Content Include="npage\Agov.aspx" />
     <Content Include="npage\AhowtoProblem.aspx" />
@@ -658,6 +660,7 @@
     <Content Include="RamaRegister.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\common.js" />
     <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -823,6 +826,13 @@
       <DependentUpon>Download.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="error.aspx.designer.vb">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.vb">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -890,6 +900,7 @@
     <Compile Include="nclass\cAppFunc.vb" />
     <Compile Include="nclass\cDBTool.vb" />
     <Compile Include="nclass\cTools.vb" />
+    <Compile Include="nclass\cUpload.vb" />
     <Compile Include="nclass\cUser.vb" />
     <Compile Include="nclass\cUserre.vb" />
     <Compile Include="NewResiter.aspx.designer.vb">
@@ -926,6 +937,13 @@
     <Compile Include="npage\AContact.aspx.vb">
       <DependentUpon>AContact.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="npage\ADownload.aspx.designer.vb">
+      <DependentUpon>ADownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="npage\ADownload.aspx.vb">
+      <DependentUpon>ADownload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="npage\Afoot.aspx.designer.vb">
       <DependentUpon>Afoot.aspx</DependentUpon>
