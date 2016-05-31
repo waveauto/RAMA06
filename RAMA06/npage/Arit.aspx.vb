@@ -219,10 +219,11 @@ Public Class Arit
                         Throw New Exception("ไม่พบข้อมูล")
                     End If
 
+
                 End If
             End If
         Catch ex As Exception
-            nVal = False
+             nVal = False
         End Try
 
         Return nVal
@@ -236,7 +237,7 @@ Public Class Arit
         Dim pvalue As String
         Dim nDt As DataTable
 
-        Dim sqlcheck As String = "SELECT * FROM oss_person WHERE codestaff='" & tbcodestaff.Text & "'"
+        Dim sqlcheck As String = "SELECT * FROM oss_person WHERE codestaff='" & tbstaffcodesend.Text & "'"
         Dim cmdc As New SqlCommand(sqlcheck)
         If mDB.fReadDataTable(cmdc, nDt) Then
             If nDt.Rows.Count > 0 Then
@@ -287,7 +288,7 @@ Public Class Arit
 
             Dim cmd As New SqlCommand(sqlsavelevel)
             With cmd.Parameters
-                .AddWithValue("@codestaff", tbcodestaff.Text)
+                .AddWithValue("@codestaff", tbstaffcodesend.Text)
                 .AddWithValue("@IDlevel", 1)
                 .AddWithValue("@Fun01", "-")
                 .AddWithValue("@Fun02", "-")
@@ -318,7 +319,7 @@ Public Class Arit
     Private Sub fSetParaValue(ByRef pCommand As SqlCommand)
 
         With pCommand.Parameters
-            .AddWithValue("@codestaff", tbcode_staff.Text)
+            .AddWithValue("@codestaff", tbstaffcodesend.Text)
             .AddWithValue("@position", tbposition.Text)
             .AddWithValue("@rank", tbrank.Text)
             .AddWithValue("@education", tbeducation.Text)

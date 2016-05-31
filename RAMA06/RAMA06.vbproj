@@ -702,6 +702,11 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="npage\VideoHandler.ashx" />
+    <None Include="Web References\HRwebservice\HrStaffProfileWebService.wsdl" />
+    <Content Include="Web References\HRwebservice\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
     <None Include="Web References\patientservice\patientservice.wsdl" />
     <Content Include="Web References\patientservice\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -1362,6 +1367,11 @@
       <DependentUpon>VVnew.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Web References\HRwebservice\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\patientservice\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1402,6 +1412,17 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://10.6.21.56:8080/hrStaffProfileWebservice/services/HrStaffProfileWebService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\HRwebservice\</RelPath>
+      <UpdateFromURL>http://10.6.21.56:8080/hrStaffProfileWebservice/services/HrStaffProfileWebService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>RAMA06_HRwebservice_HrStaffProfileWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://hisws03/webservice/patientservice.WSDL">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\patientservice\</RelPath>
