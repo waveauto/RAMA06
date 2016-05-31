@@ -48,7 +48,7 @@
             <asp:HiddenField ID="hdfmode" runat="server" />
             <asp:HiddenField ID="hdfrID" runat="server" />
             
-            <h2 class="text-center">วิดีโอสอนการใช้งานระบบ</h2>
+            <h2 class="text-center">สร้างรหัสผ่านกรอกข้อมูลบุคคลภายใน</h2>
 
             <div class="form-inline" style="padding-bottom: 10px;">
                 <div class="form-group">
