@@ -63,6 +63,17 @@ Namespace My
                 Return CType(Me("RAMA06_patientservice_patientservice"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://10.6.21.56:8282/hrStaffProfileWebservice/services/HrStaffProfileWebService"& _ 
+            ".HrStaffProfileWebServiceHttpSoap11Endpoint/")>  _
+        Public ReadOnly Property RAMA06_HRwebservice_HrStaffProfileWebService() As String
+            Get
+                Return CType(Me("RAMA06_HRwebservice_HrStaffProfileWebService"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

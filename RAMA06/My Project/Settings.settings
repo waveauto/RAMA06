@@ -5,5 +5,8 @@
     <Setting Name="RAMA06_patientservice_patientservice" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://HISWS03/webservice/patientservice.WSDL</Value>
     </Setting>
+    <Setting Name="RAMA06_HRwebservice_HrStaffProfileWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.6.21.56:8282/hrStaffProfileWebservice/services/HrStaffProfileWebService.HrStaffProfileWebServiceHttpSoap11Endpoint/</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
