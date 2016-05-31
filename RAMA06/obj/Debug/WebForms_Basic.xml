@@ -6,406 +6,138 @@ RAMA06
 </name>
 </assembly>
 <members>
-<member name="F:RAMA06.ADownload.multiview1">
-	<summary>
-multiview1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.viewAllCatData">
-	<summary>
-viewAllCatData control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.txtCatSearch">
-	<summary>
-txtCatSearch control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.btnCatSearch">
-	<summary>
-btnCatSearch control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.btnCatNew">
-	<summary>
-btnCatNew control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.gvCatData">
-	<summary>
-gvCatData control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.ddlCatPage">
-	<summary>
-ddlCatPage control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.lblCatAllPage">
-	<summary>
-lblCatAllPage control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.viewAddCatData">
-	<summary>
-viewAddCatData control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.lblCatSubtitle">
-	<summary>
-lblCatSubtitle control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.txtCatName">
-	<summary>
-txtCatName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.reqvtxtCatName">
-	<summary>
-reqvtxtCatName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.txtCatSort">
-	<summary>
-txtCatSort control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.comptxtCatSort">
-	<summary>
-comptxtCatSort control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.chkCatStatus">
-	<summary>
-chkCatStatus control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.btnBack">
-	<summary>
-btnBack control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.btnCatSave">
-	<summary>
-btnCatSave control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.viewAllFileData">
-	<summary>
-viewAllFileData control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.ltrCatFile1">
-	<summary>
-ltrCatFile1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.txtFileSearch">
-	<summary>
-txtFileSearch control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.btnFileSearch">
-	<summary>
-btnFileSearch control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.btnFileNew">
-	<summary>
-btnFileNew control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.gvFileData">
-	<summary>
-gvFileData control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.ddlFilePage">
-	<summary>
-ddlFilePage control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.lblFileAllPage">
-	<summary>
-lblFileAllPage control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.btnFileBack1">
-	<summary>
-btnFileBack1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.viewAddFileData">
-	<summary>
-viewAddFileData control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.ltrCatFile2">
-	<summary>
-ltrCatFile2 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.lblFileSubtitle">
-	<summary>
-lblFileSubtitle control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.txtFileName">
-	<summary>
-txtFileName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.reqvtxtFileName">
-	<summary>
-reqvtxtFileName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.ltrFileExample">
-	<summary>
-ltrFileExample control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.hdfOldFileExample">
-	<summary>
-hdfOldFileExample control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.uploadExample">
-	<summary>
-uploadExample control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.ltrFileForm">
-	<summary>
-ltrFileForm control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.hdfOldFileForm">
-	<summary>
-hdfOldFileForm control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.uploadForm">
-	<summary>
-uploadForm control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.txtFileSort">
-	<summary>
-txtFileSort control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.comptxtFileSort">
-	<summary>
-comptxtFileSort control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.txtFileRemark">
-	<summary>
-txtFileRemark control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.chkFileStatus">
-	<summary>
-chkFileStatus control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.btnFileBack">
-	<summary>
-btnFileBack control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.btnFileSave">
-	<summary>
-btnFileSave control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.hdfSortField">
-	<summary>
-hdfSortField control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.hdfSortDirectoin">
-	<summary>
-hdfSortDirectoin control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.hdfMode">
-	<summary>
-hdfMode control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.hdfID">
-	<summary>
-hdfID control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.hdfCatID">
-	<summary>
-hdfCatID control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.ADownload.hdfFlagSave">
-	<summary>
-hdfFlagSave control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06._error.ltrMsg">
-	<summary>
-ltrMsg control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
+<member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.#ctor">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEducationByPersonIdCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmploymentByPersonIdCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.GetVersionCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileAddressByPersonIdCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmailByPersonIdCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfilePersonalByPersonIdCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdForResearchCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileTelephoneByPersonIdCompleted">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEducationByPersonId(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEducationByPersonIdAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEducationByPersonIdAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmploymentByPersonId(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmploymentByPersonIdAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmploymentByPersonIdAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.GetVersion">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.GetVersionAsync">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.GetVersionAsync(System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonId(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileAddressByPersonId(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileAddressByPersonIdAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileAddressByPersonIdAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmailByPersonId(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmailByPersonIdAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmailByPersonIdAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfilePersonalByPersonId(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfilePersonalByPersonIdAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfilePersonalByPersonIdAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdForResearch(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdForResearchAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdForResearchAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileTelephoneByPersonId(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileTelephoneByPersonIdAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileTelephoneByPersonIdAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.HrStaffProfileWebService">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileEducationByPersonIdCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchProfileEducationByPersonIdCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileEducationByPersonIdCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileEmploymentByPersonIdCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchProfileEmploymentByPersonIdCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileEmploymentByPersonIdCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.GetVersionCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.GetVersionCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.GetVersionCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileAddressByPersonIdCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchProfileAddressByPersonIdCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileAddressByPersonIdCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileEmailByPersonIdCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchProfileEmailByPersonIdCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileEmailByPersonIdCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfilePersonalByPersonIdCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchProfilePersonalByPersonIdCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfilePersonalByPersonIdCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdForResearchCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdForResearchCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdForResearchCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileTelephoneByPersonIdCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchProfileTelephoneByPersonIdCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileTelephoneByPersonIdCompletedEventArgs">
+	<remarks/>
 </member><member name="F:RAMA06.Register.ErrorMessage">
 	<summary>
 ErrorMessage control.
@@ -5685,6 +5417,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:RAMA06.Download.ltrData">
 	<summary>
 ltrData control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06._error.ltrMsg">
+	<summary>
+ltrMsg control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -13315,6 +13055,398 @@ Literal1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:RAMA06.ADownload.multiview1">
+	<summary>
+multiview1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.viewAllCatData">
+	<summary>
+viewAllCatData control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.txtCatSearch">
+	<summary>
+txtCatSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.btnCatSearch">
+	<summary>
+btnCatSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.btnCatNew">
+	<summary>
+btnCatNew control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.gvCatData">
+	<summary>
+gvCatData control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.ddlCatPage">
+	<summary>
+ddlCatPage control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.lblCatAllPage">
+	<summary>
+lblCatAllPage control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.viewAddCatData">
+	<summary>
+viewAddCatData control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.lblCatSubtitle">
+	<summary>
+lblCatSubtitle control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.txtCatName">
+	<summary>
+txtCatName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.reqvtxtCatName">
+	<summary>
+reqvtxtCatName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.txtCatSort">
+	<summary>
+txtCatSort control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.comptxtCatSort">
+	<summary>
+comptxtCatSort control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.chkCatStatus">
+	<summary>
+chkCatStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.btnBack">
+	<summary>
+btnBack control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.btnCatSave">
+	<summary>
+btnCatSave control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.viewAllFileData">
+	<summary>
+viewAllFileData control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.ltrCatFile1">
+	<summary>
+ltrCatFile1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.txtFileSearch">
+	<summary>
+txtFileSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.btnFileSearch">
+	<summary>
+btnFileSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.btnFileNew">
+	<summary>
+btnFileNew control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.gvFileData">
+	<summary>
+gvFileData control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.ddlFilePage">
+	<summary>
+ddlFilePage control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.lblFileAllPage">
+	<summary>
+lblFileAllPage control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.btnFileBack1">
+	<summary>
+btnFileBack1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.viewAddFileData">
+	<summary>
+viewAddFileData control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.ltrCatFile2">
+	<summary>
+ltrCatFile2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.lblFileSubtitle">
+	<summary>
+lblFileSubtitle control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.txtFileName">
+	<summary>
+txtFileName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.reqvtxtFileName">
+	<summary>
+reqvtxtFileName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.ltrFileExample">
+	<summary>
+ltrFileExample control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.hdfOldFileExample">
+	<summary>
+hdfOldFileExample control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.uploadExample">
+	<summary>
+uploadExample control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.ltrFileForm">
+	<summary>
+ltrFileForm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.hdfOldFileForm">
+	<summary>
+hdfOldFileForm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.uploadForm">
+	<summary>
+uploadForm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.txtFileSort">
+	<summary>
+txtFileSort control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.comptxtFileSort">
+	<summary>
+comptxtFileSort control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.txtFileRemark">
+	<summary>
+txtFileRemark control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.chkFileStatus">
+	<summary>
+chkFileStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.btnFileBack">
+	<summary>
+btnFileBack control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.btnFileSave">
+	<summary>
+btnFileSave control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.hdfSortField">
+	<summary>
+hdfSortField control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.hdfSortDirectoin">
+	<summary>
+hdfSortDirectoin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.hdfMode">
+	<summary>
+hdfMode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.hdfID">
+	<summary>
+hdfID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.hdfCatID">
+	<summary>
+hdfCatID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.ADownload.hdfFlagSave">
+	<summary>
+hdfFlagSave control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:RAMA06.Apriv.multiview1">
 	<summary>
 multiview1 control.
@@ -13555,6 +13687,14 @@ tbpassword control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:RAMA06.Arit.tbstaffcodesend">
+	<summary>
+tbstaffcodesend control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:RAMA06.Arit.cmdLogin">
 	<summary>
 cmdLogin control.
@@ -13587,25 +13727,9 @@ tbposition control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:RAMA06.Arit.RequiredFieldValidator1">
-	<summary>
-RequiredFieldValidator1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
 </member><member name="F:RAMA06.Arit.tbrank">
 	<summary>
 tbrank control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.Arit.RequiredFieldValidator2">
-	<summary>
-RequiredFieldValidator2 control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -13619,14 +13743,6 @@ tbeducation control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:RAMA06.Arit.RequiredFieldValidatortbeducation">
-	<summary>
-RequiredFieldValidatortbeducation control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
 </member><member name="F:RAMA06.Arit.tbprofession">
 	<summary>
 tbprofession control.
@@ -13635,25 +13751,9 @@ tbprofession control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:RAMA06.Arit.RequiredFieldValidator8">
-	<summary>
-RequiredFieldValidator8 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
 </member><member name="F:RAMA06.Arit.tbdignity">
 	<summary>
 tbdignity control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.Arit.RequiredFieldValidator5">
-	<summary>
-RequiredFieldValidator5 control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -13755,6 +13855,22 @@ btnsave control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:RAMA06.nlogregis.multiview1">
+	<summary>
+multiview1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.viewlogin">
+	<summary>
+viewlogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:RAMA06.nlogregis.tbcodestaff">
 	<summary>
 tbcodestaff control.
@@ -13774,6 +13890,198 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:RAMA06.nlogregis.cmdLogin">
 	<summary>
 cmdLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.viewregister">
+	<summary>
+viewregister control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.tbstafff">
+	<summary>
+tbstafff control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.tbposition">
+	<summary>
+tbposition control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.RequiredFieldValidator1">
+	<summary>
+RequiredFieldValidator1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.tbrank">
+	<summary>
+tbrank control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.RequiredFieldValidator2">
+	<summary>
+RequiredFieldValidator2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.tbeducation">
+	<summary>
+tbeducation control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.RequiredFieldValidatortbeducation">
+	<summary>
+RequiredFieldValidatortbeducation control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.tbprofession">
+	<summary>
+tbprofession control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.RequiredFieldValidator8">
+	<summary>
+RequiredFieldValidator8 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.tbdignity">
+	<summary>
+tbdignity control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.RequiredFieldValidator5">
+	<summary>
+RequiredFieldValidator5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.ddlfname">
+	<summary>
+ddlfname control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.tbname">
+	<summary>
+tbname control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.RequiredFieldValidator3">
+	<summary>
+RequiredFieldValidator3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.FileUpload1">
+	<summary>
+FileUpload1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.tbtel">
+	<summary>
+tbtel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.RequiredFieldValidator9">
+	<summary>
+RequiredFieldValidator9 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.tbmobile">
+	<summary>
+tbmobile control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.RequiredFieldValidator4">
+	<summary>
+RequiredFieldValidator4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.tbemail">
+	<summary>
+tbemail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.RequiredFieldValidator6">
+	<summary>
+RequiredFieldValidator6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.RegularExpressionValidator1">
+	<summary>
+RegularExpressionValidator1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.nlogregis.btnsave">
+	<summary>
+btnsave control.
 </summary>
 	<remarks>
 Auto-generated field.
