@@ -50,6 +50,15 @@ Partial Public Class Arit
     Protected WithEvents tbpassword As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''tbstaffcodesend control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tbstaffcodesend As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''cmdLogin control.
     '''</summary>
     '''<remarks>
@@ -86,15 +95,6 @@ Partial Public Class Arit
     Protected WithEvents tbposition As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''RequiredFieldValidator1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
     '''tbrank control.
     '''</summary>
     '''<remarks>
@@ -102,15 +102,6 @@ Partial Public Class Arit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents tbrank As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''RequiredFieldValidator2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''tbeducation control.
@@ -122,15 +113,6 @@ Partial Public Class Arit
     Protected WithEvents tbeducation As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''RequiredFieldValidatortbeducation control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidatortbeducation As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
     '''tbprofession control.
     '''</summary>
     '''<remarks>
@@ -140,15 +122,6 @@ Partial Public Class Arit
     Protected WithEvents tbprofession As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''RequiredFieldValidator8 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator8 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
     '''tbdignity control.
     '''</summary>
     '''<remarks>
@@ -156,15 +129,6 @@ Partial Public Class Arit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents tbdignity As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''RequiredFieldValidator5 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator5 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''ddlfname control.

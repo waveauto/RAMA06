@@ -53,10 +53,13 @@
                 </div>
                 <!-- Simple Login - START -->
                 <div class="form-group">
-                    <asp:TextBox ID="tbcodestaff" runat="server" class="form-control input-lg" placeholder="รหัสบุคคล"></asp:TextBox>
+                    <asp:TextBox ID="tbcodestaff" runat="server" class="form-control input-lg" placeholder="รหัสบุคคล(Admin)"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <asp:TextBox ID="tbpassword" runat="server" class="form-control input-lg" placeholder="รหัสผ่าน"></asp:TextBox>
+                    <asp:TextBox ID="tbpassword" runat="server" class="form-control input-lg" placeholder="รหัสผ่านพิเศษ"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <asp:TextBox ID="tbstaffcodesend" runat="server" class="form-control input-lg" placeholder="รหัสบุคคลผู้ที่ให้กรอกข้อมูล"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <asp:Button ID="cmdLogin" runat="server" class="btn btn-primary btn-lg btn-block" Text="Sign In" />
@@ -68,192 +71,196 @@
             </div>
         </asp:View>
 
-        <asp:View ID ="viewadd" runat="server">
-               <br />
-    <div class="container">
-        <h2 class="text-center">ลงทะเบียน นักวิจัยภายใน</h2>
-        <div class="panel panel-primary">
+        <asp:View ID="viewadd" runat="server">
             <br />
-            <div class="messagealert" id="alert_container1">
-            </div>
             <div class="container">
+                <div class="messagealert" id="alert_container1">
+                </div>
+                <br />
+                <p></p>
+                <h2 class="text-center">ลงทะเบียน นักวิจัยภายใน</h2>
+                <div class="panel panel-primary">
+                    <br />
 
-                <div class="form-horizontal">
+                    <div class="container">
 
-                    <div class="form-group">
-                        <label class="control-label col-md-4" for="inputLarge">
-                            รหัสบุคคล :</label>
-                        <div class="col-md-2">
+                        <div class="form-horizontal">
+
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="inputLarge">
+                                    รหัสบุคคล :</label>
+                                <div class="col-md-2">
 
 
-                            <asp:TextBox ID="tbcode_staff" runat="server" class="form-control input-lg" placeholder="รหัสบุคคล"></asp:TextBox>
-                        </div>
-                    </div>
+                                    <asp:TextBox ID="tbcode_staff" runat="server" class="form-control input-lg" placeholder="รหัสบุคคล"></asp:TextBox>
+                                </div>
+                            </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-md-4" for="inputLarge">
-                            ตำแหน่งทางวิชาการ (ถ้ามี) : เช่น ผศ. รศ. ศ. ฯลฯ :</label>
-                        <div class="col-md-3 col-sm-3">
-                            <asp:TextBox ID="tbposition" runat="server" placeholder="ตำแหน่งทางวิชาการ" class="form-control input-lg"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbposition" Display="Dynamic" CssClass="label label-danger">
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="inputLarge">
+                                    ตำแหน่งทางวิชาการ (ถ้ามี) : เช่น ผศ. รศ. ศ. ฯลฯ :</label>
+                                <div class="col-md-3 col-sm-3">
+                                    <asp:TextBox ID="tbposition" runat="server" placeholder="ตำแหน่งทางวิชาการ" class="form-control input-lg"></asp:TextBox>
+                                    <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbposition" Display="Dynamic" CssClass="label label-danger">
                         กรุณากรอกตำแหน่งทางวิชาการ
-                            </asp:RequiredFieldValidator>
-                        </div>
-                    </div>
+                            </asp:RequiredFieldValidator>--%>
+                                </div>
+                            </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-md-4" for="inputLarge">
-                            ยศ (ถ้ามี) :</label>
-                        <div class="col-md-3 col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="inputLarge">
+                                    ยศ (ถ้ามี) :</label>
+                                <div class="col-md-3 col-sm-3">
 
 
-                            <asp:TextBox ID="tbrank" runat="server" placeholder="ยศ" class="form-control input-lg"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbrank" Display="Dynamic" CssClass="label label-danger">
+                                    <asp:TextBox ID="tbrank" runat="server" placeholder="ยศ" class="form-control input-lg"></asp:TextBox>
+                                    <%--  <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbrank" Display="Dynamic" CssClass="label label-danger">
                         กรุณากรอกยศ
-                            </asp:RequiredFieldValidator>
-                        </div>
-                    </div>
+                            </asp:RequiredFieldValidator>--%>
+                                </div>
+                            </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-md-4" for="inputLarge">
-                            วุฒิการศึกษาระดับปริญญาดุษฎีบัณฑิต: เช่น ดร. :</label>
-                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="inputLarge">
+                                    วุฒิการศึกษาระดับปริญญาดุษฎีบัณฑิต: เช่น ดร. :</label>
+                                <div class="col-md-3">
 
 
-                            <asp:TextBox ID="tbeducation" runat="server" placeholder="วุฒิการศึกษาระดับปริญญาดุษฎีบัณฑิต" class="form-control input-lg"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidatortbeducation" runat="server" ControlToValidate="tbeducation" Display="Dynamic" CssClass="label label-danger">
+                                    <asp:TextBox ID="tbeducation" runat="server" placeholder="วุฒิการศึกษาระดับปริญญาดุษฎีบัณฑิต" class="form-control input-lg"></asp:TextBox>
+                                    <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidatortbeducation" runat="server" ControlToValidate="tbeducation" Display="Dynamic" CssClass="label label-danger">
                         กรุณากรอกวุฒิการศึกษาระดับปริญญาดุษฎีบัณฑิต
-                            </asp:RequiredFieldValidator>
-                        </div>
-                    </div>
+                            </asp:RequiredFieldValidator>--%>
+                                </div>
+                            </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-md-4" for="inputLarge">
-                            ตำแหน่งวิชาชีพ (ถ้ามี) : เช่น นพ. พญ.&nbsp; ฯลฯ</label>
-                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="inputLarge">
+                                    ตำแหน่งวิชาชีพ (ถ้ามี) : เช่น นพ. พญ.&nbsp; ฯลฯ</label>
+                                <div class="col-md-2">
 
 
-                            <asp:TextBox ID="tbprofession" runat="server" placeholder="ตำแหน่งวิชาชีพ" class="form-control input-lg"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="tbprofession" Display="Dynamic" CssClass="label label-danger">
+                                    <asp:TextBox ID="tbprofession" runat="server" placeholder="ตำแหน่งวิชาชีพ" class="form-control input-lg"></asp:TextBox>
+                                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="tbprofession" Display="Dynamic" CssClass="label label-danger">
                         กรุณากรอกตำแหน่งวิชาชีพ
-                            </asp:RequiredFieldValidator>
-                        </div>
-                    </div>
+                            </asp:RequiredFieldValidator>--%>
+                                </div>
+                            </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-md-4" for="inputLarge">
-                            ฐานันดรศักดิ์ หรือ คำนำหน้าสตรี (ถ้ามี) :</label>
-                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="inputLarge">
+                                    ฐานันดรศักดิ์ หรือ คำนำหน้าสตรี (ถ้ามี) :</label>
+                                <div class="col-md-2">
 
 
-                            <asp:TextBox ID="tbdignity" runat="server" placeholder="ฐานันดรศักดิ์" class="form-control input-lg"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="tbdignity" Display="Dynamic" CssClass="label label-danger">
+                                    <asp:TextBox ID="tbdignity" runat="server" placeholder="ฐานันดรศักดิ์" class="form-control input-lg"></asp:TextBox>
+                                    <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="tbdignity" Display="Dynamic" CssClass="label label-danger">
                         กรุณากรอกฐานันดรศักดิ์ หรือ คำนำหน้าสตรี
-                            </asp:RequiredFieldValidator>
-                        </div>
-                    </div>
+                            </asp:RequiredFieldValidator>--%>
+                                </div>
+                            </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-md-4" for="inputLarge">
-                            คำนำหน้า:
-                        </label>
-                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="inputLarge">
+                                    คำนำหน้า:
+                                </label>
+                                <div class="col-md-2">
 
-                            <asp:DropDownList ID="ddlfname" class="form-control input-lg" runat="server">
-                                <asp:ListItem>นาย</asp:ListItem>
-                                <asp:ListItem>นางสาว</asp:ListItem>
-                                <asp:ListItem>นาง</asp:ListItem>
-                            </asp:DropDownList>
+                                    <asp:DropDownList ID="ddlfname" class="form-control input-lg" runat="server">
+                                       <asp:ListItem>กรุณาเลือก</asp:ListItem>
+                                        <asp:ListItem>นาย</asp:ListItem>
+                                        <asp:ListItem>นางสาว</asp:ListItem>
+                                        <asp:ListItem>นาง</asp:ListItem>
+                                    </asp:DropDownList>
 
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label class="control-label col-md-4" for="inputLarge">
-                            ชื่อ-สกุล :</label>
-                        <div class="col-md-4">
+                                </div>
+                            </div>
 
 
-                            <asp:TextBox ID="tbname" runat="server" placeholder="ชื่อ-สกุล" class="form-control input-lg"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="tbname" Display="Dynamic" CssClass="label label-danger">
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="inputLarge">
+                                    ชื่อ-สกุล :</label>
+                                <div class="col-md-4">
+
+
+                                    <asp:TextBox ID="tbname" runat="server" placeholder="ชื่อ-สกุล" class="form-control input-lg"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="tbname" Display="Dynamic" CssClass="label label-danger">
                         กรุณากรอกชื่อ-สกุล
-                            </asp:RequiredFieldValidator>
-                        </div>
-                    </div>
+                                    </asp:RequiredFieldValidator>
+                                </div>
+                            </div>
 
 
-                    <div class="form-group">
-                        <label class="control-label col-md-4" for="inputLarge">
-                            อัพโหลดรูปถ่าย :</label>
-                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="inputLarge">
+                                    อัพโหลดรูปถ่าย :</label>
+                                <div class="col-md-4">
 
-                            <asp:FileUpload ID="FileUpload1" class="form-control input-lg" runat="server" />
-                        </div>
-                    </div>
+                                    <asp:FileUpload ID="FileUpload1" class="form-control input-lg" runat="server" />
+                                </div>
+                            </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-md-4" for="inputLarge">
-                            เบอร์โทรหน่วยงาน :</label>
-                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="inputLarge">
+                                    เบอร์โทรหน่วยงาน :</label>
+                                <div class="col-md-4">
 
 
-                            <asp:TextBox ID="tbtel" runat="server" placeholder="เบอร์โทรหน่วยงาน" class="form-control input-lg"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="tbtel" Display="Dynamic" CssClass="label label-danger">
+                                    <asp:TextBox ID="tbtel" runat="server" placeholder="เบอร์โทรหน่วยงาน" class="form-control input-lg"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="tbtel" Display="Dynamic" CssClass="label label-danger">
                         กรุณากรอกเบอร์โทรหน่วยงาน
-                            </asp:RequiredFieldValidator>
-                        </div>
-                    </div>
+                                    </asp:RequiredFieldValidator>
+                                </div>
+                            </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-md-4" for="inputLarge">
-                            เบอร์โทรมือถือ :</label>
-                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="inputLarge">
+                                    เบอร์โทรมือถือ :</label>
+                                <div class="col-md-4">
 
 
-                            <asp:TextBox ID="tbmobile" runat="server" placeholder="เบอร์โทรมือถือ" class="form-control input-lg"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbmobile" Display="Dynamic" CssClass="label label-danger">
+                                    <asp:TextBox ID="tbmobile" runat="server" placeholder="เบอร์โทรมือถือ" class="form-control input-lg"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbmobile" Display="Dynamic" CssClass="label label-danger">
                         กรุณากรอกเบอร์โทรมือถือ
-                            </asp:RequiredFieldValidator>
-                        </div>
-                    </div>
+                                    </asp:RequiredFieldValidator>
+                                </div>
+                            </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-md-4" for="inputLarge">
-                            E-mail :</label>
-                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="inputLarge">
+                                    E-mail :</label>
+                                <div class="col-md-4">
 
 
-                            <asp:TextBox ID="tbemail" runat="server" placeholder="E-mail" class="form-control input-lg"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="tbemail" Display="Dynamic" CssClass="label label-danger">
+                                    <asp:TextBox ID="tbemail" runat="server" placeholder="E-mail" class="form-control input-lg"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="tbemail" Display="Dynamic" CssClass="label label-danger">
                         กรุณากรอกE-mail
-                            </asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator
-                                ID="RegularExpressionValidator1"
-                                ControlToValidate="tbemail"
-                                Text="(Emailไม่ถูกต้อง)"
-                                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                                CssClass="label label-danger"
-                                SetFocusOnError="true" Display="Dynamic"
-                                runat="server" />
-                        </div>
-                    </div>
+                                    </asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator
+                                        ID="RegularExpressionValidator1"
+                                        ControlToValidate="tbemail"
+                                        Text="(Emailไม่ถูกต้อง)"
+                                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                        CssClass="label label-danger"
+                                        SetFocusOnError="true" Display="Dynamic"
+                                        runat="server" />
+                                </div>
+                            </div>
 
+
+                        </div>
+
+
+                    </div>
 
                 </div>
-
-
-            </div>
-
-        </div>
-        <div class="text-center">
-            <asp:LinkButton ID="btnsave" runat="server" CssClass="btn btn-primary btn-lg">
+                <div class="text-center">
+                    <asp:LinkButton ID="btnsave" runat="server" CssClass="btn btn-primary btn-lg">
                          <span class="glyphicon glyphicon-floppy-disk"></span> &nbsp;ยืนยันการลงทะเบียน
-            </asp:LinkButton>
-        </div>
+                    </asp:LinkButton>
+                </div>
 
-        <hr />
-    </div>
+                <hr />
+            </div>
         </asp:View>
 
     </asp:MultiView>
