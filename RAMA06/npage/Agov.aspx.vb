@@ -183,7 +183,7 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
                 End If
             End If
 
-            Dim sql As String = "DELETE FROM oss_foundgovernment WHERE rID='" & hdfid.Value & "'"
+            Dim sql As String = "DELETE FROM oss_foundgovernment WHERE IDfound='" & hdfid.Value & "'"
             Dim cmd As New SqlCommand(sql)
             mDB.fExecuteCommand(cmd, pValue)
 
@@ -437,4 +437,62 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
 #End Region
 
+    Private Sub gvpic_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gvpic.RowCommand
+        If mFunc.fCheckSession Then
+
+            If e.CommandName = "aviewfile" Then
+                Dim nDt As DataTable
+                Dim nID As Integer = gvpic.DataKeys(e.CommandArgument).Value
+                Dim sql As String
+                sql = "SELECT renamefile FROM oss_imgfoundgovernment WHERE ID_imgfound = '" & nID & "'"
+                Dim cmd As New SqlCommand(sql)
+                If mDB.fReadDataTable(cmd, nDt) Then
+                    If nDt.Rows.Count > 0 Then
+                        Dim renamefile As String
+                        renamefile = nDt.Rows(0).Item("renamefile")
+
+                        Response.ContentType = ContentType
+                        Response.AppendHeader("Content-Disposition", ("attachment; filename=" + renamefile))
+                        Response.TransmitFile(Server.MapPath("~/files-uploads/" + renamefile))
+
+                        Response.End()
+
+                    End If
+                End If
+
+            ElseIf e.CommandName = "aDel" Then
+
+                Dim nValue As String
+                Dim nID As Integer = gvpic.DataKeys(e.CommandArgument).Value
+                Dim nDt As DataTable
+
+                Dim sqldelimg As String
+                Dim namefile As String
+                sqldelimg = "SELECT renamefile FROM oss_imgfoundgovernment WHERE ID_imgfound ='" & nID & "'"
+
+                Dim cmd As New SqlCommand(sqldelimg)
+
+                If mDB.fReadDataTable(cmd, nDt) Then
+                    If nDt.Rows.Count > 0 Then
+                        namefile = nDt.Rows(0).Item("renamefile")
+
+                        Dim FileToDelete As String
+                        ' Set full path to file
+                        FileToDelete = Server.MapPath("~/files-uploads/") & namefile
+                        ' Delete a file
+                        File.Delete(FileToDelete)
+
+                    End If
+                End If
+
+                Dim sqldelete As String = "DELETE FROM oss_imgfoundgovernment WHERE ID_imgfound='" & nID & "'"
+                Dim cmddel As New SqlCommand(sqldelete)
+
+                If mDB.fExecuteCommand(cmddel, nValue) Then
+                    BindGrid()
+                End If
+
+            End If
+        End If
+    End Sub
 End Class

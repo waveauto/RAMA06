@@ -210,9 +210,6 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
             Dim ndutyID As Integer = gvData.DataKeys(e.CommandArgument).Value
             hdfrID.Value = ndutyID
 
-
-
-
             Dim Ssql As String = "SELECT rID FROM oos_foundpriv WHERE IDpriv='" & hdfrID.Value & "'"
             Dim cmds As New SqlCommand(Ssql)
             If mDB.fReadDataTable(cmds, nDt) Then
@@ -611,4 +608,7 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
 #End Region
 
+    Protected Sub gvpic_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvpic.SelectedIndexChanged
+
+    End Sub
 End Class

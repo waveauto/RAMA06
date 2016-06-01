@@ -86,22 +86,22 @@
                             <ItemStyle HorizontalAlign="left" />
                         </asp:BoundField>
 
-                     
+
 
                         <asp:TemplateField HeaderText="แก้ไขข้อมูล" ItemStyle-Width="100px">
-                                <ItemTemplate>
-                                    <asp:LinkButton ID="lbtnEdit" runat="server" Text="แก้ไข" CommandName="aEdit"
-                                        CommandArgument='<%# CType(Container, GridViewRow).RowIndex %>'></asp:LinkButton>
-                                </ItemTemplate>
-                                <HeaderStyle HorizontalAlign="Center" />
-                                <ItemStyle HorizontalAlign="Center" />
-                            </asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:LinkButton ID="lbtnEdit" runat="server" Text="แก้ไข" CommandName="aEdit"
+                                    CommandArgument='<%# CType(Container, GridViewRow).RowIndex %>'></asp:LinkButton>
+                            </ItemTemplate>
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <ItemStyle HorizontalAlign="Center" />
+                        </asp:TemplateField>
 
-                            <asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="100px">
-                                <ItemTemplate>
-                                    <asp:LinkButton ID="btnDel" runat="server" Text="ลบ" CommandName="aDel" CommandArgument="<%#CType(Container, GridViewRow).RowIndex%>"></asp:LinkButton>
-                                </ItemTemplate>
-                            </asp:TemplateField>
+                        <asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="100px">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="btnDel" runat="server" Text="ลบ" CommandName="aDel" CommandArgument="<%#CType(Container, GridViewRow).RowIndex%>"></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
 
                     </Columns>
                     <EmptyDataTemplate>
@@ -152,7 +152,7 @@
                             </div>
                             <hr />
 
-                           <div class="form-group">
+                            <div class="form-group">
                                 <label class="col-md-3 control-label required">แนบไฟล์วิดีโอ :</label>
                                 <div class="col-md-5">
                                     <asp:FileUpload ID="FileUpload4" class="form-control input-lg" runat="server" />
@@ -169,14 +169,9 @@
                          <span class="glyphicon glyphicon-floppy-disk"></span> &nbsp;บันทึกข้อมูล
                                 </asp:LinkButton>
                             </div>
-                            
-                            <hr />
-
-                             
 
                             <hr />
 
-                            
                             <asp:LinkButton ID="btnback" runat="server" CssClass="btn btn-default btn-lg" CausesValidation="false">
                          <span class="glyphicon glyphicon-chevron-left"></span> &nbsp;กลับหน้าเมนู
                             </asp:LinkButton>
@@ -198,7 +193,7 @@
             </div>
         </asp:View>
 
-        
+
 
     </asp:MultiView>
 </asp:Content>
