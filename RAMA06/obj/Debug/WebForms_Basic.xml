@@ -6,138 +6,286 @@ RAMA06
 </name>
 </assembly>
 <members>
-<member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.#ctor">
-	<remarks/>
-</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEducationByPersonIdCompleted">
-	<remarks/>
-</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmploymentByPersonIdCompleted">
-	<remarks/>
-</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.GetVersionCompleted">
-	<remarks/>
-</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdCompleted">
-	<remarks/>
-</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileAddressByPersonIdCompleted">
-	<remarks/>
-</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmailByPersonIdCompleted">
-	<remarks/>
-</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfilePersonalByPersonIdCompleted">
-	<remarks/>
-</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdForResearchCompleted">
-	<remarks/>
-</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileTelephoneByPersonIdCompleted">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEducationByPersonId(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEducationByPersonIdAsync(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEducationByPersonIdAsync(System.String,System.Object)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmploymentByPersonId(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmploymentByPersonIdAsync(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmploymentByPersonIdAsync(System.String,System.Object)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.GetVersion">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.GetVersionAsync">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.GetVersionAsync(System.Object)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonId(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdAsync(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdAsync(System.String,System.Object)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileAddressByPersonId(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileAddressByPersonIdAsync(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileAddressByPersonIdAsync(System.String,System.Object)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmailByPersonId(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmailByPersonIdAsync(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmailByPersonIdAsync(System.String,System.Object)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfilePersonalByPersonId(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfilePersonalByPersonIdAsync(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfilePersonalByPersonIdAsync(System.String,System.Object)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdForResearch(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdForResearchAsync(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdForResearchAsync(System.String,System.Object)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileTelephoneByPersonId(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileTelephoneByPersonIdAsync(System.String)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileTelephoneByPersonIdAsync(System.String,System.Object)">
-	<remarks/>
-</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.CancelAsync(System.Object)">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.HrStaffProfileWebService">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchProfileEducationByPersonIdCompletedEventHandler">
-	<remarks/>
-</member><member name="P:RAMA06.HRwebservice.SearchProfileEducationByPersonIdCompletedEventArgs.Result">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchProfileEducationByPersonIdCompletedEventArgs">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchProfileEmploymentByPersonIdCompletedEventHandler">
-	<remarks/>
-</member><member name="P:RAMA06.HRwebservice.SearchProfileEmploymentByPersonIdCompletedEventArgs.Result">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchProfileEmploymentByPersonIdCompletedEventArgs">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.GetVersionCompletedEventHandler">
-	<remarks/>
-</member><member name="P:RAMA06.HRwebservice.GetVersionCompletedEventArgs.Result">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.GetVersionCompletedEventArgs">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdCompletedEventHandler">
-	<remarks/>
-</member><member name="P:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdCompletedEventArgs.Result">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdCompletedEventArgs">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchProfileAddressByPersonIdCompletedEventHandler">
-	<remarks/>
-</member><member name="P:RAMA06.HRwebservice.SearchProfileAddressByPersonIdCompletedEventArgs.Result">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchProfileAddressByPersonIdCompletedEventArgs">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchProfileEmailByPersonIdCompletedEventHandler">
-	<remarks/>
-</member><member name="P:RAMA06.HRwebservice.SearchProfileEmailByPersonIdCompletedEventArgs.Result">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchProfileEmailByPersonIdCompletedEventArgs">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchProfilePersonalByPersonIdCompletedEventHandler">
-	<remarks/>
-</member><member name="P:RAMA06.HRwebservice.SearchProfilePersonalByPersonIdCompletedEventArgs.Result">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchProfilePersonalByPersonIdCompletedEventArgs">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdForResearchCompletedEventHandler">
-	<remarks/>
-</member><member name="P:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdForResearchCompletedEventArgs.Result">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdForResearchCompletedEventArgs">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchProfileTelephoneByPersonIdCompletedEventHandler">
-	<remarks/>
-</member><member name="P:RAMA06.HRwebservice.SearchProfileTelephoneByPersonIdCompletedEventArgs.Result">
-	<remarks/>
-</member><member name="T:RAMA06.HRwebservice.SearchProfileTelephoneByPersonIdCompletedEventArgs">
-	<remarks/>
+<member name="F:RAMA06.poptext.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.poptext.tbheadname">
+	<summary>
+tbheadname control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.multiview1">
+	<summary>
+multiview1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.viewshow">
+	<summary>
+viewshow control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.hdfPopID">
+	<summary>
+hdfPopID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.txtSearch">
+	<summary>
+txtSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.btnSearch">
+	<summary>
+btnSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.btnNew">
+	<summary>
+btnNew control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.gvData">
+	<summary>
+gvData control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.hdfSortField">
+	<summary>
+hdfSortField control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.hdfSortDirectoin">
+	<summary>
+hdfSortDirectoin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.ddlPage">
+	<summary>
+ddlPage control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.lblAllPage">
+	<summary>
+lblAllPage control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.viewadd">
+	<summary>
+viewadd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.hdfrID">
+	<summary>
+hdfrID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.rdbinsert1">
+	<summary>
+rdbinsert1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.rdbinsert2">
+	<summary>
+rdbinsert2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.viewaddtext">
+	<summary>
+viewaddtext control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.hdfmodetext">
+	<summary>
+hdfmodetext control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.tbheadname">
+	<summary>
+tbheadname control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.rqfvtxtName">
+	<summary>
+rqfvtxtName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.Literal1">
+	<summary>
+Literal1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.tbdetailname">
+	<summary>
+tbdetailname control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.FileUpload4">
+	<summary>
+FileUpload4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.btnupload">
+	<summary>
+btnupload control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.gvpic">
+	<summary>
+gvpic control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.btnsave">
+	<summary>
+btnsave control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.btnback">
+	<summary>
+btnback control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.viewaddvideo">
+	<summary>
+viewaddvideo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.hdfmodevideo">
+	<summary>
+hdfmodevideo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.tbHeadvideo">
+	<summary>
+tbHeadvideo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.RequiredFieldValidator1">
+	<summary>
+RequiredFieldValidator1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.FileUpload1">
+	<summary>
+FileUpload1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.btnsavevideo">
+	<summary>
+btnsavevideo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.btnbackvideo">
+	<summary>
+btnbackvideo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:RAMA06.Register.ErrorMessage">
 	<summary>
 ErrorMessage control.
@@ -3962,6 +4110,138 @@ DropDownList7 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.#ctor">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEducationByPersonIdCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmploymentByPersonIdCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.GetVersionCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileAddressByPersonIdCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmailByPersonIdCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfilePersonalByPersonIdCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdForResearchCompleted">
+	<remarks/>
+</member><member name="E:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileTelephoneByPersonIdCompleted">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEducationByPersonId(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEducationByPersonIdAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEducationByPersonIdAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmploymentByPersonId(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmploymentByPersonIdAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmploymentByPersonIdAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.GetVersion">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.GetVersionAsync">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.GetVersionAsync(System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonId(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileAddressByPersonId(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileAddressByPersonIdAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileAddressByPersonIdAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmailByPersonId(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmailByPersonIdAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileEmailByPersonIdAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfilePersonalByPersonId(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfilePersonalByPersonIdAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfilePersonalByPersonIdAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdForResearch(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdForResearchAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchEmployeeInfoByPersonIdForResearchAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileTelephoneByPersonId(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileTelephoneByPersonIdAsync(System.String)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.SearchProfileTelephoneByPersonIdAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RAMA06.HRwebservice.HrStaffProfileWebService.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.HrStaffProfileWebService">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileEducationByPersonIdCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchProfileEducationByPersonIdCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileEducationByPersonIdCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileEmploymentByPersonIdCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchProfileEmploymentByPersonIdCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileEmploymentByPersonIdCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.GetVersionCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.GetVersionCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.GetVersionCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileAddressByPersonIdCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchProfileAddressByPersonIdCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileAddressByPersonIdCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileEmailByPersonIdCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchProfileEmailByPersonIdCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileEmailByPersonIdCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfilePersonalByPersonIdCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchProfilePersonalByPersonIdCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfilePersonalByPersonIdCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdForResearchCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdForResearchCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchEmployeeInfoByPersonIdForResearchCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileTelephoneByPersonIdCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RAMA06.HRwebservice.SearchProfileTelephoneByPersonIdCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RAMA06.HRwebservice.SearchProfileTelephoneByPersonIdCompletedEventArgs">
+	<remarks/>
 </member><member name="F:RAMA06.RecordAll05.HyperLink28">
 	<summary>
 HyperLink28 control.
@@ -11146,6 +11426,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:RAMA06.Menu1.A14">
 	<summary>
 A14 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Menu1.A31">
+	<summary>
+A31 control.
 </summary>
 	<remarks>
 Auto-generated field.

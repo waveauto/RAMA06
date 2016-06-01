@@ -325,3 +325,4 @@ D:\WORK\ep7_RAMA06\onestop\trunk\RAMA06\obj\Debug\RAMA06.vbproj.GenerateResource
 D:\WORK\ep7_RAMA06\onestop\trunk\RAMA06\obj\Debug\RAMA06.dll
 D:\WORK\ep7_RAMA06\onestop\trunk\RAMA06\obj\Debug\WebForms_Basic.xml
 D:\WORK\ep7_RAMA06\onestop\trunk\RAMA06\obj\Debug\RAMA06.pdb
+D:\WORK\ep7_RAMA06\onestop\trunk\RAMA06\obj\Debug\RAMA06.vbprojResolveAssemblyReference.cache
