@@ -25,7 +25,7 @@ Public Class Arit
     End Sub
 
     Protected Sub cmdLogin_Click(sender As Object, e As EventArgs) Handles cmdLogin.Click
-        Dim nUser As New cUserre
+        Dim nUser As cUser = Session("cUser")
         'fLogin(tbcodestaff.Text, tbpassword.Text)
         Dim nDtt As DataTable
         Dim sql As String = "SELECT * FROM oss_pss WHERE pss ='" & tbpassword.Text & "'"
@@ -276,8 +276,6 @@ Public Class Arit
 
                 Exit Sub
         End Select
-
-
 
         If fSaveData(nValue) Then
 
