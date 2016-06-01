@@ -326,6 +326,13 @@ Public Class testindex
         If Not Page.IsPostBack Then
             fBindePaginggov()
             fShowDatagov(1)
+            If True Then
+                Dim userName As String = "John Doe"
+                Dim javaScript As String = (Convert.ToString("<script type='text/javascript'>" & vbLf + "<!--" & vbLf + "window.onload = function ()" & vbLf + "{" & vbLf + " window.open('poptext.aspx?value=") & userName) + "', 'newWin','width=800px,height=600px');" & vbLf + "}" & vbLf + "// -->" & vbLf + "</script>" & vbLf
+                Me.RegisterStartupScript("OnLoadScript", javaScript)
+            End If
+
+
 
         End If
     End Sub

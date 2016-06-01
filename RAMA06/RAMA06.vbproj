@@ -585,6 +585,7 @@
     <Content Include="npage\Agov.aspx" />
     <Content Include="npage\AhowtoProblem.aspx" />
     <Content Include="npage\Aman.aspx" />
+    <Content Include="npage\Ampop.aspx" />
     <Content Include="npage\Anew.aspx" />
     <Content Include="npage\Apop.aspx" />
     <Content Include="npage\Apriv.aspx" />
@@ -657,6 +658,7 @@
     <Content Include="Page\ViewPersonResearch.aspx" />
     <Content Include="Page\WebForm1.aspx" />
     <Content Include="Page\WebForm2.aspx" />
+    <Content Include="poptext.aspx" />
     <Content Include="RamaRegister.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -976,6 +978,13 @@
     </Compile>
     <Compile Include="npage\Aman.aspx.vb">
       <DependentUpon>Aman.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="npage\Ampop.aspx.designer.vb">
+      <DependentUpon>Ampop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="npage\Ampop.aspx.vb">
+      <DependentUpon>Ampop.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="npage\Anew.aspx.designer.vb">
@@ -1305,6 +1314,13 @@
     </Compile>
     <Compile Include="Page\WebForm2.aspx.vb">
       <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="poptext.aspx.designer.vb">
+      <DependentUpon>poptext.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="poptext.aspx.vb">
+      <DependentUpon>poptext.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="RamaRegister.aspx.designer.vb">
