@@ -326,11 +326,29 @@ Public Class testindex
         If Not Page.IsPostBack Then
             fBindePaginggov()
             fShowDatagov(1)
-            If True Then
-                Dim userName As String = "John Doe"
-                Dim javaScript As String = (Convert.ToString("<script type='text/javascript'>" & vbLf + "<!--" & vbLf + "window.onload = function ()" & vbLf + "{" & vbLf + " window.open('poptext.aspx?value=") & userName) + "', 'newWin','width=800px,height=600px');" & vbLf + "}" & vbLf + "// -->" & vbLf + "</script>" & vbLf
-                Me.RegisterStartupScript("OnLoadScript", javaScript)
+
+            Dim typefile As String
+            Dim nDt As DataTable
+            Dim sql As String = "SELECT * FROM oss_popup WHERE show='1'"
+            Dim cmd As New SqlCommand(sql)
+            Dim PopID As String
+            If mDB.fReadDataTable(cmd, nDt) Then
+                If nDt.Rows.Count > 0 Then
+                    typefile = nDt.Rows(0).Item("typefile")
+                    PopID = nDt.Rows(0).Item("PopID")
+                    Select Case typefile
+                        Case "text"
+                            Dim javaScript As String = (Convert.ToString("<script type='text/javascript'>" & vbLf + "<!--" & vbLf + "window.onload = function ()" & vbLf + "{" & vbLf + " window.open('poptext.aspx?value1=") & PopID) + "', 'newWin','width=800px,height=600px');" & vbLf + "}" & vbLf + "// -->" & vbLf + "</script>" & vbLf
+                            Me.RegisterStartupScript("OnLoadScript", javaScript)
+                        Case "vdo"
+                            Dim javaScript As String = (Convert.ToString("<script type='text/javascript'>" & vbLf + "<!--" & vbLf + "window.onload = function ()" & vbLf + "{" & vbLf + " window.open('popvdo.aspx?value1=") & PopID) + "', 'newWin','width=800px,height=600px');" & vbLf + "}" & vbLf + "// -->" & vbLf + "</script>" & vbLf
+                            Me.RegisterStartupScript("OnLoadScript", javaScript)
+                    End Select
+                End If
             End If
+
+
+        
 
 
 

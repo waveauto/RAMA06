@@ -630,6 +630,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="popupVideoHandler.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Page\Committee01.aspx" />
     <Content Include="Page\Committee02.aspx" />
@@ -659,6 +660,7 @@
     <Content Include="Page\WebForm1.aspx" />
     <Content Include="Page\WebForm2.aspx" />
     <Content Include="poptext.aspx" />
+    <Content Include="popvdo.aspx" />
     <Content Include="RamaRegister.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1321,6 +1323,16 @@
     </Compile>
     <Compile Include="poptext.aspx.vb">
       <DependentUpon>poptext.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="popupVideoHandler.ashx.vb">
+      <DependentUpon>popupVideoHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="popvdo.aspx.designer.vb">
+      <DependentUpon>popvdo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="popvdo.aspx.vb">
+      <DependentUpon>popvdo.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="RamaRegister.aspx.designer.vb">

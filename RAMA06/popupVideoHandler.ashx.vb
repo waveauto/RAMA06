@@ -1,13 +1,11 @@
-﻿
-Imports System.Web
+﻿Imports System.Web
 Imports System.Data.SqlClient
 Imports System.Web.Services
 
-Public Class VideoHandler
+Public Class popupVideoHandler
     Implements System.Web.IHttpHandler
 
     Sub ProcessRequest(ByVal context As HttpContext) Implements IHttpHandler.ProcessRequest
-
 
         Dim id As Integer = Integer.Parse(context.Request.QueryString("id"))
         Dim bytes As Byte()
@@ -16,8 +14,8 @@ Public Class VideoHandler
         Dim name As String
 
         Using cmd As New SqlCommand()
-            cmd.CommandText = "select * from oss_video where IDvideo=@IDvideo"
-            cmd.Parameters.AddWithValue("@IDvideo", id)
+            cmd.CommandText = "select * from oss_popup where PopID=@PopID"
+            cmd.Parameters.AddWithValue("@PopID", id)
             cmd.Connection = con
             con.Open()
             Dim sdr As SqlDataReader = cmd.ExecuteReader()
@@ -33,7 +31,6 @@ Public Class VideoHandler
         context.Response.ContentType = contentType
         context.Response.BinaryWrite(bytes)
         context.Response.[End]()
-
 
     End Sub
 
