@@ -6,23 +6,7 @@ RAMA06
 </name>
 </assembly>
 <members>
-<member name="F:RAMA06.popvdo.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.popvdo.DataList1">
-	<summary>
-DataList1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.Register.ErrorMessage">
+<member name="F:RAMA06.Register.ErrorMessage">
 	<summary>
 ErrorMessage control.
 </summary>
@@ -1561,6 +1545,22 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:RAMA06.ShowProposal.GridView2">
 	<summary>
 GridView2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.popvdo.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.popvdo.DataList1">
+	<summary>
+DataList1 control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -9738,6 +9738,54 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:RAMA06.testindex.btnshowother">
 	<summary>
 btnshowother control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.testindex.tbheadname">
+	<summary>
+tbheadname control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.testindex.Literal1">
+	<summary>
+Literal1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.testindex.gvpic">
+	<summary>
+gvpic control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.testindex.ltr2">
+	<summary>
+ltr2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.testindex.tbheadnamevideo">
+	<summary>
+tbheadnamevideo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.testindex.vdo">
+	<summary>
+vdo control.
 </summary>
 	<remarks>
 Auto-generated field.

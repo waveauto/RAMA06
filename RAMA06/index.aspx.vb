@@ -8,6 +8,7 @@ Public Class testindex
     Private mTool As New cTools
     Private mDB As New cDBTool
     Private mFunc As New cAppFunc
+    Private mPath As String = "/files-uploads/"
 
 #Region "GOV"
 #Region "EVEN"
@@ -327,22 +328,47 @@ Public Class testindex
             fBindePaginggov()
             fShowDatagov(1)
 
+
+
+
+
             Dim typefile As String
             Dim nDt As DataTable
             Dim sql As String = "SELECT * FROM oss_popup WHERE show='1'"
             Dim cmd As New SqlCommand(sql)
             Dim PopID As String
+            Dim rID As Integer
             If mDB.fReadDataTable(cmd, nDt) Then
                 If nDt.Rows.Count > 0 Then
                     typefile = nDt.Rows(0).Item("typefile")
                     PopID = nDt.Rows(0).Item("PopID")
                     Select Case typefile
                         Case "text"
-                            Dim javaScript As String = (Convert.ToString("<script type='text/javascript'>" & vbLf + "<!--" & vbLf + "window.onload = function ()" & vbLf + "{" & vbLf + " window.open('poptext.aspx?value1=") & PopID) + "', 'newWin','width=800px,height=600px');" & vbLf + "}" & vbLf + "// -->" & vbLf + "</script>" & vbLf
-                            Me.RegisterStartupScript("OnLoadScript", javaScript)
+
+                            rID = nDt.Rows(0).Item("rID")
+                            tbheadname.Text = nDt.Rows(0).Item("headname")
+                            Literal1.Text = nDt.Rows(0).Item("detailname")
+                            showpicture(rID)
+
+                            ScriptManager.RegisterStartupScript(Me, [GetType](), "showmodal", "$('#myModal').modal('show');", True)
+
+                            'Dim javaScript As String = (Convert.ToString("<script type='text/javascript'>" & vbLf + "<!--" & vbLf + "window.onload = function ()" & vbLf + "{" & vbLf + " window.open('poptext.aspx?value1=") & PopID) + "', 'newWin','width=800px,height=600px');" & vbLf + "}" & vbLf + "// -->" & vbLf + "</script>" & vbLf
+                            'Me.RegisterStartupScript("OnLoadScript", javaScript)
                         Case "vdo"
-                            Dim javaScript As String = (Convert.ToString("<script type='text/javascript'>" & vbLf + "<!--" & vbLf + "window.onload = function ()" & vbLf + "{" & vbLf + " window.open('popvdo.aspx?value1=") & PopID) + "', 'newWin','width=800px,height=600px');" & vbLf + "}" & vbLf + "// -->" & vbLf + "</script>" & vbLf
-                            Me.RegisterStartupScript("OnLoadScript", javaScript)
+                            PopID = nDt.Rows(0).Item("PopID")
+                            tbheadnamevideo.Text = nDt.Rows(0).Item("headname")
+                            ltr2.Text = PopID
+                            vdo.Src = ("popupVideoHandler.ashx?id=" + ltr2.Text)
+                            BindGrid(PopID)
+
+                            ScriptManager.RegisterStartupScript(Me, [GetType](), "showmodal", "$('#myModal1').modal('show');", True)
+
+
+
+
+
+                            'Dim javaScript As String = (Convert.ToString("<script type='text/javascript'>" & vbLf + "<!--" & vbLf + "window.onload = function ()" & vbLf + "{" & vbLf + " window.open('popvdo.aspx?value1=") & PopID) + "', 'newWin','width=800px,height=600px');" & vbLf + "}" & vbLf + "// -->" & vbLf + "</script>" & vbLf
+                            'Me.RegisterStartupScript("OnLoadScript", javaScript)
                     End Select
                 End If
             End If
@@ -353,6 +379,24 @@ Public Class testindex
 
 
         End If
+    End Sub
+
+
+    Private Sub BindGrid(ByVal id As Integer)
+
+
+        'Dim nDt As DataTable
+        'Dim sql As String = "SELECT * FROM oss_popup WHERE PopID='" & id & "'"
+        'Dim cmd As New SqlCommand(sql)
+        'If mDB.fReadDataTable(cmd, nDt) Then
+        '    If nDt.Rows.Count > 0 Then
+        '        DataList1.DataSource = nDt
+        '        DataList1.DataBind()
+        '    End If
+        'End If
+
+
+
     End Sub
 
     Private Function DateToDisplay(ByVal _dateTime As System.DateTime, ByVal _displayTime As Boolean) As String
@@ -546,5 +590,60 @@ Public Class testindex
 
     Private Sub ddlPaget2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlPaget2.SelectedIndexChanged
         fShowDatapriv(ddlPaget2.SelectedValue)
+    End Sub
+
+
+
+    Private Sub showpicture(ByVal rid As Integer)
+        Dim nUser As cUser = Session("cUser")
+        Dim nDt As DataTable
+        Dim strsql As String = "SELECT row_number() OVER (ORDER BY id_imgoss_popup ASC) AS row,* FROM oss_picpopup WHERE rID='" & rid & "'"
+
+        Dim cmd As New SqlCommand(strsql)
+        If mDB.fReadDataTable(cmd, nDt) Then
+            If nDt.Rows.Count > 0 Then
+                gvpic.Visible = True
+                gvpic.DataSource = nDt
+                gvpic.DataBind()
+            Else
+                gvpic.Visible = False
+            End If
+        End If
+    End Sub
+
+    Private Sub gvpic_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gvpic.RowCommand
+        If e.CommandName = "aviewfile" Then
+            Dim nDt As DataTable
+            Dim nID As Integer = gvpic.DataKeys(e.CommandArgument).Value
+            Dim sql As String
+            sql = "SELECT renamefile FROM oss_picpopup WHERE id_imgoss_popup = '" & nID & "'"
+            Dim cmd As New SqlCommand(sql)
+            If mDB.fReadDataTable(cmd, nDt) Then
+                If nDt.Rows.Count > 0 Then
+                    Dim renamefile As String
+                    renamefile = nDt.Rows(0).Item("renamefile")
+
+                    Response.ContentType = ContentType
+                    Response.AppendHeader("Content-Disposition", ("attachment; filename=" + renamefile))
+                    Response.TransmitFile(Server.MapPath("~/files-uploads/" + renamefile))
+
+                    Response.End()
+
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub gvpic_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gvpic.RowDataBound
+        If e.Row.RowType = DataControlRowType.DataRow Then
+            With CType(e.Row.FindControl("ltr1"), Literal)
+                .Text = "<a href='" & mPath & DataBinder.Eval(e.Row.DataItem, "renamefile") & "'>รูป</a>"
+                '.Text = String.Format("<a href='{0}' traget='_blank'>รูป</a>", Page.ResolveClientUrl("~" & mPath & DataBinder.Eval(e.Row.DataItem, "renamefile")))
+
+            End With
+
+           
+
+        End If
     End Sub
 End Class

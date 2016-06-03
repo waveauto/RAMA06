@@ -41,6 +41,60 @@ Partial Public Class testindex
     Protected WithEvents btnshowother As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
+    '''tbheadname control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tbheadname As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Literal1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Literal1 As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
+    '''gvpic control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvpic As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''ltr2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ltr2 As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
+    '''tbheadnamevideo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tbheadnamevideo As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''vdo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents vdo As Global.System.Web.UI.HtmlControls.HtmlVideo
+
+    '''<summary>
     '''multiview1 control.
     '''</summary>
     '''<remarks>

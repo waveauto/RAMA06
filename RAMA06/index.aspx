@@ -2,14 +2,38 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    
     <script type="text/javascript">
-        $(function () {
-            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-                var target = $(e.target).attr("href")
-                alert(target);
-                <%--$("<%=hdfmode.ClientID%>").val(target);--%>
-            });
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-title').text('New message to ' + recipient)
+            modal.find('.modal-body input').val(recipient)
         })
+
+
     </script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+          /* Get iframe src attribute value i.e. YouTube video url
+          and store it in a variable */
+          var url = $("#cartoonVideo").attr('src');
+
+          /* Assign empty url value to the iframe src attribute when
+          modal hide, which stop the video playing */
+          $("#myModal1").on('hide.bs.modal', function () {
+              $("#cartoonVideo").attr('src', '');
+          });
+
+          /* Assign the initially stored url back to the iframe src
+          attribute when modal is displayed again */
+          $("#myModal1").on('show.bs.modal', function () {
+              $("#cartoonVideo").attr('src', url);
+          });
+      });
+</script>
+
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -24,9 +48,105 @@
         <asp:LinkButton ID="btnshowother" runat="server" class="btn btn-primary btn-outline btn-lg">
                           &nbsp;ข่าวประชาสัมพันธ์ทั่วไป
         </asp:LinkButton>
+         
+
     </div>
 
+    <%--************************** modal--%>
+
+   <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+
+              
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">เรื่อง:</label>
+                            <asp:TextBox ID="tbheadname" runat="server" CssClass="form-control" placeholder="ชื่อPopup" ReadOnly="true"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">รายละเอียด:</label>
+                            <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                        </div>
+                    </form>
+
+                    <div class="table-responsive">
+                        <asp:GridView ID="gvpic" DataKeyNames="id_imgoss_popup" runat="server" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="False" AllowPaging="True" PageSize="20">
+                            <Columns>
+                                <asp:BoundField HeaderText="ลำดับ" DataField="row">
+                                    <HeaderStyle HorizontalAlign="Center" />
+                                    <ItemStyle HorizontalAlign="Center" />
+                                </asp:BoundField>
+                                <asp:TemplateField HeaderText="ขื่อไฟล์" HeaderStyle-Width="1300px">
+                                    <ItemTemplate>
+                                        <asp:Literal ID="ltr1" runat="server"></asp:Literal>
+                                        <%--<asp:LinkButton ID="btnnamefile" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "namefile") %>' CommandName="aviewfile" CommandArgument="<%#CType(Container, GridViewRow).RowIndex%>" ItemStyle-Width="1800px"></asp:LinkButton>--%>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+
+                        </asp:GridView>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <%--***************************************--%>
    <br />
+
+
+
+    <%--modal video***************************--%>
+
+   
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel1"></h4>
+                </div>
+                <div class="modal-body">
+
+             
+                    <div class="text-center">
+                        <asp:Literal ID="ltr2" runat="server" Visible="false"></asp:Literal>
+                        <div class="form-group">
+                            <%--<label for="recipient-name" class="control-label">เรื่อง:</label>--%>
+                            <asp:TextBox ID="tbheadnamevideo" runat="server" CssClass="form-control" placeholder="ชื่อPopup" ReadOnly="true"></asp:TextBox>
+                        </div>
+                        <video id="vdo" runat="server" src="popupVideoHandler.ashx?id={0}" controls></video>
+
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <%--***************************--%>
 
     <asp:MultiView ID="multiview1" runat="server" ActiveViewIndex="0">
 
