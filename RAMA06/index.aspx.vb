@@ -330,8 +330,6 @@ Public Class testindex
 
 
 
-
-
             Dim typefile As String
             Dim nDt As DataTable
             Dim sql As String = "SELECT * FROM oss_popup WHERE show='1'"
@@ -363,6 +361,19 @@ Public Class testindex
 
                             ScriptManager.RegisterStartupScript(Me, [GetType](), "showmodal", "$('#myModal1').modal('show');", True)
 
+
+                        Case "slid"
+                            rID = nDt.Rows(0).Item("rID")
+                            Dim strsql As String = "SELECT * FROM oss_picpopup WHERE rID='" & rID & "' ORDER BY id_imgoss_popup"
+                            Dim cmdpic As New SqlCommand(strsql)
+                            If mDB.fReadDataTable(cmdpic, nDt) Then
+                                If nDt.Rows.Count > 0 Then
+                                    images.DataSource = nDt
+                                    images.DataBind()
+                                End If
+                            End If
+
+                            ScriptManager.RegisterStartupScript(Me, [GetType](), "showmodal", "$('#myModalslid').modal('show');", True)
 
 
 

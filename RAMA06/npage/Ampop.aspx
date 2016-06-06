@@ -118,7 +118,10 @@
                         <asp:RadioButton ID="rdbinsert1" GroupName="insert" runat="server" Text="แสดงข้อมูลเป็นข้อความ" OnSelectedIndexChanged="rdbinsert1_SelectedIndexChanged" AutoPostBack="true" />
                     </label>
                     <label class="radio-inline">
-                        <asp:RadioButton ID="rdbinsert2" GroupName="insert" runat="server" Text="แสดงข้อมูลเป็นวิดีโอ" OnSelectedIndexChanged="rdbinsert_SelectedIndexChanged" AutoPostBack="true" />
+                        <asp:RadioButton ID="rdbinsert2" GroupName="insert" runat="server" Text="แสดงข้อมูลเป็นวิดีโอ" OnSelectedIndexChanged="rdbinsert2_SelectedIndexChanged" AutoPostBack="true" />
+                    </label>
+                     <label class="radio-inline">
+                        <asp:RadioButton ID="rdbinsert3" GroupName="insert" runat="server" Text="แสดงข้อมูลเป็นรูปสไลด์" OnSelectedIndexChanged="rdbinsert3_SelectedIndexChanged" AutoPostBack="true" />
                     </label>
 
 
@@ -285,6 +288,101 @@
             </div>
         </asp:View>
 
+        <asp:View ID="viewaddslid" runat="server">
+            <div class="container">
+                  <asp:HiddenField ID="hdfmodepicslid" runat="server" />
+                <h2 class="text-center">ข้อมูลpopupเป็นรุปสไลด์</h2>
+                <div class="panel panel-warning">
+                    <div class="panel-body">
+                        <div class="form-horizontal">
 
+                            <div class="form-group">
+                                <label class="col-md-3 control-label required">ชื่อPopup :</label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="tbpicheadname" runat="server" CssClass="form-control input-lg" placeholder="ชื่อPopup"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbpicheadname" Display="Dynamic" CssClass="label label-danger">
+                             กรุณากรอกชื่อPopup
+                                    </asp:RequiredFieldValidator>
+                                </div>
+
+                            </div>
+                            <hr />
+                            <hr />
+                            <div class="form-group">
+                                <label class="col-md-3 control-label required">แนบไฟล์ (ถ้ามี) :</label>
+                                <div class="col-md-4">
+                                    <asp:FileUpload ID="FileUpload2" class="form-control input-lg" runat="server" />
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3"></label>
+
+                                <div class="col-md-4">
+                                    <asp:LinkButton ID="btnsavepicslid" runat="server" CssClass="btn btn-primary btn-lg" CausesValidation="false">
+                                    <span class="glyphicon glyphicon-circle-arrow-down"></span> &nbsp;Upload File
+                                    </asp:LinkButton>
+                                </div>
+                                <hr />
+
+                            </div>
+
+                            <div class="table-responsive">
+                                <asp:GridView ID="gvpicpop" DataKeyNames="id_imgoss_popup" runat="server" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="False" AllowPaging="True" PageSize="20">
+                                    <Columns>
+                                        <asp:BoundField HeaderText="ลำดับ" DataField="row">
+                                            <HeaderStyle HorizontalAlign="Center" />
+                                            <ItemStyle HorizontalAlign="Center" />
+                                        </asp:BoundField>
+                                        <asp:TemplateField HeaderText="ขื่อไฟล์" HeaderStyle-Width="1300px">
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="btnnamefile" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "namefile") %>' CommandName="aviewfile" CommandArgument="<%#CType(Container, GridViewRow).RowIndex%>" ItemStyle-Width="1800px"></asp:LinkButton>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="Center">
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="btnDel" runat="server" Text="ลบ" CommandName="aDel" CommandArgument="<%#CType(Container, GridViewRow).RowIndex%>"></asp:LinkButton>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                    </Columns>
+
+                                </asp:GridView>
+                            </div>
+                            <hr />
+
+
+                            <div class="text-center">
+                                <%-- <asp:LinkButton ID="btnview" runat="server" CssClass="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                         <span class="glyphicon glyphicon-floppy-disk"></span> &nbsp;Preview
+                                </asp:LinkButton>--%>
+
+                                <asp:LinkButton ID="btnsavepicpop" runat="server" CssClass="btn btn-primary btn-lg">
+                         <span class="glyphicon glyphicon-floppy-disk"></span> &nbsp;บันทึกข้อมูล
+                                </asp:LinkButton>
+                            </div>
+                            <asp:LinkButton ID="btnbackpicpopup" runat="server" CssClass="btn btn-default btn-lg" CausesValidation="false">
+                         <span class="glyphicon glyphicon-chevron-left"></span> &nbsp;กลับหน้าเมนู
+                            </asp:LinkButton>
+
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+        </asp:View>
     </asp:MultiView>
 </asp:Content>

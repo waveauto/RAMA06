@@ -6,7 +6,15 @@ RAMA06
 </name>
 </assembly>
 <members>
-<member name="F:RAMA06.Register.ErrorMessage">
+<member name="F:RAMA06.testindex1.images">
+	<summary>
+images control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Register.ErrorMessage">
 	<summary>
 ErrorMessage control.
 </summary>
@@ -9791,6 +9799,14 @@ vdo control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:RAMA06.testindex.images">
+	<summary>
+images control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:RAMA06.testindex.multiview1">
 	<summary>
 multiview1 control.
@@ -10607,6 +10623,14 @@ rdbinsert2 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:RAMA06.Ampop.rdbinsert3">
+	<summary>
+rdbinsert3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:RAMA06.Ampop.viewaddtext">
 	<summary>
 viewaddtext control.
@@ -10746,6 +10770,78 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:RAMA06.Ampop.btnbackvideo">
 	<summary>
 btnbackvideo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.viewaddslid">
+	<summary>
+viewaddslid control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.hdfmodepicslid">
+	<summary>
+hdfmodepicslid control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.tbpicheadname">
+	<summary>
+tbpicheadname control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.RequiredFieldValidator2">
+	<summary>
+RequiredFieldValidator2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.FileUpload2">
+	<summary>
+FileUpload2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.btnsavepicslid">
+	<summary>
+btnsavepicslid control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.gvpicpop">
+	<summary>
+gvpicpop control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.btnsavepicpop">
+	<summary>
+btnsavepicpop control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.Ampop.btnbackpicpopup">
+	<summary>
+btnbackpicpopup control.
 </summary>
 	<remarks>
 Auto-generated field.

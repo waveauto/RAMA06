@@ -41,6 +41,15 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
         End If
     End Sub
 
+    Protected Sub rdbinsert3_CheckedChanged(sender As Object, e As EventArgs) Handles rdbinsert3.CheckedChanged
+        If rdbinsert3.Checked = True Then
+            hdfmodepicslid.Value = "NEW"
+            runrID()
+
+            multiview1.SetActiveView(viewaddslid)
+        End If
+    End Sub
+
     Protected Sub btnsavevideo_Click(sender As Object, e As EventArgs) Handles btnsavevideo.Click
         Dim nValue As String
 
@@ -121,7 +130,28 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
                 showdatavideo(hdfPopID.Value)
                 multiview1.SetActiveView(viewaddvideo)
+
+            ElseIf typefile = "slid" Then
+
+                hdfPopID.Value = ndutyID
+                hdfmodepicslid.Value = "EDIT"
+
+
+                Dim nDt As DataTable
+                Dim sql As String = "SELECT rID FROM oss_popup WHERE PopID='" & hdfPopID.Value & "'"
+                Dim cmd As New SqlCommand(sql)
+                If mDB.fReadDataTable(cmd, nDt) Then
+                    If nDt.Rows.Count > 0 Then
+                        hdfrID.Value = nDt.Rows(0).Item("rID")
+
+                        showdataslid(hdfPopID.Value)
+                        showdatapicslid(hdfrID.Value)
+                        multiview1.SetActiveView(viewaddslid)
+                    End If
+                End If
+
             End If
+
 
         ElseIf e.CommandName = "aDel" Then
 
@@ -178,6 +208,43 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
                 fBindePaging()
                 fShowData(1)
+
+            ElseIf typefile = "slid" Then
+                Dim pValue As String
+                Dim nDt As DataTable
+
+
+                hdfPopID.Value = ndutyID
+
+                Dim Ssql As String = "SELECT rID FROM oss_popup WHERE PopID='" & hdfPopID.Value & "'"
+                Dim cmds As New SqlCommand(Ssql)
+                If mDB.fReadDataTable(cmds, nDt) Then
+                    If nDt.Rows.Count > 0 Then
+
+                        Dim strsql As String = "SELECT * FROM oss_picpopup WHERE rID = '" & nDt.Rows(0).Item("rID") & "'"
+                        Dim cmdd As New SqlCommand(strsql)
+                        Dim i As Integer
+                        If mDB.fReadDataTable(cmdd, nDt) Then
+                            If nDt.Rows.Count > 0 Then
+                                For i = 0 To nDt.Rows.Count - 1
+                                    delpic(nDt.Rows(i).Item("id_imgoss_popup"))
+                                Next
+                            End If
+                        End If
+
+                    End If
+                End If
+
+                Dim sql As String = "DELETE FROM oss_popup WHERE PopID='" & hdfPopID.Value & "'"
+                Dim cmd As New SqlCommand(sql)
+                mDB.fExecuteCommand(cmd, pValue)
+
+
+
+
+                fBindePaging()
+                fShowData(1)
+
             End If
 
         End If
@@ -370,7 +437,7 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
                     If fUpdateDatatext(nValue) Then
                         hdfmodevideo.Value = "NEW"
-
+                        runrID()
                         mTool.fShowAlert(cTools.alertCssClassType.success, Me, nValue, "บันทึกข้อมูลเรียบร้อยแล้ว ")
                     End If
             End Select
@@ -379,6 +446,183 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
 
         End If
     End Sub
+
+    Protected Sub btnsavepicpop_Click(sender As Object, e As EventArgs) Handles btnsavepicpop.Click
+        Dim nValue As String
+
+        If mFunc.fCheckSession Then
+
+            Select Case hdfmodepicslid.Value
+                Case "NEW"
+                    Dim fileExt As String = Path.GetExtension(FileUpload2.FileName)
+
+
+                    If fSaveDatapicslid(nValue) Then
+                        tbpicheadname.Text = ""
+                        runrID()
+                        mTool.fShowAlert(cTools.alertCssClassType.success, Me, nValue, "บันทึกข้อมูลเรียบร้อยแล้ว ")
+                    Else
+                        'ShowMessage("Choose a valid video file", MessageType.Error)
+                    End If
+
+
+                Case "EDIT"
+                    Dim fileExt As String = Path.GetExtension(FileUpload2.FileName)
+
+
+
+                    If fUpdatepicslid(nValue) Then
+                        hdfmodevideo.Value = "NEW"
+                        runrID()
+                        mTool.fShowAlert(cTools.alertCssClassType.success, Me, nValue, "บันทึกข้อมูลเรียบร้อยแล้ว ")
+                    End If
+
+
+
+            End Select
+
+        End If
+
+    End Sub
+
+    Protected Sub btnsavepicslid_Click(sender As Object, e As EventArgs) Handles btnsavepicslid.Click
+        If mFunc.fCheckSession() Then
+            Dim nValue As String
+            Dim nUser As cUser = Session("cUser")
+
+            If FileUpload2.FileName = "" Then
+                mTool.fShowAlert(cTools.alertCssClassType.danger, Me, nValue, " กรุณาเลือกไฟล์ก่อนอัพโหลดค่ะ ")
+                Exit Sub
+            End If
+            If FileUpload2.PostedFile.ContentLength > 2147483647 Then
+                mTool.fShowAlert(cTools.alertCssClassType.danger, Me, nValue, " ไฟล์มีขนาดเกิน 2MB.ค่ะ ")
+                Exit Sub
+            End If
+
+            If True Then
+                If FileUpload2.HasFile Then
+                    Try
+
+                        Dim intDiceRoll As Long
+                        intDiceRoll = GetRandomNumber(1, 999999999)
+
+                        Dim ext As String = Path.GetExtension(FileUpload2.FileName)
+                        Dim filesize As Integer
+                        filesize = FileUpload2.PostedFile.ContentLength
+                        'InsertT01_IMG
+
+                        Dim rename As String = checkrenamefile(intDiceRoll, ext)
+
+                        Dim sqlinsert As String = ""
+                        sqlinsert = "INSERT INTO oss_picpopup(rID,namefile,renamefile,sizefile,typefile)" & _
+                        "VALUES" & _
+                        "(@rID,@namefile,@renamefile,@sizefile,@typefile)"
+
+                        Dim cmd As New SqlCommand(sqlinsert)
+                        cmd.Parameters.AddWithValue("@rID", hdfrID.Value)
+                        cmd.Parameters.AddWithValue("@namefile", FileUpload2.FileName)
+                        cmd.Parameters.AddWithValue("@renamefile", rename)
+                        cmd.Parameters.AddWithValue("@sizefile", filesize)
+                        cmd.Parameters.AddWithValue("@typefile", ext)
+
+                        Try
+                            mDB.fExecuteCommand(cmd, 0)
+
+                            BindGridpicslid()
+
+                        Catch ex As Exception
+
+                            mTool.fShowAlert(cTools.alertCssClassType.danger, Me, nValue, " ไม่สามารถบันทึกข้อมูลได้ ")
+                        Finally
+
+                        End Try
+
+
+                        FileUpload2.SaveAs(Server.MapPath("~/files-uploads/") & rename)
+
+                    Catch ex As Exception
+
+
+                        mTool.fShowAlert(cTools.alertCssClassType.danger, Me, nValue, " The file could not be uploaded. The following error occured ")
+                    End Try
+                End If
+            End If
+        End If
+    End Sub
+
+    Protected Sub btnbackpicpopup_Click(sender As Object, e As EventArgs) Handles btnbackpicpopup.Click
+        fBindePaging()
+        fShowData(1)
+
+        multiview1.SetActiveView(viewshow)
+    End Sub
+
+    Protected Sub gvData_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvData.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub gvpicpop_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gvpicpop.RowCommand
+        If mFunc.fCheckSession Then
+
+            If e.CommandName = "aviewfile" Then
+                Dim nDt As DataTable
+                Dim nID As Integer = gvpicpop.DataKeys(e.CommandArgument).Value
+                Dim sql As String
+                sql = "SELECT renamefile FROM oss_picpopup WHERE id_imgoss_popup = '" & nID & "'"
+                Dim cmd As New SqlCommand(sql)
+                If mDB.fReadDataTable(cmd, nDt) Then
+                    If nDt.Rows.Count > 0 Then
+                        Dim renamefile As String
+                        renamefile = nDt.Rows(0).Item("renamefile")
+
+                        Response.ContentType = ContentType
+                        Response.AppendHeader("Content-Disposition", ("attachment; filename=" + renamefile))
+                        Response.TransmitFile(Server.MapPath("~/files-uploads/" + renamefile))
+
+                        Response.End()
+
+                    End If
+                End If
+
+            ElseIf e.CommandName = "aDel" Then
+
+                Dim nValue As String
+                Dim nID As Integer = gvpicpop.DataKeys(e.CommandArgument).Value
+                Dim nDt As DataTable
+
+                Dim sqldelimg As String
+                Dim namefile As String
+                sqldelimg = "SELECT renamefile FROM oss_picpopup WHERE id_imgoss_popup ='" & nID & "'"
+
+                Dim cmd As New SqlCommand(sqldelimg)
+
+                If mDB.fReadDataTable(cmd, nDt) Then
+                    If nDt.Rows.Count > 0 Then
+                        namefile = nDt.Rows(0).Item("renamefile")
+
+                        Dim FileToDelete As String
+                        ' Set full path to file
+                        FileToDelete = Server.MapPath("~/files-uploads/") & namefile
+                        ' Delete a file
+                        File.Delete(FileToDelete)
+
+                    End If
+                End If
+
+                Dim sqldelete As String = "DELETE FROM oss_picpopup WHERE id_imgoss_popup='" & nID & "'"
+                Dim cmddel As New SqlCommand(sqldelete)
+
+                If mDB.fExecuteCommand(cmddel, nValue) Then
+                    BindGridpicslid()
+                End If
+
+            End If
+        End If
+    End Sub
+
+    
+
+
 #End Region
 
 #Region "FUNCTION"
@@ -738,7 +982,107 @@ CType(System.DateTime.Now.Ticks Mod System.Int32.MaxValue, Integer))
         End If
         Return nVal
     End Function
-#End Region
 
+    Private Function fSaveDatapicslid(ByRef pValue As String) As Boolean
+        Dim nSb As New StringBuilder
+        nSb.Append("insert into oss_popup(rID,headname,detailname,typefile,video,video_name,videosize,show) ")
+        nSb.Append("values(@rID,@headname,@detailname,@typefile,@video,@video_name,@videosize,@show)")
+        Dim nComd As New SqlCommand(nSb.ToString)
+        fSetParaValuepicslid(nComd)
+        Return mDB.fExecuteCommand(nComd, pValue)
+    End Function
+
+    Private Sub fSetParaValuepicslid(ByRef pCommand As SqlCommand)
+        Dim nUser As cUser = Session("cUser")
+        With pCommand.Parameters
+
+            .AddWithValue("@rID", hdfrID.Value)
+            .AddWithValue("@headname", tbpicheadname.Text)
+            .AddWithValue("@detailname", "")
+            .AddWithValue("@typefile", "slid")
+            .AddWithValue("@video", System.Data.SqlTypes.SqlBinary.Null)
+            .AddWithValue("@video_name", "")
+            .AddWithValue("@videosize", "")
+            .AddWithValue("@show", "0")
+
+        End With
+
+    End Sub
+
+    Private Sub BindGridpicslid()
+
+        Dim nUser As cUser = Session("cUser")
+        Dim nDt As DataTable
+        Dim strsql As String = "SELECT row_number() OVER (ORDER BY id_imgoss_popup ASC) AS row,* FROM oss_picpopup WHERE rID='" & hdfrID.Value & "'"
+
+        Dim cmd As New SqlCommand(strsql)
+        If mDB.fReadDataTable(cmd, nDt) Then
+            If nDt.Rows.Count > 0 Then
+                gvpicpop.Visible = True
+
+                gvpicpop.DataSource = nDt
+                gvpicpop.DataBind()
+            Else
+                gvpicpop.Visible = False
+            End If
+        End If
+    End Sub
+
+    Private Sub showdatapicslid(ByVal id As Integer)
+
+        Dim nUser As cUser = Session("cUser")
+        Dim nDt As DataTable
+        Dim strsql As String = "SELECT row_number() OVER (ORDER BY id_imgoss_popup ASC) AS row,* FROM oss_picpopup WHERE rID='" & id & "'"
+
+        Dim cmd As New SqlCommand(strsql)
+        If mDB.fReadDataTable(cmd, nDt) Then
+            If nDt.Rows.Count > 0 Then
+                gvpicpop.Visible = True
+
+                gvpicpop.DataSource = nDt
+                gvpicpop.DataBind()
+            Else
+                gvpicpop.Visible = False
+            End If
+        End If
+    End Sub
+
+    Private Sub showdataslid(ByVal id As Integer)
+        Dim sql As String = "SELECT * FROM oss_popup WHERE popID='" & id & "'"
+        Dim cmd As New SqlCommand(sql)
+        Dim nDt As DataTable
+        If mDB.fReadDataTable(cmd, nDt) Then
+            If nDt.Rows.Count > 0 Then
+                tbpicheadname.Text = nDt.Rows(0).Item("headname")
+
+            End If
+        End If
+    End Sub
+
+    Private Function fUpdatepicslid(ByRef pValue As String) As Boolean
+
+        Dim nSb As New System.Text.StringBuilder
+        nSb.Append("update oss_popup set ")
+        nSb.Append("headname = @headname ")
+        nSb.Append("where PopID = @PopID")
+        Dim nComd As New SqlCommand(nSb.ToString)
+        fSetParaValueupslid(nComd)
+        Return mDB.fExecuteCommand(nComd, pValue)
+    End Function
+
+    Private Sub fSetParaValueupslid(ByRef pCommand As SqlCommand)
+        Dim nUser As cUser = Session("cUser")
+
+        With pCommand.Parameters
+            .AddWithValue("@headname", tbpicheadname.Text)
+
+            .AddWithValue("@PopID", hdfPopID.Value)
+
+        End With
+
+    End Sub
+
+
+#End Region
 
 End Class

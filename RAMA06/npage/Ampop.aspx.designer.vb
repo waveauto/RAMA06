@@ -149,6 +149,15 @@ Partial Public Class Ampop
     Protected WithEvents rdbinsert2 As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
+    '''rdbinsert3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rdbinsert3 As Global.System.Web.UI.WebControls.RadioButton
+
+    '''<summary>
     '''viewaddtext control.
     '''</summary>
     '''<remarks>
@@ -309,4 +318,85 @@ Partial Public Class Ampop
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnbackvideo As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''viewaddslid control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents viewaddslid As Global.System.Web.UI.WebControls.View
+
+    '''<summary>
+    '''hdfmodepicslid control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hdfmodepicslid As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
+    '''tbpicheadname control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tbpicheadname As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''RequiredFieldValidator2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''FileUpload2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents FileUpload2 As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''btnsavepicslid control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnsavepicslid As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''gvpicpop control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvpicpop As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''btnsavepicpop control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnsavepicpop As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''btnbackpicpopup control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnbackpicpopup As Global.System.Web.UI.WebControls.LinkButton
 End Class

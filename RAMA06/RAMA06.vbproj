@@ -698,6 +698,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="index.aspx" />
+    <Content Include="testindex.aspx" />
     <Content Include="userControl\ucSelectProject.ascx" />
     <Content Include="Vvdo.aspx" />
     <Content Include="VVnew.aspx" />
@@ -1359,6 +1360,13 @@
     </Compile>
     <Compile Include="npage\VideoHandler.ashx.vb">
       <DependentUpon>VideoHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="testindex.aspx.designer.vb">
+      <DependentUpon>testindex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testindex.aspx.vb">
+      <DependentUpon>testindex.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="userControl\ucSelectProject.ascx.designer.vb">
       <DependentUpon>ucSelectProject.ascx</DependentUpon>
