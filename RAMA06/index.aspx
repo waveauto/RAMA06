@@ -33,7 +33,11 @@
       });
 </script>
 
-    
+    <script>
+        $('.carousel').carousel({
+            interval: 3000
+        });
+    </script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -157,6 +161,7 @@
                             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
                         </ol>
 
                         <!-- Wrapper for slides -->
@@ -186,16 +191,16 @@
                             <asp:Repeater ID="images" runat="server">
                                 <AlternatingItemTemplate>
                                     <div class="item active">
-                                        <img src="/files-uploads/<%# Eval("renamefile").ToString()%>"style="width: 888px;
-                                    height: 388px" />
+                                        <img src="http://10.6.22.114/RAMA06/RAMA06/files-uploads/<%# Eval("renamefile").ToString()%>"style="width: 888px;
+                                    height: 388px" class="img-responsive" />
                                         <%--<img src='/resimler/<%#Eval("SliderResim")%>' class="img-responsive" alt="">--%>
                                     </div>
                                 </AlternatingItemTemplate>
 
                                 <ItemTemplate>
                                     <div class="item">
-                                        <img src="/files-uploads/<%# Eval("renamefile").ToString() %>"style="width: 848px;
-                                    height: 388px" />
+                                        <img src="http://10.6.22.114/RAMA06/RAMA06/files-uploads/<%# Eval("renamefile").ToString() %>"style="width: 888px;
+                                    height: 388px" class="img-responsive" />
                                     </div>
                                 </ItemTemplate>
                             </asp:Repeater>
