@@ -528,6 +528,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.datetimepicker.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\StyleSheet1.css" />
     <Content Include="Content\testifream.css" />
     <Content Include="Data\IOR AS IS.jpg" />
     <Content Include="Data\IOR TO BE.jpg" />

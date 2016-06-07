@@ -6,15 +6,7 @@ RAMA06
 </name>
 </assembly>
 <members>
-<member name="F:RAMA06.testindex1.images">
-	<summary>
-images control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:RAMA06.Register.ErrorMessage">
+<member name="F:RAMA06.Register.ErrorMessage">
 	<summary>
 ErrorMessage control.
 </summary>
@@ -13506,6 +13498,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:RAMA06.RecordAll02.HyperLink3">
 	<summary>
 HyperLink3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.testindex1.images">
+	<summary>
+images control.
 </summary>
 	<remarks>
 Auto-generated field.

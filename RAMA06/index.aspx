@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MSPFirst.Master" CodeBehind="index.aspx.vb" Inherits="RAMA06.testindex" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    
-    <script type="text/javascript">
+   <%-- <script type="text/javascript">
         $('#exampleModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
             var recipient = button.data('whatever') // Extract info from data-* attributes
@@ -37,8 +37,12 @@
         $('.carousel').carousel({
             interval: 3000
         });
-    </script>
+    </script>--%>
 
+    <link href="Content/StyleSheet1.css" rel="stylesheet" />
+ 
+
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
@@ -185,9 +189,8 @@
                                     ...
                                 </div>
                             </div>--%>
-                           <div class="col-md-1">
-
-                           </div>
+                         
+                           
                             <asp:Repeater ID="images" runat="server">
                                 <AlternatingItemTemplate>
                                     <div class="item active">
@@ -199,6 +202,7 @@
 
                                 <ItemTemplate>
                                     <div class="item">
+                        
                                         <img src="http://10.6.22.114/RAMA06/RAMA06/files-uploads/<%# Eval("renamefile").ToString() %>"style="width: 888px;
                                     height: 388px" class="img-responsive" />
                                     </div>
