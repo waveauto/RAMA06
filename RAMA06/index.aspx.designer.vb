@@ -59,13 +59,13 @@ Partial Public Class testindex
     Protected WithEvents Literal1 As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
-    '''gvpic control.
+    '''gvpicmodal control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents gvpic As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents gvpicmodal As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''ltr2 control.
@@ -266,13 +266,13 @@ Partial Public Class testindex
     Protected WithEvents lblAllPaget2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''viewother control.
+    '''vother control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents viewother As Global.System.Web.UI.WebControls.View
+    Protected WithEvents vother As Global.System.Web.UI.WebControls.View
 
     '''<summary>
     '''hdfid control.

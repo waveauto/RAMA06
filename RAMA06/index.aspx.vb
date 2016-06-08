@@ -202,7 +202,7 @@ Public Class testindex
     Protected Sub btnshowother_Click(sender As Object, e As EventArgs) Handles btnshowother.Click
         fBindePaging()
         fShowData(1)
-        multiview1.SetActiveView(viewother)
+        multiview1.SetActiveView(vother)
     End Sub
 #End Region
 
@@ -350,14 +350,13 @@ Public Class testindex
 
                             ScriptManager.RegisterStartupScript(Me, [GetType](), "showmodal", "$('#myModal').modal('show');", True)
 
-                            'Dim javaScript As String = (Convert.ToString("<script type='text/javascript'>" & vbLf + "<!--" & vbLf + "window.onload = function ()" & vbLf + "{" & vbLf + " window.open('poptext.aspx?value1=") & PopID) + "', 'newWin','width=800px,height=600px');" & vbLf + "}" & vbLf + "// -->" & vbLf + "</script>" & vbLf
-                            'Me.RegisterStartupScript("OnLoadScript", javaScript)
+
                         Case "vdo"
                             PopID = nDt.Rows(0).Item("PopID")
                             tbheadnamevideo.Text = nDt.Rows(0).Item("headname")
                             ltr2.Text = PopID
                             vdo.Src = ("popupVideoHandler.ashx?id=" + ltr2.Text)
-                            BindGrid(PopID)
+
 
                             ScriptManager.RegisterStartupScript(Me, [GetType](), "showmodal", "$('#myModal1').modal('show');", True)
 
@@ -375,40 +374,13 @@ Public Class testindex
 
                             ScriptManager.RegisterStartupScript(Me, [GetType](), "showmodal", "$('#myModalslid').modal('show');", True)
 
-
-
-
-                            'Dim javaScript As String = (Convert.ToString("<script type='text/javascript'>" & vbLf + "<!--" & vbLf + "window.onload = function ()" & vbLf + "{" & vbLf + " window.open('popvdo.aspx?value1=") & PopID) + "', 'newWin','width=800px,height=600px');" & vbLf + "}" & vbLf + "// -->" & vbLf + "</script>" & vbLf
-                            'Me.RegisterStartupScript("OnLoadScript", javaScript)
                     End Select
                 End If
             End If
 
-
-        
-
-
-
         End If
     End Sub
 
-
-    Private Sub BindGrid(ByVal id As Integer)
-
-
-        'Dim nDt As DataTable
-        'Dim sql As String = "SELECT * FROM oss_popup WHERE PopID='" & id & "'"
-        'Dim cmd As New SqlCommand(sql)
-        'If mDB.fReadDataTable(cmd, nDt) Then
-        '    If nDt.Rows.Count > 0 Then
-        '        DataList1.DataSource = nDt
-        '        DataList1.DataBind()
-        '    End If
-        'End If
-
-
-
-    End Sub
 
     Private Function DateToDisplay(ByVal _dateTime As System.DateTime, ByVal _displayTime As Boolean) As String
         Dim _day As String
@@ -613,19 +585,19 @@ Public Class testindex
         Dim cmd As New SqlCommand(strsql)
         If mDB.fReadDataTable(cmd, nDt) Then
             If nDt.Rows.Count > 0 Then
-                gvpic.Visible = True
-                gvpic.DataSource = nDt
-                gvpic.DataBind()
+                gvpicmodal.Visible = True
+                gvpicmodal.DataSource = nDt
+                gvpicmodal.DataBind()
             Else
-                gvpic.Visible = False
+                gvpicmodal.Visible = False
             End If
         End If
     End Sub
 
-    Private Sub gvpic_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gvpic.RowCommand
+    Private Sub gvpicmodal_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gvpicmodal.RowCommand
         If e.CommandName = "aviewfile" Then
             Dim nDt As DataTable
-            Dim nID As Integer = gvpic.DataKeys(e.CommandArgument).Value
+            Dim nID As Integer = gvpicmodal.DataKeys(e.CommandArgument).Value
             Dim sql As String
             sql = "SELECT renamefile FROM oss_picpopup WHERE id_imgoss_popup = '" & nID & "'"
             Dim cmd As New SqlCommand(sql)
@@ -645,7 +617,7 @@ Public Class testindex
         End If
     End Sub
 
-    Private Sub gvpic_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gvpic.RowDataBound
+    Private Sub gvpicmodal_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gvpicmodal.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
             With CType(e.Row.FindControl("ltr1"), Literal)
                 .Text = "<a href='" & mPath & DataBinder.Eval(e.Row.DataItem, "renamefile") & "'>รูป</a>"
@@ -653,8 +625,10 @@ Public Class testindex
 
             End With
 
-           
+
 
         End If
     End Sub
+
+
 End Class

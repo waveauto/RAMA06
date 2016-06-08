@@ -528,7 +528,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.datetimepicker.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\StyleSheet1.css" />
     <Content Include="Content\testifream.css" />
     <Content Include="Data\IOR AS IS.jpg" />
     <Content Include="Data\IOR TO BE.jpg" />
@@ -571,7 +570,7 @@
     <Content Include="Images\P8.jpg" />
     <Content Include="Images\P9.jpg" />
     <Content Include="Images\RAMA_LOGO_FINAL.png" />
-    <Content Include="index_.aspx" />
+    <Content Include="index.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Manual.aspx" />
     <Content Include="MSP01.Master" />
@@ -698,7 +697,6 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="index.aspx" />
     <Content Include="testindex.aspx" />
     <Content Include="userControl\ucSelectProject.ascx" />
     <Content Include="Vvdo.aspx" />
@@ -853,11 +851,11 @@
     <Compile Include="IMGT.ashx.vb">
       <DependentUpon>IMGT.ashx</DependentUpon>
     </Compile>
-    <Compile Include="index_.aspx.designer.vb">
-      <DependentUpon>index_.aspx</DependentUpon>
+    <Compile Include="index.aspx.designer.vb">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="index_.aspx.vb">
-      <DependentUpon>index_.aspx</DependentUpon>
+    <Compile Include="index.aspx.vb">
+      <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="login.aspx.designer.vb">
@@ -1352,13 +1350,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Startup.vb" />
-    <Compile Include="index.aspx.designer.vb">
-      <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="index.aspx.vb">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="npage\VideoHandler.ashx.vb">
       <DependentUpon>VideoHandler.ashx</DependentUpon>
     </Compile>
