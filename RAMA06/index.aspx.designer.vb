@@ -95,13 +95,13 @@ Partial Public Class testindex
     Protected WithEvents vdo As Global.System.Web.UI.HtmlControls.HtmlVideo
 
     '''<summary>
-    '''images control.
+    '''rptObject control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents images As Global.System.Web.UI.WebControls.Repeater
+    Protected WithEvents rptObject As Global.System.Web.UI.WebControls.Repeater
 
     '''<summary>
     '''multiview1 control.
@@ -120,6 +120,15 @@ Partial Public Class testindex
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents viewshowgov As Global.System.Web.UI.WebControls.View
+
+    '''<summary>
+    '''ScriptManager1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
 
     '''<summary>
     '''hdffrequency control.

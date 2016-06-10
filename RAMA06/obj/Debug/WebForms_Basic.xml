@@ -8351,9 +8351,9 @@ vdo control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:RAMA06.testindex.images">
+</member><member name="F:RAMA06.testindex.rptObject">
 	<summary>
-images control.
+rptObject control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -8370,6 +8370,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:RAMA06.testindex.viewshowgov">
 	<summary>
 viewshowgov control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.testindex.ScriptManager1">
+	<summary>
+ScriptManager1 control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -13311,9 +13319,17 @@ HyperLink3 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:RAMA06.testindex1.images">
+</member><member name="F:RAMA06.testindex1.ScriptManager1">
 	<summary>
-images control.
+ScriptManager1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:RAMA06.testindex1.rptObject">
+	<summary>
+rptObject control.
 </summary>
 	<remarks>
 Auto-generated field.

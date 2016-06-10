@@ -1,41 +1,49 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MSPFirst.Master" CodeBehind="index.aspx.vb" Inherits="RAMA06.testindex" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    
-   <script type="text/javascript">
-       $('#exampleModal').on('show.bs.modal', function (event) {
-           var button = $(event.relatedTarget) // Button that triggered the modal
-           var recipient = button.data('whatever') // Extract info from data-* attributes
-           // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-           // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-           var modal = $(this)
-           modal.find('.modal-title').text('New message to ' + recipient)
-           modal.find('.modal-body input').val(recipient)
-       })
+     <%--แก้ปัญหา IE เวอร์ชั้นเก่าๆ--%>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <%--****************************--%>
+    <!--support IE8 IE9-->
+    <script src="<%=Page.ResolveClientUrl("~/Scripts/html5shiv.js")%>" type="text/javascript"></script>
+    <script src="<%=Page.ResolveClientUrl("~/Scripts/respond.min.js")%>" type="text/javascript"></script>
+    <!--support IE8 IE9-->
+    <script type="text/javascript">
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-title').text('New message to ' + recipient)
+            modal.find('.modal-body input').val(recipient)
+        })
 
     </script>
-  <script type="text/javascript">
-      $(document).ready(function () {
-          /* Get iframe src attribute value i.e. YouTube video url
-          and store it in a variable */
-          var url = $("#cartoonVideo").attr('src');
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /* Get iframe src attribute value i.e. YouTube video url
+            and store it in a variable */
+            var url = $("#cartoonVideo").attr('src');
 
-          /* Assign empty url value to the iframe src attribute when
-          modal hide, which stop the video playing */
-          $("#myModal1").on('hide.bs.modal', function () {
-              $("#cartoonVideo").attr('src', '');
-          });
+            /* Assign empty url value to the iframe src attribute when
+            modal hide, which stop the video playing */
+            $("#myModal1").on('hide.bs.modal', function () {
+                $("#cartoonVideo").attr('src', '');
+            });
 
-          /* Assign the initially stored url back to the iframe src
-          attribute when modal is displayed again */
-          $("#myModal1").on('show.bs.modal', function () {
-              $("#cartoonVideo").attr('src', url);
-          });
-      });
-</script>
-
- 
+            /* Assign the initially stored url back to the iframe src
+            attribute when modal is displayed again */
+            $("#myModal1").on('show.bs.modal', function () {
+                $("#cartoonVideo").attr('src', url);
+            });
+        });
+    </script>
 
     
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
@@ -138,7 +146,7 @@
 
 
 
-    <div class="modal fade" id="myModalslid" tabindex="-1" role="dialog" aria-labelledby="myModalLabelslid">
+    <%--<div class="modal fade" id="myModalslid" tabindex="-1" role="dialog" aria-labelledby="myModalLabelslid">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -147,11 +155,13 @@
                 </div>
                 <div class="modal-body">
 
+                    
+
 
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                    
                         <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="0">></li>
                             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                             <li data-target="#carousel-example-generic" data-slide-to="3"></li>
@@ -160,6 +170,9 @@
           
                         <div class="carousel-inner" role="listbox">
                        
+                            
+                           
+
 
 
                             <asp:Repeater ID="images" runat="server">
@@ -167,7 +180,7 @@
                                     <div class="item active">
                                         <img src="http://10.6.22.114/RAMA06/RAMA06/files-uploads/<%# Eval("renamefile").ToString()%>" style="width: 888px; height: 388px"
                                             class="img-responsive" />
-                                     
+
                                     </div>
                                 </AlternatingItemTemplate>
 
@@ -179,6 +192,7 @@
                                     </div>
                                 </ItemTemplate>
                             </asp:Repeater>
+                          
 
 
              
@@ -199,6 +213,55 @@
 
 
                 </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>--%>
+
+
+
+    <div class="modal fade" id="myModaltestslide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabelpic">แจ้งประกาศ</h4>
+                    <h4 class="modal-title" id="myModaltestslid"></h4>
+                </div>
+                <div class="modal-body">
+
+                    <div id="myCarousel2" class="carousel slide">
+
+                        <div class="carousel-inner">
+                            <asp:Repeater ID="rptObject" runat="server">
+                                <ItemTemplate>
+                                    <asp:Literal ID="ltCarousel" runat="server"></asp:Literal>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </div>
+
+
+                        <a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+
+
+                    </div>
+                    
+
+
+
+
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
@@ -209,10 +272,18 @@
 
 
 
+    
+
+    
+
+
+
 
     <asp:MultiView ID="multiview1" runat="server" ActiveViewIndex="0">
 
         <asp:View ID="viewshowgov" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
 
             <asp:HiddenField ID="hdffrequency" runat="server" />
             <asp:HiddenField ID="HiddenField3" runat="server" />

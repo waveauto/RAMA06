@@ -14,11 +14,20 @@ Option Explicit On
 Partial Public Class testindex1
 
     '''<summary>
-    '''images control.
+    '''ScriptManager1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents images As Global.System.Web.UI.WebControls.Repeater
+    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
+
+    '''<summary>
+    '''rptObject control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rptObject As Global.System.Web.UI.WebControls.Repeater
 End Class
