@@ -328,6 +328,187 @@ Public Class testindex
 #End Region
 
 
+#Region "priv"
+#Region "EVEN"
+
+    Protected Sub btnshowout_Click(sender As Object, e As EventArgs) Handles btnshowout.Click
+        fBindePagingpriv()
+        fShowDatapriv(1)
+
+
+        multiview1.SetActiveView(viewshowout)
+    End Sub
+
+    Private Sub gvdatat2_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gvdatat2.RowCommand
+        If e.CommandName = "aEdit" Then
+
+            Dim ndutyID As Integer = gvdatat2.DataKeys(e.CommandArgument).Value
+            Dim nValue As String
+            hdfid.Value = ndutyID
+
+
+            Dim nDt As DataTable
+            Dim sql As String
+            sql = " SELECT MAX(frequency) AS frequency "
+            sql &= " FROM oos_foundpriv "
+            sql &= " WHERE IDpriv = '" & hdfid.Value & "'"
+
+            Dim cmd As New SqlCommand(sql)
+            If mDB.fReadDataTable(cmd, nDt) Then
+                If nDt.Rows.Count > 0 Then
+                    If IsDBNull(nDt.Rows(0).Item("frequency")) Then
+                        hdffrequency.Value = 1
+                    Else
+                        hdffrequency.Value = (CInt(nDt.Rows(0).Item("frequency")))
+                        hdffrequency.Value += 1
+                    End If
+                End If
+            End If
+
+            Dim sqlup As String = "UPDATE oos_foundpriv SET frequency = @frequency WHERE IDpriv = @IDpriv"
+            Dim cmdup As New SqlCommand(sqlup)
+            With cmdup.Parameters
+                .AddWithValue("@frequency", hdffrequency.Value)
+                .AddWithValue("@IDpriv", hdfid.Value)
+            End With
+
+            If mDB.fExecuteCommand(cmdup, nValue) Then
+
+            End If
+
+            Dim url As String = "npage/Vpriv.aspx?value1=" + hdfid.Value
+            Dim sb As New StringBuilder()
+            sb.Append("<script type = 'text/javascript'>")
+            sb.Append("window.open('")
+            sb.Append(url)
+            sb.Append("');")
+            sb.Append("</script>")
+            ClientScript.RegisterStartupScript(Me.GetType(), _
+                        "script", sb.ToString())
+
+        End If
+    End Sub
+
+    Protected Sub btnsearcht2_Click(sender As Object, e As EventArgs) Handles btnsearcht2.Click
+        fBindePagingpriv()
+        fShowDatapriv(1)
+    End Sub
+
+    Private Sub gvdatat2_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gvdatat2.RowDataBound
+        If e.Row.RowType = DataControlRowType.DataRow Then
+            Dim pValue As String
+            Dim datetoday As String = DateTime.Parse(Date.Now, System.Globalization.CultureInfo.CurrentCulture)
+            Dim dat As String = datetoday
+            datetoday = DateToDisplay(dat, True)
+            Dim id_new As Integer = Int32.Parse(gvdatat2.DataKeys(e.Row.RowIndex).Values("IDpriv").ToString())
+
+            Dim intStatus As Integer
+            intStatus = CType(DataBinder.Eval(e.Row.DataItem, "statusicon"), Integer)
+            Dim enddate As String
+            enddate = CType(DataBinder.Eval(e.Row.DataItem, "dateend"), String)
+            enddate = DateToDisplay(enddate, True)
+            Dim img As Image = DirectCast(e.Row.FindControl("image"), Image)
+
+            If intStatus = 0 Then
+
+                img.Visible = False
+            ElseIf intStatus = 1 Then
+                img.Visible = True
+            ElseIf intStatus = 2 Then
+
+                If enddate = datetoday Then
+
+                    img.Visible = False
+                    Dim sqlupdate As String = ""
+                    sqlupdate = "UPDATE oos_foundpriv SET statusicon=@statusicon WHERE IDpriv=@IDpriv"
+                    Dim cmd As New SqlCommand(sqlupdate)
+                    cmd.Parameters.AddWithValue("@statusactionicon", 0)
+                    cmd.Parameters.AddWithValue("@IDpriv", id_new)
+                    mDB.fExecuteCommand(cmd, pValue)
+                Else
+
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub ddlPaget2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlPaget2.SelectedIndexChanged
+        fShowDatapriv(ddlPaget2.SelectedValue)
+    End Sub
+
+
+
+
+#End Region
+
+#Region "FUNCTION"
+    Private Sub fBindePagingpriv()
+        Dim nSb As New System.Text.StringBuilder
+        nSb.Append("select count(*) from oos_foundpriv where 1=1 ")
+        nSb.Append(fGetSearchStrpriv())
+        Dim nVal As Integer
+        Dim nComd As New SqlCommand(nSb.ToString)
+        fSetCommandFilterValuepriv(nComd)
+        mDB.fReadTopData(nComd, nVal)
+        If nVal > 0 Then
+            Dim nPage As Integer = Math.Ceiling(nVal / gvdatat1.PageSize)
+            lblAllPaget2.Text = nPage
+            ddlPaget2.Items.Clear()
+            For i = 1 To nPage
+                ddlPaget2.Items.Insert(i - 1, New ListItem(i, i))
+            Next
+        End If
+    End Sub
+
+    Private Function fGetSearchStrpriv() As String
+        Dim nValue As String = ""
+        If tbsearcht2.Text <> "" Then nValue &= " and (privHead like @searchTxt )"
+        Return nValue
+    End Function
+
+    Private Sub fSetCommandFilterValuepriv(ByRef pCommand As SqlCommand)
+        With pCommand.Parameters
+            .AddWithValue("@searchTxt", "%" & tbsearcht2.Text & "%")
+        End With
+    End Sub
+
+    Private Sub fShowDatapriv(ByVal pPage As Integer, Optional ByVal pSortDirection As String = "")
+        gvdatat2.DataSource = fReadDatapriv(pPage, pSortDirection)
+        gvdatat2.DataBind()
+    End Sub
+
+    Private Function fReadDatapriv(ByVal pPage As Integer, Optional ByVal pSortDirection As String = "") As DataTable
+        Dim nUser As cUser = Session("cUser")
+        Dim nPageSize As Integer = gvdatat1.PageSize
+        Dim nSb As New System.Text.StringBuilder
+        nSb.Append("select * from ( ")
+        nSb.Append("select ROW_NUMBER() OVER(ORDER BY IDpriv desc) AS row,*  ")
+        nSb.Append("from oos_foundpriv where 1=1")
+        nSb.Append(fGetSearchStrpriv())
+        nSb.Append(") AS a ")
+        nSb.Append(String.Format(" where row between {0} and {1} order by IDpriv desc",
+                                 ((pPage - 1) * nPageSize) + 1,
+                                 ((pPage - 1) * nPageSize) + nPageSize))
+        Dim nComd As New SqlCommand(nSb.ToString)
+        fSetCommandFilterValuepriv(nComd)
+        Dim nDt As DataTable
+
+        If mDB.fReadDataTable(nComd, nDt) Then
+            If pSortDirection <> "" Then
+                nDt = nDt.Select("", pSortDirection).CopyToDataTable
+            End If
+        End If
+        Return nDt
+    End Function
+
+
+
+
+#End Region
+#End Region
+
+
+#Region "MODAL"
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             fBindePaginggov()
@@ -468,6 +649,9 @@ Public Class testindex
     End Sub
 
 
+
+
+
     Private Function DateToDisplay(ByVal _dateTime As System.DateTime, ByVal _displayTime As Boolean) As String
         Dim _day As String
         Dim _month As String
@@ -495,173 +679,6 @@ Public Class testindex
 
         Return _ret
     End Function
-
-    Private Sub fBindePagingpriv()
-        Dim nSb As New System.Text.StringBuilder
-        nSb.Append("select count(*) from oos_foundpriv where 1=1 ")
-        nSb.Append(fGetSearchStrpriv())
-        Dim nVal As Integer
-        Dim nComd As New SqlCommand(nSb.ToString)
-        fSetCommandFilterValuepriv(nComd)
-        mDB.fReadTopData(nComd, nVal)
-        If nVal > 0 Then
-            Dim nPage As Integer = Math.Ceiling(nVal / gvdatat1.PageSize)
-            lblAllPaget2.Text = nPage
-            ddlPaget2.Items.Clear()
-            For i = 1 To nPage
-                ddlPaget2.Items.Insert(i - 1, New ListItem(i, i))
-            Next
-        End If
-    End Sub
-
-    Private Function fGetSearchStrpriv() As String
-        Dim nValue As String = ""
-        If tbsearcht2.Text <> "" Then nValue &= " and (privHead like @searchTxt )"
-        Return nValue
-    End Function
-
-    Private Sub fSetCommandFilterValuepriv(ByRef pCommand As SqlCommand)
-        With pCommand.Parameters
-            .AddWithValue("@searchTxt", "%" & tbsearcht2.Text & "%")
-        End With
-    End Sub
-
-    Private Sub fShowDatapriv(ByVal pPage As Integer, Optional ByVal pSortDirection As String = "")
-        gvdatat2.DataSource = fReadDatapriv(pPage, pSortDirection)
-        gvdatat2.DataBind()
-    End Sub
-
-    Private Function fReadDatapriv(ByVal pPage As Integer, Optional ByVal pSortDirection As String = "") As DataTable
-        Dim nUser As cUser = Session("cUser")
-        Dim nPageSize As Integer = gvdatat1.PageSize
-        Dim nSb As New System.Text.StringBuilder
-        nSb.Append("select * from ( ")
-        nSb.Append("select ROW_NUMBER() OVER(ORDER BY IDpriv desc) AS row,*  ")
-        nSb.Append("from oos_foundpriv where 1=1")
-        nSb.Append(fGetSearchStrpriv())
-        nSb.Append(") AS a ")
-        nSb.Append(String.Format(" where row between {0} and {1} order by IDpriv desc",
-                                 ((pPage - 1) * nPageSize) + 1,
-                                 ((pPage - 1) * nPageSize) + nPageSize))
-        Dim nComd As New SqlCommand(nSb.ToString)
-        fSetCommandFilterValuepriv(nComd)
-        Dim nDt As DataTable
-
-        If mDB.fReadDataTable(nComd, nDt) Then
-            If pSortDirection <> "" Then
-                nDt = nDt.Select("", pSortDirection).CopyToDataTable
-            End If
-        End If
-        Return nDt
-    End Function
-
-
-    Protected Sub btnshowout_Click(sender As Object, e As EventArgs) Handles btnshowout.Click
-        fBindePagingpriv()
-        fShowDatapriv(1)
-
-
-        multiview1.SetActiveView(viewshowout)
-    End Sub
-
-    Private Sub gvdatat2_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gvdatat2.RowCommand
-        If e.CommandName = "aEdit" Then
-
-            Dim ndutyID As Integer = gvdatat2.DataKeys(e.CommandArgument).Value
-            Dim nValue As String
-            hdfid.Value = ndutyID
-
-
-            Dim nDt As DataTable
-            Dim sql As String
-            sql = " SELECT MAX(frequency) AS frequency "
-            sql &= " FROM oos_foundpriv "
-            sql &= " WHERE IDpriv = '" & hdfid.Value & "'"
-
-            Dim cmd As New SqlCommand(sql)
-            If mDB.fReadDataTable(cmd, nDt) Then
-                If nDt.Rows.Count > 0 Then
-                    If IsDBNull(nDt.Rows(0).Item("frequency")) Then
-                        hdffrequency.Value = 1
-                    Else
-                        hdffrequency.Value = (CInt(nDt.Rows(0).Item("frequency")))
-                        hdffrequency.Value += 1
-                    End If
-                End If
-            End If
-
-            Dim sqlup As String = "UPDATE oos_foundpriv SET frequency = @frequency WHERE IDpriv = @IDpriv"
-            Dim cmdup As New SqlCommand(sqlup)
-            With cmdup.Parameters
-                .AddWithValue("@frequency", hdffrequency.Value)
-                .AddWithValue("@IDpriv", hdfid.Value)
-            End With
-
-            If mDB.fExecuteCommand(cmdup, nValue) Then
-
-            End If
-
-            Dim url As String = "npage/Vpriv.aspx?value1=" + hdfid.Value
-            Dim sb As New StringBuilder()
-            sb.Append("<script type = 'text/javascript'>")
-            sb.Append("window.open('")
-            sb.Append(url)
-            sb.Append("');")
-            sb.Append("</script>")
-            ClientScript.RegisterStartupScript(Me.GetType(), _
-                        "script", sb.ToString())
-
-        End If
-    End Sub
-
-    Protected Sub btnsearcht2_Click(sender As Object, e As EventArgs) Handles btnsearcht2.Click
-        fBindePagingpriv()
-        fShowDatapriv(1)
-    End Sub
-
-    Private Sub gvdatat2_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gvdatat2.RowDataBound
-        If e.Row.RowType = DataControlRowType.DataRow Then
-            Dim pValue As String
-            Dim datetoday As String = DateTime.Parse(Date.Now, System.Globalization.CultureInfo.CurrentCulture)
-            Dim dat As String = datetoday
-            datetoday = DateToDisplay(dat, True)
-            Dim id_new As Integer = Int32.Parse(gvdatat2.DataKeys(e.Row.RowIndex).Values("IDpriv").ToString())
-
-            Dim intStatus As Integer
-            intStatus = CType(DataBinder.Eval(e.Row.DataItem, "statusicon"), Integer)
-            Dim enddate As String
-            enddate = CType(DataBinder.Eval(e.Row.DataItem, "dateend"), String)
-            enddate = DateToDisplay(enddate, True)
-            Dim img As Image = DirectCast(e.Row.FindControl("image"), Image)
-
-            If intStatus = 0 Then
-
-                img.Visible = False
-            ElseIf intStatus = 1 Then
-                img.Visible = True
-            ElseIf intStatus = 2 Then
-
-                If enddate = datetoday Then
-
-                    img.Visible = False
-                    Dim sqlupdate As String = ""
-                    sqlupdate = "UPDATE oos_foundpriv SET statusicon=@statusicon WHERE IDpriv=@IDpriv"
-                    Dim cmd As New SqlCommand(sqlupdate)
-                    cmd.Parameters.AddWithValue("@statusactionicon", 0)
-                    cmd.Parameters.AddWithValue("@IDpriv", id_new)
-                    mDB.fExecuteCommand(cmd, pValue)
-                Else
-
-                End If
-            End If
-        End If
-    End Sub
-
-    Private Sub ddlPaget2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlPaget2.SelectedIndexChanged
-        fShowDatapriv(ddlPaget2.SelectedValue)
-    End Sub
-
-
 
     Private Sub showpicture(ByVal rid As Integer)
         Dim nUser As cUser = Session("cUser")
@@ -716,5 +733,6 @@ Public Class testindex
         End If
     End Sub
 
+#End Region
 
 End Class
