@@ -587,6 +587,8 @@
     <Content Include="npage\Aman.aspx" />
     <Content Include="npage\Ampop.aspx" />
     <Content Include="npage\Anew.aspx" />
+    <Content Include="npage\Apm.aspx" />
+    <Content Include="npage\Apmm.aspx" />
     <Content Include="npage\Apop.aspx" />
     <Content Include="npage\Apriv.aspx" />
     <Content Include="npage\Apss.aspx" />
@@ -994,6 +996,20 @@
     </Compile>
     <Compile Include="npage\Anew.aspx.vb">
       <DependentUpon>Anew.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="npage\Apm.aspx.designer.vb">
+      <DependentUpon>Apm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="npage\Apm.aspx.vb">
+      <DependentUpon>Apm.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="npage\Apmm.aspx.designer.vb">
+      <DependentUpon>Apmm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="npage\Apmm.aspx.vb">
+      <DependentUpon>Apmm.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="npage\Apop.aspx.designer.vb">

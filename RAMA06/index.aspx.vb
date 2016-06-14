@@ -536,7 +536,6 @@ Public Class testindex
 
                             ScriptManager.RegisterStartupScript(Me, [GetType](), "showmodal", "$('#myModal').modal('show');", True)
 
-
                         Case "vdo"
                             PopID = nDt.Rows(0).Item("PopID")
                             tbheadnamevideo.Text = nDt.Rows(0).Item("headname")
