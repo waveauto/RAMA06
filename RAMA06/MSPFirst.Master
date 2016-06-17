@@ -46,18 +46,18 @@
 <body>
     <form id="form1" runat="server">
 
- <div style="background-color:#2EACE0;color:#fff;height:120px;">
-      <br />  
-      <h2>&nbsp;One Stop Service for Research Management System. </h2>      
-        <p>&nbsp;&nbsp; สำนักงานวิจัย วิชาการ และนวัตกรรม</p>      
-   </div>
+        <div style="background-color: #2EACE0; color: #fff; height: 120px;">
+            <br />
+            <h2>&nbsp;One Stop Service for Research Management System. </h2>
+            <p>&nbsp;&nbsp; สำนักงานวิจัย วิชาการ และนวัตกรรม</p>
+        </div>
         <nav class="navbar navbar-default">
             <ul class="nav navbar-nav">
                 <li class="active"><a href='<%= Page.ResolveUrl("~/Page/Menu1.aspx")%>'>หน้าแรก</a></li>
                 <li><a href='<%= Page.ResolveUrl("~/Manual.aspx")%>'>คู่มือ</a></li>
 
                 <li><a href='<%= Page.ResolveUrl("~/Vvdo.aspx")%>'>วิดีโอ</a></li>
-                 <li><a href='<%= Page.ResolveUrl("~/Download.aspx")%>'>ดาวน์โหลด</a></li>
+                <li><a href='<%= Page.ResolveUrl("~/Download.aspx")%>'>ดาวน์โหลด</a></li>
                 <li><a href='<%= Page.ResolveUrl("~/About.aspx")%>'>เกี่ยวกับระบบ</a></li>
                 <li><a href='<%= Page.ResolveUrl("~/Contact.aspx")%>'>ติดต่อเรา</a></li>
             </ul>
@@ -68,21 +68,18 @@
         </nav>
 
 
-<div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
 
- 
-        </asp:ContentPlaceHolder>
-</div>  
+        <footer class="navbar navbar-inverse" style="background-color: #2EACE0; color: #fff;">
+            <br />
+            <p class="text-center">มุ่งเรียนรู้ คู่คุณธรรม ใฝ่คุณภาพ ร่วมสานภารกิจ คิดนอกกรอบ รับผิดชอบสังคม.</p>
+            <p class="text-center">พัฒนาโดยฝายสารสนเทศ โทร. 0208,083-0110-273 Email : kriangkrai.pit@mahidol.ca.th</p>
+            <p class="text-center">คณะแพทยศาสตร์โรงพยาบาลรามาธิบดี มหาวิทยาลัยมหิดล</p>
+        </footer>
 
- <footer class="navbar navbar-inverse" style="background-color:#2EACE0;color:#fff;">
-   <br />
-   <p class="text-center"> มุ่งเรียนรู้ คู่คุณธรรม ใฝ่คุณภาพ ร่วมสานภารกิจ คิดนอกกรอบ รับผิดชอบสังคม.</p> 
-   <p class="text-center" >พัฒนาโดยฝายสารสนเทศ โทร. 0208,083-0110-273 Email : kriangkrai.pit@mahidol.ca.th</p>
-    <p class="text-center" >คณะแพทยศาสตร์โรงพยาบาลรามาธิบดี มหาวิทยาลัยมหิดล</p>
-</footer>    
-    
     </form>
 </body>
 </html>
